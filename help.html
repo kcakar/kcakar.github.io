@@ -5,188 +5,20 @@
 		<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="jquery-3.2.0.min.js"></script>
-        <script>
-        $(function(){
-        	$("#output").val("");
-        	$("#work").click(function(){
-        		var outText="Merge list for\n\n";
-        		outText += fillRevisions(getRevisions());
-        		outText += fillFilesTouched(getFilesTouched());
-        		$("#output").val(outText);
-
-        		var filesTouched=[];
-				getFilesTouched()
-        	});
-        });
-
-        function getRevisions()
-        {
-        	var revisions=[];
-        	var myStr = $("#input").val();
-
-			do{
-				var start=myStr.indexOf('Revision');
-				var end=myStr.indexOf('Files touched');
-				var commit=myStr.substring(start+8,end);
-
-				do{
-					var regex=/\d+/;
-					var match= regex.exec(commit);
-					if(match!=null)
-					{
-						if(match.length>0)
-						{
-							if(match.length>1)
-							{
-								console.log(match)
-							}
-							for(var j=0;j<match.length;j++)
-							{
-								var has=false;
-
-								for(var i=0;i<revisions.length;i++)
-								{
-									if(revisions[i]==match[j])
-									{
-										has=true;
-										break;
-									}
-								}
-
-								if(!has)
-								{
-									revisions.push(match[j]);
-								}
-								has=false;
-							}
-							
-						}
-					}
-					commit=commit.replace(match,"");
-				}
-				while(match!=null&&commit.trim().length>0);
-				
-				myStr = myStr.substring(myStr.indexOf("Files touched") + 13);
-			}
-			while(start!=-1);
-			  	
-        	return revisions;
-        }
-
-        function fillRevisions(revisions)
-        {
-        	var revisionText="Revisions:\n";
-
-        	for(var i=0;i<revisions.length;i++)
-        	{
-        		revisionText+=revisions[i];
-        		if(i!=revisions.length-1)
-        		{
-					revisionText+=", ";
-        		}
-        	}
-        	return revisionText+"\n\n";
-        }
-
-        function getFilesTouched()
-        {
-        	var filesTouched=[];
-        	var myStr = $("#input").val();
-        	
-			do{
-				var start=myStr.indexOf('Files touched');
-				var end=myStr.indexOf('Url');
-				var commit=myStr.substring(start+13,end-2	);
-				
-				commit = commit.substring(commit.indexOf(":") + 1);
-				do
-				{
-
-					var check="";
-					if(commit.indexOf("\n")>-1)
-					{
-						check=commit.substr(0, commit.indexOf("\n")+1);
-					}
-					else
-					{
-						check=commit;
-					}
-					
-
-					if(check.indexOf("tr")!=-1)
-					{
-						var toAdd=check.replace("\n","").trim();
-						var has=false;
-
-							for(var i=0;i<filesTouched.length;i++)
-							{
-								if(filesTouched[i]==toAdd)
-								{
-									has=true;
-									break;
-								}
-							}
-
-							if(!has)
-							{
-								filesTouched.push(toAdd);
-							}
-							has=false;
-					}
-
-					
-					if(check=="\n")
-					{
-						commit = commit.replace('\n', '');
-					}
-					else
-					{
-						commit=commit.substring(commit.indexOf(check) + check.length);
-					}
-					
-				}
-				while(commit.length>0 || commit.indexOf("\n")!=-1);
-
-				
-				myStr = myStr.substring(myStr.indexOf("Files touched") + 13);
-				myStr = myStr.substring(myStr.indexOf("Files touched"));
-			}
-			while(start!=-1);
-			  	
-        	return filesTouched;
-
-        }
-
-        function fillFilesTouched(filesTouched)
-        {
-        	var filesTouchedText="FilesTouched:\n";
-
-        	for(var i=0;i<filesTouched.length;i++)
-        	{
-        		filesTouchedText+=filesTouched[i];
-        		if(i!=filesTouched.length-1)
-        		{
-					filesTouchedText+="\n";
-        		}
-        	}
-        	return filesTouchedText+"\n\n";
-        }
-        </script>
-
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script src="jquery-3.2.0.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="help.js"></script>
 </head>
-<body>
-<textarea id="input" type="text" style="width:49%;height:300px;"></textarea>
+<body style="padding-top:10px;background-color:#c2c2d6">
+<textarea id="input" type="text" class="form-control" style="width:49%;height:300px;float:left;margin-right:1%;margin-left:10px;"></textarea>
 
-<textarea id="output" type="text" style="width:49%;height:300px;" /></textarea>
+<textarea id="output" type="text" class="form-control" style="width:49%;height:300px;" /></textarea>
 
-<button id="work">Çalış!</button>
-
-<section id="Demo">
-	<pre>
-This is now updated.
+<button type="button" id="work" class="btn btn-success" style="margin:10px;">Çalış!</button>
+<button type="button" id="demo" class="btn btn-success" style="margin:10px;">Demo text üret!</button>
+<section id="Demo" style="margin:10px;width:300px;display:none;">
+	<pre>This is now updated.
 
 Revision:
 25435345
