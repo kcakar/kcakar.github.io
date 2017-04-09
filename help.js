@@ -168,7 +168,7 @@ function getFilesTouched()
 
 function fillFilesTouched(filesTouched)
 {
-	var filesTouchedText="FilesTouched:\n";
+	var filesTouchedText="Files Touched:\n";
 
 	for(var i=0;i<filesTouched.length;i++)
 	{
