@@ -34,13 +34,15 @@ function getRevisions()
 	var myStr = $("#input").val();
 
 	do{
-		var start=myStr.indexOf('Revision');
-		var end=myStr.indexOf('Files touched');
+		var start=myStr.indexOf('Revis');
+		var end=myStr.indexOf('Files touch');
 		var commit=myStr.substring(start+8,end);
 
 		do{
 			var regex=/\d+/;
 			var match= regex.exec(commit);
+			console.log(commit)
+			console.log(match)
 			if(match!=null)
 			{
 				if(match.length>0)
@@ -51,22 +53,25 @@ function getRevisions()
 					}
 					for(var j=0;j<match.length;j++)
 					{
-						var has=false;
-
-						for(var i=0;i<revisions.length;i++)
+						if(match[j].length==7)
 						{
-							if(revisions[i]==match[j])
+							var has=false;
+
+							for(var i=0;i<revisions.length;i++)
 							{
-								has=true;
-								break;
+								if(revisions[i]==match[j])
+								{
+									has=true;
+									break;
+								}
 							}
-						}
 
-						if(!has)
-						{
-							revisions.push(match[j]);
+							if(!has)
+							{
+								revisions.push(match[j]);
+							}
+							has=false;
 						}
-						has=false;
 					}
 					
 				}
@@ -103,7 +108,7 @@ function getFilesTouched()
 	var myStr = $("#input").val();
 	
 	do{
-		var start=myStr.indexOf('Files touched');
+		var start=myStr.indexOf('Files touch');
 		var end=myStr.indexOf('Url');
 		var commit=myStr.substring(start+13,end-2	);
 		
@@ -122,7 +127,7 @@ function getFilesTouched()
 			}
 			
 
-			if(check.indexOf("tr")!=-1)
+			if(check.indexOf("/")!=-1)
 			{
 				var toAdd=check.replace("\n","").trim();
 				var has=false;
@@ -157,8 +162,8 @@ function getFilesTouched()
 		while(commit.length>0 || commit.indexOf("\n")!=-1);
 
 		
-		myStr = myStr.substring(myStr.indexOf("Files touched") + 13);
-		myStr = myStr.substring(myStr.indexOf("Files touched"));
+		myStr = myStr.substring(myStr.indexOf("Files touch") + 11);
+		myStr = myStr.substring(myStr.indexOf("Files touch"));
 	}
 	while(start!=-1);
 	  	
