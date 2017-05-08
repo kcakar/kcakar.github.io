@@ -366,6 +366,8 @@ figcaption{
 #about p{
     color: #218bff;
     font-family: 'Theinhardt';
+    font-size:1.05em;
+    line-height:1.3em;
 }
 
 @media screen and (max-width: 1000px) {
@@ -381,4 +383,18 @@ figcaption{
         margin-top:160px;
         margin-bottom: 50px;
     }
+}
+
+hr{
+    border-color: #218bff;
+    border-style: solid;
+    border-bottom: none;
+    border-width: 1px;
+}
+
+@media screen and (max-width: 800px) {
+   hr{
+        width: 150px;
+        float: left;
+    } 
 }
