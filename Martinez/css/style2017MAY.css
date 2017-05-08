@@ -366,8 +366,8 @@ figcaption{
 #about p{
     color: #218bff;
     font-family: 'Theinhardt';
-    font-size:1.05em;
-    line-height:1.3em;
+    font-size:1.3em;
+    line-height:1.35em;
 }
 
 @media screen and (max-width: 1000px) {
