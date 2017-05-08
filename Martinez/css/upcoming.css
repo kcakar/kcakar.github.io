@@ -1,20 +1,21 @@
 #main-img-div{
     background-image: url(../images/upcoming.jpg);
-    background-size: auto 100vh;
+    background-size: auto 80vh;
     background-position: center bottom;
+    margin-top: -10vh;
 }
 
 @media screen and (max-width: 800px) {
     #main-img-div {
-        background-size: 70vw auto;
+        background-size: 60vw auto;
         background-position: center bottom;
         display: block;
-        height: 100vh;
+        height: 80vh;
         max-width: 100%;
         overflow: hidden;
         padding: 0;
         width: 100vw;
-        margin-top: -10vh;
+        margin-top: 10vh;
     }
 }
 
