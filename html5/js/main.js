@@ -66,10 +66,6 @@ $(document).ready(function () {
         $("#video-container iframe").attr("src", "http://www.canlitvlive.io/tvizle.php?t=1&tv=trt-1");
         $("#listen-start-container").hide();
     });
-
-    setTimeout(function () {
-        loadTweetsfnc();
-    }, 1000);
 });
 
 var currentTweetCount = 0;
@@ -80,43 +76,7 @@ var zIndex = 0;
 var frontZ = 999;
 var timer = 500;
 
-function loadTweetsfnc() {
-    if (window.location.pathname.indexOf("index") > -1) {
-        while (loaded < toLoad) {
-            if ($("#twitter-widget-0").length > 0) {
-                var count = $("#twitter-widget-0").contents().find(".timeline-TweetList-tweet").length;
-                if (currentTweetCount != count) {
-                    currentTweetCount = count;
-                    loadTweets = false;
-                    $("#twitter-widget-0").contents().find(".timeline-LoadMore-prompt").click();
-                    loaded += 10;
-                    //$(".avatarDiv").addClass("fullOpacity");
-                    console.log("new tweets arrive")
-                    loadMonument();
-                }
-                else if (loaded + 20 > toLoad || currentTweetCount + 20 > toLoad) {
-                    
-                    return;
-                }
-                else {
-                    setTimeout(function () {
-                        loadTweetsfnc();
-                    }, 1000);
-                    break;
-                }
 
-
-            }
-            else {
-                setTimeout(function () {
-                    loadTweetsfnc();
-                }, 1000);
-                break;
-            }
-        }
-    }
-
-}
 
 window.addEventListener('resize', function () {
     tweets = [];
