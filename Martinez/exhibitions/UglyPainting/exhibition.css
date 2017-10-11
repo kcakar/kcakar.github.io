@@ -87,6 +87,19 @@ video{
 .img7,.img9{
    margin-right:6vw;
 }
+
+@media screen and (max-width: 1000px) {
+    .img1 img{
+        height: initial;
+        width:80vw;
+        float: left;
+    }
+    .img1{
+        height: initial;
+        float: left;
+    }
+}
+
 @media screen and (max-width: 800px) {
     figure.backlayer{
         width:80vw;
@@ -97,13 +110,5 @@ video{
         height: 50vh;
     }
 
-    .img1 img{
-        height: initial;
-        width:80vw;
-        float: left;
-    }
-    .img1{
-        height: initial;
-        float: left;
-    }
+
 }
