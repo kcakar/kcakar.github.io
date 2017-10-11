@@ -25,11 +25,36 @@
 }
 
 #main-img-div{
-    background-image: url(images/1.jpg);
-    width: 80vw;
+    background-image: none;
+    width: 100vw;
     margin-left: auto;
     margin-right: auto;
 }
+
+#main-img-div {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 80vw;
+    height: initial;
+    overflow: initial;
+    padding: 0;
+    width: 100vw;
+    max-width: 100%
+}
+
+video{
+    margin:0;
+}
+.backlayer {
+    display: block;
+    float: left;
+    margin-top: 5vh;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    width:80vw;
+}
+
 
 .img2{
     width:75%;
@@ -61,7 +86,5 @@
         margin-left:0;
         margin-right:0;
     }
-    video{
-        margin-top:5vh;
-    }
+
 }
