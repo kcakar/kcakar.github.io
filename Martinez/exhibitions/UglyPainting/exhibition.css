@@ -54,12 +54,12 @@ video{
     transform: translateY(-50%);
 }
 .img1{
-    height: 70vh;
+    height: 100vh;
     float: right;
 }
 
 .img1 img{
-    height: 70vh;
+    height: 100vh;
     width:auto;
     float: right;
 }
@@ -86,6 +86,11 @@ video{
 }
 .img7,.img9{
    margin-right:6vw;
+}
+
+.img11{
+    width:60vw;
+    margin-left:10vw;
 }
 
 @media screen and (max-width: 1000px) {
