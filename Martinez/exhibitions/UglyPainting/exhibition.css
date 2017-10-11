@@ -44,7 +44,15 @@ video{
     width:80vw;
 }
 
+.hero-video-exhibition{
+    height: 100vh;
+}
 
+.hero-video-exhibition video{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 .img2{
     width:75%;
@@ -76,5 +84,7 @@ video{
         margin-left:0;
         margin-right:0;
     }
-
+    .hero-video-exhibition{
+        height: 50vh;
+    }
 }
