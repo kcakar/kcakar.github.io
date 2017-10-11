@@ -53,7 +53,16 @@ video{
     top: 50%;
     transform: translateY(-50%);
 }
+.img1{
+    height: 100vh;
+    float: right;
+}
 
+.img1 img{
+    height: 100vh;
+    width:auto;
+    float: right;
+}
 .img2{
     width:75%;
 }
@@ -86,5 +95,15 @@ video{
     }
     .hero-video-exhibition{
         height: 50vh;
+    }
+
+    .img1 img{
+        height: initial;
+        width:80vw;
+        float: left;
+    }
+    .img1{
+        height: initial;
+        float: left;
     }
 }
