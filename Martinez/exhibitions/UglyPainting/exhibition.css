@@ -1,0 +1,67 @@
+@font-face {
+  font-family: Gothic;
+  src: url('../../css/Gothic.ttf')  format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Theinhardt';
+    src: url('../../css/Theinhardt-RegularIta.eot');
+    src: url('../../css/Theinhardt-RegularIta.eot?#iefix') format('embedded-opentype'),
+        url('../../css/Theinhardt-RegularIta.woff') format('woff'),
+        url('../../css/Theinhardt-RegularIta.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Theinhardt';
+    src: url('../../css/Theinhardt-Regular.eot');
+    src: url('../../css/Theinhardt-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../css/Theinhardt-Regular.woff') format('woff'),
+        url('../../css/Theinhardt-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#main-img-div{
+    background-image: url(images/1.jpg);
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img2{
+    width:75%;
+}
+
+.img4{
+    margin-left:20vw;
+    width:60vw;
+}
+
+.img5{
+    width:55vw;
+}
+
+.img6{
+    margin-left:25vw;
+    width:45vw;
+}
+
+.img7,.img9,.img8,.img10{
+    width:37vw;
+}
+.img7,.img9{
+   margin-right:6vw;
+}
+@media screen and (max-width: 800px) {
+    figure.backlayer{
+        width:80vw;
+        margin-left:0;
+        margin-right:0;
+    }
+    video{
+        margin-top:5vh;
+    }
+}
