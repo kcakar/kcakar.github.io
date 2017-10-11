@@ -54,12 +54,12 @@ video{
     transform: translateY(-50%);
 }
 .img1{
-    height: 100vh;
+    height: 70vh;
     float: right;
 }
 
 .img1 img{
-    height: 100vh;
+    height: 70vh;
     width:auto;
     float: right;
 }
