@@ -482,15 +482,17 @@ h2{
 .intro-section img.fruit{
     margin:0;
     padding: 0;
+    opacity: 0;
     filter: blur(1px);
     width: 50vw;
     height:  auto;
-    opacity: 0.5;
     position: absolute;
     bottom:0px;
     left:calc(50% - 25vw);
     z-index: 1;
     animation: fadeInUpFruit 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 5.5s;
 }
 .intro-section img.buse{
     opacity: 0;
@@ -503,6 +505,7 @@ h2{
     margin-right: -1px;
     margin-top:-1px;
 }
+
 
 @keyframes fadeIn {
     from {
