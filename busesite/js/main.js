@@ -58,7 +58,7 @@ function getRandomHeight() {
     return Math.floor(Math.random() * (height * 2))
 }
 
-// fillFruits();
+fillFruits();
 
 
 

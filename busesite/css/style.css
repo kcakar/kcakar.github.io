@@ -124,14 +124,14 @@ body{
 }
 
 /* devmode */
-/* main{
+main{
     opacity: 0;
     animation:main-appear-animation 1s;
     animation-fill-mode: forwards;
     animation-delay: 4.5s; 
     height: 0;
     overflow: hidden;
-} */
+}
 
 @keyframes main-appear-animation {
     0% {opacity:0}
