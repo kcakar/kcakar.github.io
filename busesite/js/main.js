@@ -86,7 +86,7 @@ function incrementCounter() {
     
     if ( counter === len ) {
         console.log("eşit")
-        setTimeout(e=>{playIntro()},5000);
+        playIntro();
     }
 }
 
