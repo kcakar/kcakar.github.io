@@ -5,7 +5,7 @@ const introVar = document.querySelector("#intro");
 const main = document.querySelector("main");
 const loader = document.querySelector(".loader");
 let width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-let height= Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+let height= Math.max(document.documentElement.clientHeight, window.innerHeight || 0)/2;
 
 function fillIntroImages() {
     introImages.push({
@@ -36,7 +36,7 @@ function fillIntroImages() {
 
 function fillFruits() {
     let html = "";
-    for (let i = 0; i <= 100; i++) {
+    for (let i = 0; i <= 50; i++) {
         let food = getRandomFood();
         html += `
         <div class="fruit" style="left:${getRandomWidth()}px;top:${getRandomHeight()}px">
