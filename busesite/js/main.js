@@ -91,8 +91,9 @@ function incrementCounter() {
     console.log(len)
     
     if ( counter === len ) {
-        console.log("eşit")
-        playIntro();
+        setTimeout(function() {
+            playIntro();
+        }, 1500);
     }
 }
 
@@ -191,6 +192,7 @@ function handle() {
     this.classList.toggle("active");
 }
 
+//float images when they move into view
 
 //google maps
 function initMap() {
@@ -205,4 +207,4 @@ function initMap() {
       position: buse,
       map: map,
     });
-  }
+}
