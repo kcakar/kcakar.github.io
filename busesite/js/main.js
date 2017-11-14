@@ -1,5 +1,9 @@
+//INTRO ANIMATION
 const introImages = [];
 const fruits = document.querySelector(".fruits");
+const intro = document.querySelector("#intro");
+const main = document.querySelector("main");
+const loader = document.querySelector(".loader");
 let width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 let height= Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
@@ -31,8 +35,6 @@ function fillIntroImages() {
 }
 
 function fillFruits() {
-    fillIntroImages();
-
     let html = "";
     for (let i = 0; i <= 100; i++) {
         let food = getRandomFood();
@@ -58,9 +60,35 @@ function getRandomHeight() {
     return Math.floor(Math.random() * (height * 2))
 }
 
-fillFruits();
+function playIntro(){
+    console.log( 'All images loaded!' );
+    intro.classList.add("animate");
+    main.classList.add("loaded");
+    loader.classList.add("done");
+    fillFruits();
+}
 
+fillIntroImages();
 
+//wait until images load
+var imgs = document.images,
+len = imgs.length,
+counter = 0;
+
+[].forEach.call( imgs, function( img ) {
+    img.addEventListener( 'load', incrementCounter, false );
+} );
+
+function incrementCounter() {
+    counter++;
+    console.log(counter)
+    console.log(len)
+    
+    if ( counter === len ) {
+        console.log("eşit")
+        setTimeout(e=>{playIntro()},5000);
+    }
+}
 
 // MENU JS
 const nav = document.querySelector(".fixed-canvas nav");
@@ -138,7 +166,7 @@ function isScrolledIntoView(elem) {
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 
-//CURTAIN JS
+//CURTAIN SECTION JS
 
 const panels = document.querySelectorAll(".panel");
 

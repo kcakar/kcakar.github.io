@@ -5,7 +5,7 @@
 	font-family: "geometr415-md-bt";
 	src: url('./fonts/geometr415-md-bt-medium.eot');
 	src: url('./fonts/geometr415-md-bt-medium.eot?#iefix') format('embedded-opentype'),
-	url('./fonts/geometr415-md-bt-medium.svg#Geometr415 Md BT') format('svg'),
+	/* url('./fonts/geometr415-md-bt-medium.svg#Geometr415 Md BT') format('svg'), */
 	url('./fonts/geometr415-md-bt-medium.woff') format('woff'),
 	url('./fonts/geometr415-md-bt-medium.ttf') format('truetype');
 	font-weight: normal;
@@ -70,6 +70,10 @@ body{
     justify-content: center;
     text-align: center;
     overflow: hidden;
+
+}
+
+#intro.animate{
     animation: intro-hide 2s;
     animation-fill-mode: forwards;
     animation-delay: 3s;
@@ -81,7 +85,7 @@ body{
     100% {opacity:0;height: 0;}
 }
 
-#intro .intro-text{
+#intro.animate .intro-text{
     z-index: 2;
     animation: intro-animation 2s;
     animation-fill-mode: forwards;
@@ -93,7 +97,8 @@ body{
     0% {transform:scale(1);opacity:1}
     100% {transform:scale(3);opacity:0}
 }
-.fruits{
+
+#intro.animate .fruits{
     position: absolute;
     left:0;
     top:100vh;
@@ -125,12 +130,15 @@ body{
 
 /* devmode */
 main{
+    height: 0;
+    overflow: hidden;
+}
+
+main.loaded{
     opacity: 0;
     animation:main-appear-animation 1s;
     animation-fill-mode: forwards;
     animation-delay: 4.5s; 
-    height: 0;
-    overflow: hidden;
 }
 
 @keyframes main-appear-animation {
@@ -164,7 +172,7 @@ main{
    100% {left: 100px;}
 }
 
-.fixed-canvas nav li a figure{
+main.loaded .fixed-canvas nav li a figure{
     padding: 0;
     margin: 0;
     position: absolute;
@@ -219,13 +227,13 @@ main{
     left: calc(50% - 50px);
 }
 
- .switchIn{
+main.loaded .switchIn{
    animation:bounceInDown 0.7s!important;
    animation-fill-mode: forwards!important;
    animation-play-state: running!important;
  }
 
- .switchOut{
+ main.loaded .switchOut{
    animation:bounceOutUp 0.7s!important;
    animation-fill-mode: forwards!important;
    animation-play-state: running!important;
@@ -437,7 +445,7 @@ main{
     margin-top:calc(40vh - 160px);
 }
 
-.intro-section .hero-text h1{
+main.loaded .intro-section .hero-text h1{
     opacity: 0;
     animation: fadeInUp 2s;
     animation-fill-mode: forwards;
@@ -445,7 +453,7 @@ main{
     
 }
 
-.intro-section .hero-text h2{
+main.loaded .intro-section .hero-text h2{
     opacity: 0;
     animation: fadeIn 2s;
     animation-delay: 6s;
@@ -479,7 +487,7 @@ h2{
     letter-spacing: 0.3em;
 }
 
-.intro-section img.fruit{
+main.loaded .intro-section img.fruit{
     margin:0;
     padding: 0;
     opacity: 0;
@@ -494,7 +502,7 @@ h2{
     animation-fill-mode: forwards;
     animation-delay: 5.5s;
 }
-.intro-section img.buse{
+main.loaded .intro-section img.buse{
     opacity: 0;
     animation: fadeIn 2s;
     animation-delay: 5.5s;
@@ -541,7 +549,7 @@ h2{
     }
   }
 
-  .fadeInUp {
+  main.loaded .fadeInUp {
     animation-name: fadeInUp;
   }
 
@@ -673,7 +681,7 @@ h2{
     user-select: none;
   }
 
-  .panel:hover p{
+  main.loaded .panel:hover p{
     animation: pulse 0.6s;
     animation-iteration-count: 2;
   }
