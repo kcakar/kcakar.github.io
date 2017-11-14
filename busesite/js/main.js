@@ -76,7 +76,13 @@ len = imgs.length,
 counter = 0;
 
 [].forEach.call( imgs, function( img ) {
-    img.addEventListener( 'load', incrementCounter, false );
+    if(img.complete)
+    {
+        incrementCounter()
+    }
+    else{
+        img.addEventListener( 'load', incrementCounter, false );
+    }
 } );
 
 function incrementCounter() {
