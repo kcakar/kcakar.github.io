@@ -129,11 +129,11 @@ body{
 }
 
 /* devmode */
-main{
+/* main{
     height: initial;
     opacity: 1;
-}
-/* main{
+} */
+main{
     height: 0;
     overflow: hidden;
 }
@@ -143,7 +143,7 @@ main.loaded{
     animation:main-appear-animation 1s;
     animation-fill-mode: forwards;
     animation-delay: 4.5s; 
-} */
+}
 
 
 @keyframes main-appear-animation {
