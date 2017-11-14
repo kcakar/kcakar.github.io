@@ -1,7 +1,7 @@
 //INTRO ANIMATION
 const introImages = [];
 const fruits = document.querySelector(".fruits");
-const intro = document.querySelector("#intro");
+const introVar = document.querySelector("#intro");
 const main = document.querySelector("main");
 const loader = document.querySelector(".loader");
 let width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -62,7 +62,7 @@ function getRandomHeight() {
 
 function playIntro(){
     console.log( 'All images loaded!' );
-    intro.classList.add("animate");
+    introVar.classList.add("animate");
     main.classList.add("loaded");
     loader.classList.add("done");
     fillFruits();
