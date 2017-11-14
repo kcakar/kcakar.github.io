@@ -130,6 +130,10 @@ body{
 
 /* devmode */
 main{
+    height: initial;
+    opacity: 1;
+}
+/* main{
     height: 0;
     overflow: hidden;
 }
@@ -139,7 +143,8 @@ main.loaded{
     animation:main-appear-animation 1s;
     animation-fill-mode: forwards;
     animation-delay: 4.5s; 
-}
+} */
+
 
 @keyframes main-appear-animation {
     0% {opacity:0}
@@ -560,8 +565,7 @@ main.loaded .intro-section img.buse{
     background-color: #f1eee9;
     background: url(../img/back.jpg);
     padding-bottom: 50px;
-    
- }
+}
 
  section.consult h1{
     font-family: "bebas-neue", sans-serif;
@@ -572,7 +576,26 @@ main.loaded .intro-section img.buse{
     text-align: center;
     z-index: 13;
     padding-bottom: 150px;
+    position: relative;
  }
+
+ section.consult img:nth-of-type(1){
+     opacity: 0.5;
+     position: relative;
+     top:-150px;
+     left:250px;
+     z-index: 0;
+ }
+
+ section.consult img:nth-of-type(2){
+    opacity: 0.5;
+    position: relative;
+    top:-150px;
+    left:550px;
+    z-index: 0;
+    width:100px;
+    height: auto;
+}
  
  .panels {
     width: calc(100vw - 180px);
@@ -869,3 +892,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 }
 
 /* MAP STYLE END*/
+.animate-scroll{
+    transition-duration: cubic-bezier(.17,.67,.83,.67);
+}
+

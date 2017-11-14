@@ -159,22 +159,9 @@ contactLink.addEventListener("mouseover", e => switchIn(contactImage));
 
 nav.addEventListener("mouseleave", e => switchIn(mainLogo));
 
-let animateItems = document.querySelectorAll(".animate-fadeInUp");
 
-// window.addEventListener("scroll", e => isScrolledIntoView(animateItems));
-
-function isScrolledIntoView(elem) {
-    let docViewTop = window.scrollY;
-    let docViewBottom = docViewTop + window.innerHeight;
-
-    let elemTop = elem.offsetTop;
-    let elemBottom = elemTop + offsetHeight;
-
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-}
 
 //CURTAIN SECTION JS
-
 const panels = document.querySelectorAll(".panel");
 
 panels.forEach(panel => {
@@ -192,7 +179,52 @@ function handle() {
     this.classList.toggle("active");
 }
 
+
+
 //float images when they move into view
+let lastScrollTop = 0;
+function isScrolledIntoView(elem) {
+    let docViewTop = window.scrollY;
+    let docViewBottom = docViewTop + window.innerHeight;
+
+    let elemBottom = elem.offsetTop + elem.offsetHeight;
+
+    return (elem.offsetTop <= docViewBottom && elemBottom>docViewTop);
+    
+}
+
+function getTransformAmount(elem,totalAmount)
+{
+    let windowMiddlePoint=window.scrollY+window.innerHeight/2;
+    let elementMiddlePoint=elem.offsetTop+(elem.offsetHeight) /2;
+    let visiblePercentage=((windowMiddlePoint-elementMiddlePoint)*50)/elem.offsetHeight;
+    let currentAmount = visiblePercentage*totalAmount/100;
+
+    console.log("windowMiddlePoint:"+windowMiddlePoint)
+    console.log("elementMiddlePoint:"+elementMiddlePoint)
+    console.log("diffrence:"+(windowMiddlePoint-elementMiddlePoint))
+    console.log("percentage:%"+((windowMiddlePoint-elementMiddlePoint)*50)/elem.offsetHeight)   
+    console.log("currentAmount:"+currentAmount );  
+    
+    return currentAmount;
+}
+
+let animateItems = document.querySelectorAll(".animate-scroll");
+let animateAmount=50;
+animateItems.forEach(item=>{
+        item.style.transform=`translate3d(0,${animateAmount}px,0) rotate(${animateAmount}deg)`;
+    }
+);
+
+window.addEventListener("scroll", e =>{
+    animateItems.forEach(item=>{
+        if(isScrolledIntoView(item)){
+            const amount=getTransformAmount(item,animateAmount);
+            item.style.transform=`translate3d(${amount/2}px,${amount}px,0) rotate(${amount}deg)`;
+        }
+    })
+},false);
+
 
 //google maps
 function initMap() {
