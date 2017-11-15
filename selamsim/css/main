@@ -82,6 +82,9 @@ body {
 
 main{
     display: none;
+    position: relative;
+    height: 100vh;
+    width:100vw;
 }
 
 main .messages{
@@ -228,9 +231,9 @@ main .messages{
 main .user-control{
     height: 100px;
     width: 100vw;
-    position: absolute;
+    position: relative;
+    bottom: 0;
     display: flex;
-    top: calc(100vh - 100px);
 }
 
 main .user-control div{
