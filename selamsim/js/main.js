@@ -1,14 +1,34 @@
 const messagesDiv=document.querySelector(".messages");
+const startBTN=document.querySelector(".start");
+const mainDiv=document.querySelector("main");
+const intro=document.querySelector(".intro");
+const nameTXT=document.querySelector("#name");
+const pointsDiv=document.querySelector(".points");
+let points=0;
+
+
+const sendSelamButton=document.querySelector(".send-selam-button");
+const takeSelamButton=document.querySelector(".take-selam-button");
+
 const users=[];
 let usersWhoCanAnswer=[];
+let userName="Bilinmeyen";
 
 let interval=null;
-let maxResponseTime=2;//seconds
+let maxResponseTime=20;//2seconds
 let lastMessageSa=true;
 let lastMessage=null;
+let alreadyTookSelam=false;
 
 function startGame()
 {
+    mainDiv.style.display="initial";
+    intro.style.display="none";
+
+    if(nameTXT.value!="")
+    {
+        userName=nameTXT.value;
+    }
     fillUsers();
     sendMessage("Sa");
     interval=setInterval(produceMessage,1000);
@@ -19,17 +39,20 @@ function fillUsers(){
 
     for(var i=0;i<people.length;i++)
     {
-        users.push({
-            name:people[i],
-            color:"color-"+(i+1)
-        });
+        if(people[i]!=userName)
+        {
+            users.push({
+                name:people[i],
+                color:"color-"+(i+1)
+            });
+        }
     }
 
     usersWhoCanAnswer=users.concat();
 }
 
 function produceMessage(){
-    let randomResponseTime= (Math.floor(Math.random()*maxResponseTime)+1)*1000;
+    let randomResponseTime= (Math.floor(Math.random()*maxResponseTime)+1)*100;
 
     if(usersWhoCanAnswer.length==0)
     {
@@ -50,6 +73,7 @@ function produceMessage(){
         }
         else{
             lastMessageSa=true;
+            alreadyTookSelam=false;
             usersWhoCanAnswer=users.concat();
             sendMessage("Sa");
         }
@@ -85,11 +109,71 @@ function sendMessage(messageContent){
 }
 
 function sayHi(){
+    if(lastMessageSa)
+    {
+        removePoints();
+    }
+    alreadyTookSelam=true;
+    lastMessageSa=true;
+    sendSelamButton.style.webkitAnimationName = "";
+    setTimeout(function ()
+    {
+        sendSelamButton.style.webkitAnimationName = "click";
+    }, 0);
 
+    let message=
+    `<div class="message-row">
+        <div class="message-container sent">
+            <span class="tail-container"></span>
+            <span class="message-owner">${userName}</span>
+            <div class="message">Sa</div>
+        </div>
+    </div>`;
+
+    messagesDiv.innerHTML=message+messagesDiv.innerHTML;
 }
 
 function takeHi(){
-    
+    if(alreadyTookSelam)
+    {
+        removePoints()
+    }
+    else{
+        addPoints();
+    }
+    alreadyTookSelam=true;
+    takeSelamButton.style.webkitAnimationName = "";
+    setTimeout(function ()
+    {
+        takeSelamButton.style.webkitAnimationName = "click";
+    }, 0);
+
+    let message=
+    `<div class="message-row">
+        <div class="message-container sent">
+            <span class="tail-container"></span>
+            <span class="message-owner">${userName}</span>
+            <div class="message">As</div>
+        </div>
+    </div>`;
+
+    messagesDiv.innerHTML=message+messagesDiv.innerHTML;
 }
 
-startGame();
+function addPoints(){
+    points+=100;
+    pointsDiv.classList.remove("mistake");
+    pointsDiv.innerHTML=points;
+}
+
+function removePoints(){
+    points-=1000;
+    pointsDiv.classList.add("mistake");
+    pointsDiv.innerHTML=points;
+}
+
+// startGame();
+sendSelamButton.addEventListener("click",sayHi);
+takeSelamButton.addEventListener("click",takeHi);
+
+startBTN.addEventListener("click",startGame);
