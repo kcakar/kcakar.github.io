@@ -172,8 +172,8 @@ function removePoints(){
     pointsDiv.innerHTML=points;
 }
 
-// startGame();
+
 sendSelamButton.addEventListener("click",sayHi);
 takeSelamButton.addEventListener("click",takeHi);
-
 startBTN.addEventListener("click",startGame);
+window.scrollTo(0,document.body.scrollHeight);
