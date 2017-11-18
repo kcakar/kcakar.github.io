@@ -1,0 +1,256 @@
+.cell {
+    position: relative;
+    overflow: hidden;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    padding: 100px;
+  }
+.cell .loader .dot:nth-child(1) {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .cell .loader .dot:nth-child(1):after {
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+  }
+  .cell .loader .dot:nth-child(2) {
+    -webkit-transform: rotate(15.65217deg);
+            transform: rotate(15.65217deg);
+  }
+  .cell .loader .dot:nth-child(2):after {
+    -webkit-animation-delay: 0.08696s;
+            animation-delay: 0.08696s;
+  }
+  .cell .loader .dot:nth-child(3) {
+    -webkit-transform: rotate(31.30435deg);
+            transform: rotate(31.30435deg);
+  }
+  .cell .loader .dot:nth-child(3):after {
+    -webkit-animation-delay: 0.17391s;
+            animation-delay: 0.17391s;
+  }
+  .cell .loader .dot:nth-child(4) {
+    -webkit-transform: rotate(46.95652deg);
+            transform: rotate(46.95652deg);
+  }
+  .cell .loader .dot:nth-child(4):after {
+    -webkit-animation-delay: 0.26087s;
+            animation-delay: 0.26087s;
+  }
+  .cell .loader .dot:nth-child(5) {
+    -webkit-transform: rotate(62.6087deg);
+            transform: rotate(62.6087deg);
+  }
+  .cell .loader .dot:nth-child(5):after {
+    -webkit-animation-delay: 0.34783s;
+            animation-delay: 0.34783s;
+  }
+  .cell .loader .dot:nth-child(6) {
+    -webkit-transform: rotate(78.26087deg);
+            transform: rotate(78.26087deg);
+  }
+  .cell .loader .dot:nth-child(6):after {
+    -webkit-animation-delay: 0.43478s;
+            animation-delay: 0.43478s;
+  }
+  .cell .loader .dot:nth-child(7) {
+    -webkit-transform: rotate(93.91304deg);
+            transform: rotate(93.91304deg);
+  }
+  .cell .loader .dot:nth-child(7):after {
+    -webkit-animation-delay: 0.52174s;
+            animation-delay: 0.52174s;
+  }
+  .cell .loader .dot:nth-child(8) {
+    -webkit-transform: rotate(109.56522deg);
+            transform: rotate(109.56522deg);
+  }
+  .cell .loader .dot:nth-child(8):after {
+    -webkit-animation-delay: 0.6087s;
+            animation-delay: 0.6087s;
+  }
+  .cell .loader .dot:nth-child(9) {
+    -webkit-transform: rotate(125.21739deg);
+            transform: rotate(125.21739deg);
+  }
+  .cell .loader .dot:nth-child(9):after {
+    -webkit-animation-delay: 0.69565s;
+            animation-delay: 0.69565s;
+  }
+  .cell .loader .dot:nth-child(10) {
+    -webkit-transform: rotate(140.86957deg);
+            transform: rotate(140.86957deg);
+  }
+  .cell .loader .dot:nth-child(10):after {
+    -webkit-animation-delay: 0.78261s;
+            animation-delay: 0.78261s;
+  }
+  .cell .loader .dot:nth-child(11) {
+    -webkit-transform: rotate(156.52174deg);
+            transform: rotate(156.52174deg);
+  }
+  .cell .loader .dot:nth-child(11):after {
+    -webkit-animation-delay: 0.86957s;
+            animation-delay: 0.86957s;
+  }
+  .cell .loader .dot:nth-child(12) {
+    -webkit-transform: rotate(172.17391deg);
+            transform: rotate(172.17391deg);
+  }
+  .cell .loader .dot:nth-child(12):after {
+    -webkit-animation-delay: 0.95652s;
+            animation-delay: 0.95652s;
+  }
+  .cell .loader .dot:nth-child(13) {
+    -webkit-transform: rotate(187.82609deg);
+            transform: rotate(187.82609deg);
+  }
+  .cell .loader .dot:nth-child(13):after {
+    -webkit-animation-delay: 1.04348s;
+            animation-delay: 1.04348s;
+  }
+  .cell .loader .dot:nth-child(14) {
+    -webkit-transform: rotate(203.47826deg);
+            transform: rotate(203.47826deg);
+  }
+  .cell .loader .dot:nth-child(14):after {
+    -webkit-animation-delay: 1.13043s;
+            animation-delay: 1.13043s;
+  }
+  .cell .loader .dot:nth-child(15) {
+    -webkit-transform: rotate(219.13043deg);
+            transform: rotate(219.13043deg);
+  }
+  .cell .loader .dot:nth-child(15):after {
+    -webkit-animation-delay: 1.21739s;
+            animation-delay: 1.21739s;
+  }
+  .cell .loader .dot:nth-child(16) {
+    -webkit-transform: rotate(234.78261deg);
+            transform: rotate(234.78261deg);
+  }
+  .cell .loader .dot:nth-child(16):after {
+    -webkit-animation-delay: 1.30435s;
+            animation-delay: 1.30435s;
+  }
+  .cell .loader .dot:nth-child(17) {
+    -webkit-transform: rotate(250.43478deg);
+            transform: rotate(250.43478deg);
+  }
+  .cell .loader .dot:nth-child(17):after {
+    -webkit-animation-delay: 1.3913s;
+            animation-delay: 1.3913s;
+  }
+  .cell .loader .dot:nth-child(18) {
+    -webkit-transform: rotate(266.08696deg);
+            transform: rotate(266.08696deg);
+  }
+  .cell .loader .dot:nth-child(18):after {
+    -webkit-animation-delay: 1.47826s;
+            animation-delay: 1.47826s;
+  }
+  .cell .loader .dot:nth-child(19) {
+    -webkit-transform: rotate(281.73913deg);
+            transform: rotate(281.73913deg);
+  }
+  .cell .loader .dot:nth-child(19):after {
+    -webkit-animation-delay: 1.56522s;
+            animation-delay: 1.56522s;
+  }
+  .cell .loader .dot:nth-child(20) {
+    -webkit-transform: rotate(297.3913deg);
+            transform: rotate(297.3913deg);
+  }
+  .cell .loader .dot:nth-child(20):after {
+    -webkit-animation-delay: 1.65217s;
+            animation-delay: 1.65217s;
+  }
+  .cell .loader .dot:nth-child(21) {
+    -webkit-transform: rotate(313.04348deg);
+            transform: rotate(313.04348deg);
+  }
+  .cell .loader .dot:nth-child(21):after {
+    -webkit-animation-delay: 1.73913s;
+            animation-delay: 1.73913s;
+  }
+  .cell .loader .dot:nth-child(22) {
+    -webkit-transform: rotate(328.69565deg);
+            transform: rotate(328.69565deg);
+  }
+  .cell .loader .dot:nth-child(22):after {
+    -webkit-animation-delay: 1.82609s;
+            animation-delay: 1.82609s;
+  }
+  .cell .loader .dot:nth-child(23) {
+    -webkit-transform: rotate(344.34783deg);
+            transform: rotate(344.34783deg);
+  }
+  .cell .loader .dot:nth-child(23):after {
+    -webkit-animation-delay: 1.91304s;
+            animation-delay: 1.91304s;
+  }
+  .cell .loader .dot:after {
+    -webkit-animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+            animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+  
+  .dot {
+    position: absolute;
+    top: -60px;
+    height: 120px;
+  }
+  .dot:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #96c83e;
+    border-radius: 100%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation: a 1s infinite alternate;
+            animation: a 1s infinite alternate;
+  }
+  
+  @-webkit-keyframes a {
+    to {
+      top: 100%;
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      background-color: #f68d2a;
+    }
+  }
+  
+  @keyframes a {
+    to {
+      top: 100%;
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      background-color: #ffab40;
+    }
+  }
+
+  .loader {
+    position: absolute;
+    top: calc(50% + 20px);
+    left: calc(50% - 100px);
+  }
+
+  .loader.done {
+    animation: loaded 1s ;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes loaded {
+    to {
+      opacity: 0;
+      display: none;
+    }
+  }
