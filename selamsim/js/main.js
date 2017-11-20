@@ -43,6 +43,7 @@ function startGame()
         player.name=nameTXT.value;
     }
     fillUsers();
+    window.scrollTo(0,document.body.scrollHeight);
     sendMessage("Sa");
     interval=setInterval(produceMessage,1000);
     gameTimeInterval=setInterval(gameTimer,1000);
