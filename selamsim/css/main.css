@@ -291,7 +291,7 @@ main .points.mistake{
 }
 
 section.endgame{
-    height: 100vh;
+    padding-bottom: 50px;
     width:100vw;
     background-color:rgba(206, 96, 96, 0.658);
     text-align: center;
