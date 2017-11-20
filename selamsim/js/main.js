@@ -191,8 +191,8 @@ function sayHi(){
             <div class="message">Sa</div>
         </div>
     </div>`;
-
     messagesDiv.innerHTML=message+messagesDiv.innerHTML;
+    window.scrollTo(0,document.body.scrollHeight);
 }
 
 function takeHi(){
@@ -218,8 +218,9 @@ function takeHi(){
             <div class="message">As</div>
         </div>
     </div>`;
-
+    
     messagesDiv.innerHTML=message+messagesDiv.innerHTML;
+    window.scrollTo(0,document.body.scrollHeight);
 }
 
 function addPoints(){
