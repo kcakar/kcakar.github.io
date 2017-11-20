@@ -25,7 +25,7 @@ body {
 
 .intro div:not(.rules){
     width:300px;
-    height: 380px;
+    height: 400px;
     margin-left:auto;
     margin-right: auto;
     padding-top:calc(50vh - 170px);
@@ -54,7 +54,7 @@ body {
 .intro #name{
     width:200px;
     height: 50px;
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .intro span{
@@ -273,7 +273,7 @@ main .points{
     -moz-box-shadow: -1px 0px 36px 12px rgba(0,0,0,0.29);
     box-shadow: -1px 0px 36px 12px rgba(0,0,0,0.29);
     text-align: center;
-    line-height: 50px;
+    line-height: 10px;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -281,15 +281,132 @@ main .points{
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
-                                  cursor: default;
-                                  font-weight: bold;
+    cursor: default;
+    font-weight: bold;
+    padding-top:10px;
 }
 
 main .points.mistake{
     background-color: #d83630;
 }
 
+section.endgame{
+    height: 100vh;
+    width:100vw;
+    background-color:rgba(206, 96, 96, 0.658);
+    text-align: center;
+    font-size: 32px;
+    position: absolute;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
 
+section.endgame.finished{
+    display: block;
+}
+
+section.endgame .container{
+    border-radius: 15px;
+    background-color: rgba(206, 96, 96, 1);
+    width:300px;
+    margin: 0 auto;
+    vertical-align: middle;
+    padding: 20px;
+    
+}
+
+section.endgame h2{
+    line-height: 30px;
+    font-size:30px;
+    margin:0;
+    padding: 0;
+    margin-top: 30px;
+}
+
+section.endgame .puan{
+    margin-bottom:10px;
+}
+
+section.endgame .leaderboard{
+    width: 250px;
+    position: relative;
+    left: calc(50% - 125px);
+}
+
+section.endgame ul{
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+
+
+section.endgame ol {
+    counter-reset: li; 
+    list-style: none;
+    *list-style: decimal;
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+section.endgame ol li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+    cursor: pointer;
+}
+
+section.endgame ol li:hover{
+    background: #eee;
+}
+
+section.endgame ol li:hover:before{
+    transform: rotate(360deg);  
+}
+
+section.endgame ol li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+section.endgame .restart{
+    border-radius: 5px;
+    background-color: yellowgreen;
+    padding: 5px;
+    margin-top:10px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+                                  transition: background 0.5s;
+                                  cursor: pointer;
+}
 
 @keyframes click {
     from {

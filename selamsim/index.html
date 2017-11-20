@@ -18,21 +18,40 @@
                     Kurallar:
                     <p>-Kendi selamını alamazsın</p>
                     <p>-Selam almadan selam veremezsin</p>
+                    <p>-Selam aldıktan hemen sonra selam veremezsin</p>
                     <p>-Aynı selamı birden fazla alamazsın</p>
                 </div>
                 <label for="name">Adın ne?</label>
-                <input id="name" type="text">
+                <input id="name" type="text" maxlength="12">
                 <span class="start">Başla!</span>
             </div>
         </section>
         <main>
-            <section class="points">0</section>
+            <section class="points"><span class="time">00:30</span><p>Skor:0</p></section>
             <section class="messages"></section>
             <section class="user-control">
                 <div class="send-selam-button">Sa</div>
                 <div class="take-selam-button">As</div>
             </section>
         </main>
+        <section class="endgame">
+            <div class="container">
+                <h2>Sıralama:</h2>
+                <div class="leaderboard">
+                    <ol>
+                        <li>Kerem</li>
+                        <li>Ahmet</li>
+                        <li>Kerem</li>
+                        <li>Ahmet</li>
+                        <li>Kerem</li>
+                        <li>Ahmet</li>
+                        <li>Kerem</li>
+                        <li>Ahmet</li>
+                    </ol>
+                </div>
+                <span class="restart">Yeniden oyna!</span>
+            </div>
+        </section>
         <script src="js/main.js"></script>
     </body>
 </html>
