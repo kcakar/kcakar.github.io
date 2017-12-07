@@ -1,0 +1,153 @@
+@font-face {
+  font-family: Gothic;
+  src: url('../../css/Gothic.ttf')  format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Theinhardt';
+    src: url('../../css/Theinhardt-RegularIta.eot');
+    src: url('../../css/Theinhardt-RegularIta.eot?#iefix') format('embedded-opentype'),
+        url('../../css/Theinhardt-RegularIta.woff') format('woff'),
+        url('../../css/Theinhardt-RegularIta.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Theinhardt';
+    src: url('../../css/Theinhardt-Regular.eot');
+    src: url('../../css/Theinhardt-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../css/Theinhardt-Regular.woff') format('woff'),
+        url('../../css/Theinhardt-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#main-img-div{
+    background-image: url(images/1.jpg);
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+video{
+    margin:0;
+}
+
+.ugly-hero{
+    height: 100vh;
+    width: 80vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ugly-hero img{
+    display: block;
+    margin-top:5vh;
+    height: calc(90vh - 12px);
+    width:auto;
+    border: 2px solid red;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.backlayer {
+    float:none
+  }
+.backlayer {
+    display: block;
+    margin-top: 5vh;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    width:80vw;
+}
+
+.hero-video-exhibition{
+    height: 100vh;
+}
+
+.hero-video-exhibition video{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.img1{
+    height: 100vh;
+    float: right;
+}
+
+.img1 img{
+    height: 100vh;
+    width:auto;
+    float: right;
+}
+.img2{
+    width:75%;
+}
+
+.img4{
+    margin-left:20vw;
+    width:60vw;
+}
+
+.img5{
+    width:55vw;
+}
+
+.img6{
+    margin-left:25vw;
+    width:45vw;
+}
+
+.img7,.img9,.img8,.img10{
+    width:37vw;
+}
+.img7,.img9{
+   margin-right:6vw;
+}
+
+.img11{
+    width:60vw;
+    margin-left:10vw;
+}
+
+@media screen and (max-width: 1000px) {
+    .img1 img{
+        height: initial;
+        width:80vw;
+        float: left;
+    }
+    .img1{
+        height: initial;
+        float: left;
+    }
+}
+@media screen and (max-width: 870px) {
+    .ugly-hero{
+        height: auto;
+        width:80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .ugly-hero img{
+        display: block;
+        height: auto;
+        width:calc(80vw - 4px);
+        border: 2px solid red;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media screen and (max-width: 800px) {
+    figure.backlayer{
+        width:80vw;
+        margin-left:0;
+        margin-right:0;
+    }
+    .hero-video-exhibition{
+        height: 50vh;
+    }
+}
