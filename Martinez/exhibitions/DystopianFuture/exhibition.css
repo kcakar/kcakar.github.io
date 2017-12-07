@@ -128,6 +128,17 @@ video{
     float: left;
 }
 
+.img10:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+section:after{
+    content: "";
+    display: table;
+    clear: both;
+}
 
 @media screen and (max-width: 1000px) {
     .img1 img{
