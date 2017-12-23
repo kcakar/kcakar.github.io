@@ -56,7 +56,10 @@
 		<div id="plus"></div>
 	</section>
 	<section id="movingLayer">
-		<div class="ugly-hero"><img src="exhibitions/DystopianFuture/images/1.jpg"></div>
+		<div class="hero-video">
+			
+			<div class="play-button"></div>
+		</div>
 		<div id="main-img-div-s"></div>
 		<div class="rest">
 			<figure class="backlayer img2">
@@ -89,4 +92,13 @@
 		</div>
 	</section>
 </body>
+<script>
+	$(function(){
+		$(".play-button").click(function(){
+			$(".hero-video").prepend(`<iframe class="active" id="ytplayer" type="text/html" 
+			src="https://www.youtube.com/embed/DLKVxL1Fkq8?autoplay=1"
+			frameborder="0" allowfullscreen></iframe>`);
+		})
+	})
+</script>
 </html>
