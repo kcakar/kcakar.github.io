@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 
 import base from '../base';
 
-class Login extends React.Component {
+class AuthHelper extends React.Component {
     constructor() {
         super();
 
@@ -13,6 +13,7 @@ class Login extends React.Component {
         this.authHandler = this.authHandler.bind(this);
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
+        this.onAuth = this.onAuth.bind(this);
 
         this.state = {
             uid: null,
@@ -21,7 +22,7 @@ class Login extends React.Component {
 
     }
 
-    componentDidMount() {
+    onAuth(){
         base.onAuth((user) => {
             if (user) {
                 this.authHandler(null, { user });
@@ -29,21 +30,18 @@ class Login extends React.Component {
         });
     }
 
-
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.userLogout) {
-            this.logout();
-        }
-    }
-
     authHandler(err, authData) {
+        //login olur
+        //auth data auth handlere gelir
+        //auth datadan uid alınır
+        //uid ile databaseye erişilir
         if (err) {
             console.error(err);
             return;
         }
 
         //get store info
-        const userRef = base.database().ref(this.props.userId);
+        const userRef = base.database().ref(authData.uid);
 
         //query db for store data
         userRef.once('value', (snapshot) => {
@@ -70,23 +68,13 @@ class Login extends React.Component {
     }
 
     login(user) {
-        this.props.login(user);
+        // this.props.login(user);
     }
-
 
     logout() {
-        console.log("login.logout")
         base.unauth();
-        this.props.userLoggedOut();
     }
 
-    render() {
-        return (
-            <section className="manageWords">
-                <button className="facebook" onClick={() => this.authenticate('facebook')}>LOG IN WITH FACEBOOK</button>
-            </section>
-        );
-    }
 }
 
-export default Login
+export default new AuthHelper()

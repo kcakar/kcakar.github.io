@@ -6,15 +6,13 @@ import './css/style.css';
 
 import Memorizer from './components/Memorizer';
 import NotFound from './components/NotFound';
-import Setup from './components/Setup';
 
 
 const Root = () =>{
     return (
         <BrowserRouter>
             <div>
-                 <Match exactly pattern="/" component={Memorizer}/> 
-                <Match exactly pattern="/setup/:userId" component={Setup}/>
+                <Match exactly pattern="/" component={Memorizer}/> 
                 <Miss component={NotFound}/>
             </div>
         </BrowserRouter>
