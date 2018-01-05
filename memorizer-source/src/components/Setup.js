@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import {Fab,Elevation,GridList,GridTile,GridTilePrimary,GridTilePrimaryContent,GridTileSecondary,GridTileTitle} from 'rmwc';
 
 import interests from '../interests.js';
-import '../Setup.css'
+import '../css/Setup.css'
 import {spanishWords,spanishCategories} from '../DefaultWords.js';
 import language from '../Language';
 import LanguageSwitcher from './LanguageSwitcher';

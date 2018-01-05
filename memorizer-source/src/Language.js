@@ -71,7 +71,7 @@ const language = {
     },
     game:{
         tr:{
-            written_question:"Kelimeyi çevirin!",
+            written_question:"Aşağıdaki ifadeyi çevirin!",
             txt_answer:"Cevabınız...",
             btn_check:"KONTROL ET",
             btn_skip:"GEÇ",
@@ -81,7 +81,7 @@ const language = {
             end_screen_continue:"ÖĞRENMEYE DEVAM ET"
         },
         en:{
-            written_question:"Translate the word!",
+            written_question:"Translate this!",
             txt_answer:"Your answer...",
             btn_check:"CHECK",
             btn_skip:"SKIP",

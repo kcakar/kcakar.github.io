@@ -10,7 +10,7 @@ import {Elevation} from "rmwc";
 
 
 import brainIMG from "../images/brain.png";
-import '../Intro.css';
+import '../css/Intro.css';
 import language from '../Language';
 
 

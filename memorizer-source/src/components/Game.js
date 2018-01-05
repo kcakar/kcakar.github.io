@@ -6,8 +6,17 @@ import {Theme,TextField,Button,Card,CardMedia,CardPrimary,CardTitle,CardSubtitle
 import colors from '../colors';
 import images from '../images';
 import language from '../Language';
+import '../css/Game.css';
+
+
+const questionTypes={
+    "written":0,
+    "test":1,       
+}
 
 class Game extends React.Component{
+
+    
 
     constructor(){
         super();
@@ -33,6 +42,7 @@ class Game extends React.Component{
         this.nextQuestion=this.nextQuestion.bind(this);
         this.renderQuestion=this.renderQuestion.bind(this);
         this.renderSummary=this.renderSummary.bind(this);
+        this.renderWrittenQuestion=this.renderWrittenQuestion.bind(this);
         this.restart=this.restart.bind(this);
     }
     
@@ -109,7 +119,6 @@ class Game extends React.Component{
     generateQuestions(gameWords){
         let questions=[];
         for(let i=0;i<gameWords.length;i++){
-            console.log(gameWords[i])
             gameWords[i].rate=0;
 
             let totalAnswer=gameWords[i].rightAnswer+ gameWords[i].wrongAnswer;
@@ -211,35 +220,59 @@ class Game extends React.Component{
         this.setState({colorWeight:weight});
     }
 
-    renderQuestion(){
+    renderQuestion(type){
         const siteLang=this.props.settings.siteLanguage;
+        console.log(type)
+        console.log(type===questionTypes.test)
+
+        if(type === questionTypes.written)
+        {
+            return this.renderWrittenQuestion(siteLang);
+        }
+        else if(type===questionTypes.test)
+        {
+            return this.renderTestQuestion(siteLang);
+        }
+    }
+
+    renderWrittenQuestion(siteLang)
+    {
         return(
-        <div className="question">
-            <Card>
-                <CardPrimary>
-                    <CardTitle large="true" >{language.game[siteLang].written_question}</CardTitle>
-                    <CardSubtitle large="true" >
-                        {this.state.currentQuestion.questionWord}
-                    </CardSubtitle>
-                    <div className="the-line"></div>
-                    <div className="answer">
-                        <TextField 
-                            className={this.state.isError?"error" :""}
-                            label={language.game[siteLang].txt_answer} 
-                            fullwidth 
-                            inputRef={input => this.answerInput=input} 
-                            onChange={this.handleAnswer}
-                        />
-                    </div>
-                </CardPrimary>
-                <CardSupportingText>
-                </CardSupportingText>
-                <CardActions>
-                    <CardAction onClick={this.checkAnswer}>{language.game[siteLang].btn_check}</CardAction>
-                    <CardAction onClick={this.skipQuestion}>{language.game[siteLang].btn_skip}</CardAction>
-                </CardActions>
-            </Card>
-        </div>
+            <div className="question">
+                <Card>
+                    <CardPrimary>
+                        <CardTitle large="true" >{language.game[siteLang].written_question}</CardTitle>
+                        <CardSubtitle large="true" >
+                            {this.state.currentQuestion.questionWord}
+                        </CardSubtitle>
+                        <div className="the-line"></div>
+                        <div className="answer">
+                            <TextField 
+                                className={this.state.isError?"error" :""}
+                                label={language.game[siteLang].txt_answer} 
+                                fullwidth 
+                                inputRef={input => this.answerInput=input} 
+                                onChange={this.handleAnswer}
+                            />
+                        </div>
+                    </CardPrimary>
+                    <CardSupportingText>
+                    </CardSupportingText>
+                    <CardActions>
+                        <CardAction onClick={this.checkAnswer}>{language.game[siteLang].btn_check}</CardAction>
+                        <CardAction onClick={this.skipQuestion}>{language.game[siteLang].btn_skip}</CardAction>
+                    </CardActions>
+                </Card>
+            </div>
+        )
+    }
+
+    renderTestQuestion(siteLang)
+    {
+        return (
+           <div className="question">
+                asdf
+           </div>
         )
     }
 
@@ -325,7 +358,7 @@ class Game extends React.Component{
                 HTML=this.renderFail();
             }
             else{
-                HTML=this.renderQuestion();
+                HTML=this.renderQuestion(questionTypes.test);
             }
             return(
                 <section className="game">

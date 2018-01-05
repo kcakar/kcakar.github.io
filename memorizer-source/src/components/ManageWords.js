@@ -3,7 +3,8 @@ import React from 'react';
 import {render} from 'react-dom';
 
 import { Button,TextField,TextFieldIcon,Elevation,Fab } from 'rmwc';
-import '../Table.css';
+import '../css/Table.css';
+import '../css/ManageWords.css';
 import language from '../Language';
 
 class ManageWords extends React.Component{

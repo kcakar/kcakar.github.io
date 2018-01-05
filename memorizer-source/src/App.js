@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 import Memorizer from './components/Memorizer';
 import 'material-components-web/dist/material-components-web.css'
 
