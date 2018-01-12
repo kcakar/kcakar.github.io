@@ -32,6 +32,7 @@ class Memorizer extends React.Component {
         //     userLogout:false
         // }
 
+        //manage words
         this.state = {
             settings: {
                 interests:[],
@@ -41,12 +42,28 @@ class Memorizer extends React.Component {
             user:{},
             categories:{},
             isSetup: true,
-            isGame:true,
+            isGame:false,
             activeCategory:"İspanyolca - 01",
             didLogin: false,
             userLogout:false
         }
 
+
+        //game screen
+        // this.state = {
+        //     settings: {
+        //         interests:[],
+        //         siteLanguage:"en"
+        //     },
+        //     words: {},
+        //     user:{},
+        //     categories:{},
+        //     isSetup: true,
+        //     isGame:true,
+        //     activeCategory:"İspanyolca - 01",
+        //     didLogin: false,
+        //     userLogout:false
+        // }
         this.saveSettings = this.saveSettings.bind(this);
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
@@ -73,6 +90,7 @@ class Memorizer extends React.Component {
         this.changeLanguage=this.changeLanguage.bind(this);
     }
 
+
     componentWillUpdate(nextProps,nextState){
         if(!nextState.words)
         {
@@ -97,6 +115,20 @@ class Memorizer extends React.Component {
         if (categories && categories!==undefined && Object.keys(categories).length>0) {
             localStorage.setItem(`${username}-categories`, JSON.stringify(categories));
         }
+    }
+
+    updateStatistics(wordIndex,stat){
+        let words={...this.state.words};
+        if(stat<0)
+        {
+            console.log(words[wordIndex])
+            words[wordIndex].wrongAnswer=words[wordIndex].wrongAnswer+1;
+            console.log(words[wordIndex].wrongAnswer)
+        }
+        else{
+            words[wordIndex].rightAnswer=words[wordIndex].rightAnswer+1;
+        }
+        this.setState({words});
     }
 
     addWord(word)
@@ -198,6 +230,21 @@ class Memorizer extends React.Component {
         this.fillEverythingFromLocalStorage();
     }
 
+    saveSettings(settings) {
+        if(!settings.siteLanguage)
+        {
+            settings.siteLanguage="en";
+        }
+
+        if(!settings.interests)
+        {
+            settings.interests=[];
+        }
+        this.setState({settings});
+        // this.setState({isSetup: false});
+        this.updateSettings(settings);
+    }
+
     fillEverythingFromLocalStorage()
     {
         let words=JSON.parse(localStorage.getItem(`${this.state.user.userName}-words`));
@@ -228,13 +275,6 @@ class Memorizer extends React.Component {
     {
         this.setState({didLogin:false});
         this.setState({userLogout:true});
-    }
-
-    saveSettings(settings) {
-        debugger;
-        this.setState({settings});
-        // this.setState({isSetup: false});
-        this.updateSettings(settings);
     }
 
     addFromFile(categoryFile)
@@ -293,7 +333,21 @@ class Memorizer extends React.Component {
     {
         let settings=this.state.settings;
         settings.siteLanguage=lang;
+        
         this.setState({settings});
+    }
+
+    filterWordsByCategory()
+    {
+        let filteredWords={};
+        Object.keys(this.state.words).map(key=>{
+            if(this.state.words[key].category===this.state.activeCategory)
+            {
+                filteredWords[key]=this.state.words[key];
+            }
+        });
+
+        return filteredWords;
     }
 
     renderHeader(){
@@ -305,7 +359,10 @@ class Memorizer extends React.Component {
     renderSetup()
     {
         const siteLang=this.state.settings.siteLanguage;
-        let a =language.settings[siteLang];
+
+        console.log(language)
+        console.log(siteLang)
+        console.log(language.settings[siteLang])
         return(
             <div>
                 {this.renderHeader()}
@@ -336,7 +393,7 @@ class Memorizer extends React.Component {
                         startGame={this.startGame} 
                         settings={this.state.settings} 
                         user={this.state.user} 
-                        words={this.state.words} 
+                        words={this.filterWordsByCategory()} 
                         addWord={this.addWord} 
                         removeWord={this.removeWord}
                         handleWordChange={this.handleWordChange}
@@ -372,20 +429,6 @@ class Memorizer extends React.Component {
                 </section>
             </div>
         );
-    }
-
-    updateStatistics(wordIndex,stat){
-        let words={...this.state.words};
-        if(stat<0)
-        {
-            console.log(words[wordIndex])
-            words[wordIndex].wrongAnswer=words[wordIndex].wrongAnswer+1;
-            console.log(words[wordIndex].wrongAnswer)
-        }
-        else{
-            words[wordIndex].rightAnswer=words[wordIndex].rightAnswer+1;
-        }
-        this.setState({words});
     }
 
     render() {

@@ -17,9 +17,10 @@ section.game{
     position: relative;
     min-height: 500px;
     min-width: 500px;
+    margin-top:50px;
   }
   
-  
+
   
   section.game .question{
       background-color: white;
@@ -33,7 +34,7 @@ section.game{
   @media only screen and (max-width: 500px) {
     section.game .question{
       min-width: initial;
-  }
+    }
   }
   
   @media only screen and (max-width: 530px) {
@@ -41,9 +42,13 @@ section.game{
       display: initial;
     }
     section.game .question{
-      margin-top: 40px;
+      margin-top: 20px;
       align-self: flex-start;
       width:100%;
+    }
+
+    section.content .status-bar .mdc-linear-progress{
+      width:90%;
     }
   }
   
@@ -53,24 +58,34 @@ section.game{
   
   section.game .question .mdc-card__title.mdc-card__title--large{
     font-weight: bold;
+    padding-bottom: 10px;
   }
   
   section.game .question .mdc-card__subtitle{
     border-top: 1px dashed darkgray;
     font-size:20px;
-    padding-top:10px;
+    padding-top:20px;
   }
   
   section.game .question .the-line{
-    border-top: 5px solid rgb(60, 49, 163);
-    position: absolute;
-    top:50%;
-    width:calc(100% + 20px);
-    left:-10px;
+    border-top: 3px solid rgb(60, 49, 163);
+    position: relative;
+    margin-top:30px;
+    margin-bottom:20px;
+    width:calc(100% + 80px);
+    left:-40px;
   }
   
+  section.game .question.test .answer .mdc-form-field{
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  section.game .question.test .answer{
+    width: 100%;
+  }
+
   section.game .question .answer{
-    margin-top:50px;
     padding-top:5px;
   }
   
@@ -125,6 +140,7 @@ section.game{
     text-align: center;
     flex-direction: column;
     padding: 20px;
+    border:1px solid rgba(0, 0, 0, 0.212);
   }
   @media only screen and (max-width: 530px) {
     section.game .summary .summary-row{
@@ -153,3 +169,4 @@ section.game{
     text-align: center;
     padding: 10px;
   }
+

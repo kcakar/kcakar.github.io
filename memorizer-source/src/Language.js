@@ -71,6 +71,7 @@ const language = {
     },
     game:{
         tr:{
+            test_question:"Doğru çeviriyi seçin!",
             written_question:"Aşağıdaki ifadeyi çevirin!",
             txt_answer:"Cevabınız...",
             btn_check:"KONTROL ET",
@@ -81,6 +82,7 @@ const language = {
             end_screen_continue:"ÖĞRENMEYE DEVAM ET"
         },
         en:{
+            test_question:"Choose the right translation!",
             written_question:"Translate this!",
             txt_answer:"Your answer...",
             btn_check:"CHECK",

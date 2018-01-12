@@ -2,7 +2,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import {Theme,TextField,Button,Card,CardMedia,CardPrimary,CardTitle,CardSubtitle,CardSupportingText,CardActions,CardAction} from 'rmwc';
+import {Snackbar,LinearProgress,Elevation,Radio,Theme,TextField,Button,Card,CardMedia,CardPrimary,CardTitle,CardSubtitle,CardSupportingText,CardActions,CardAction} from 'rmwc';
 import colors from '../colors';
 import images from '../images';
 import language from '../Language';
@@ -12,6 +12,11 @@ import '../css/Game.css';
 const questionTypes={
     "written":0,
     "test":1,       
+}
+
+const questionDirection={
+    straight:0,
+    reversed:1
 }
 
 class Game extends React.Component{
@@ -24,26 +29,32 @@ class Game extends React.Component{
         this.state={
             gameProgress:0,
             totalQuestionCount:20,
-            succeedScreen:false,
-            failScreen:false,
             isError:false,
             questions:[],
             currentQuestion:{},
             colorWeight:200,
             rightImage:1,
-            wrongImage:1
+            wrongImage:1,
+            testOptionCount:4,
+            snackbarIsOpen:false,
+            snackbarMessage:""
         }
         
         this.randomlyPickWords=this.randomlyPickWords.bind(this);
         this.startGame=this.startGame.bind(this);
         this.handleAnswer=this.handleAnswer.bind(this);
         this.checkAnswer=this.checkAnswer.bind(this);
-        this.skipQuestion=this.skipQuestion.bind(this);
+        this.wrongAnswer=this.wrongAnswer.bind(this);
         this.nextQuestion=this.nextQuestion.bind(this);
+        this.restart=this.restart.bind(this);
+        this.getChoices=this.getChoices.bind(this);
+        this.rightAnswer=this.rightAnswer.bind(this);
+        this.cleanInputs=this.cleanInputs.bind(this);
         this.renderQuestion=this.renderQuestion.bind(this);
         this.renderSummary=this.renderSummary.bind(this);
+        this.renderStatusBar=this.renderStatusBar.bind(this);
         this.renderWrittenQuestion=this.renderWrittenQuestion.bind(this);
-        this.restart=this.restart.bind(this);
+        this.renderSnackbar=this.renderSnackbar.bind(this);
     }
     
     componentWillMount(){
@@ -63,8 +74,6 @@ class Game extends React.Component{
         
         this.setState({
             gameProgress:0,
-            succeedScreen:false,
-            failScreen:false,
             isError:false,
             questions:questions,
             currentQuestion:questions[0]
@@ -92,6 +101,10 @@ class Game extends React.Component{
         return Math.floor(Math.random()*array.length)
     }
 
+    getRandomQuestionType(){
+        return Math.floor(Math.random()* Object.keys(questionTypes).length)
+    }
+
     objectToArray(obj){
         const arr=[];
         const objKeys=Object.keys(obj);
@@ -112,8 +125,67 @@ class Game extends React.Component{
             return ((100*right)/totalAnswer).toFixed(2)
         }
         else{
-            return 0;
+            return (0).toFixed(2);
         }
+    }
+
+    getChoices(gameWords,question,gameWord){
+        let choices=[];
+        
+        console.log(question)
+        let words=[...gameWords];
+        console.log(words)
+        words.splice(words.indexOf(gameWord),1);
+        console.log(words)
+        //fill the options
+        for(let i=0;i<this.state.testOptionCount;i++)
+        {
+            const index=this.getRandomIndex(words);
+            const word=words[index];
+            if(question.direction===questionDirection.reversed)
+            {
+                choices.push(words[index].word);
+            }
+            else{
+                choices.push(words[index].translation);
+            }
+            words.splice(index,1);
+        }
+
+        //add the right answer
+        console.log(question)
+        const answerIndex=this.getRandomIndex(Array(choices.length+1).fill());
+        choices.splice(answerIndex, 0, question.questionAnswer);
+        return choices;
+    }
+
+    createQuestion(gameWord,gameWords) {
+        let question = {};
+        question.type=this.getRandomQuestionType();
+
+        if (Math.random() > 0.5)//decide question direction Enlgish -> turkish vs turkish -> english
+        {
+            question.direction=questionDirection.straight;
+            question.questionLanguage = gameWord.translationLanguage;
+            question.questionWord = gameWord.word;
+            question.questionAnswer = gameWord.translation;
+            question.questionRate = gameWord.rate;
+            question.index = gameWord.word;
+        }
+        else {
+            question.direction=questionDirection.reversed;
+            question.questionLanguage=gameWord.language;
+            question.questionWord=gameWord.translation;
+            question.questionAnswer=gameWord.word;
+            question.questionRate=gameWord.rate;
+            question.index=gameWord.word;
+        }
+        
+        if(question.type === questionTypes.test)
+        {
+            question.choices = this.getChoices(gameWords,question,gameWord);
+        }
+        return question;
     }
 
     generateQuestions(gameWords){
@@ -128,71 +200,36 @@ class Game extends React.Component{
                 gameWords[i].rate= this.getRate(gameWords[i].rightAnswer,gameWords[i].wrongAnswer);
             }
 
-            if(Math.random()>0.5)
-            {
-                questions.push({
-                    questionLanguage:gameWords[i].translationLanguage,
-                    questionWord:gameWords[i].word,
-                    questionAnswer:gameWords[i].translation,
-                    questionRate:gameWords[i].rate,
-                    index:gameWords[i].word
-                });
-            }
-            else{
-                questions.push({
-                    questionLanguage:gameWords[i].language,
-                    questionWord:gameWords[i].translation,
-                    questionAnswer:gameWords[i].word,
-                    questionRate:gameWords[i].rate,
-                    index:gameWords[i].word
-                });
-            }
+            const question=this.createQuestion(gameWords[i],gameWords);
+            questions.push(question);
         }
+        console.table(questions)
         return questions;
     }
 
-    nextQuestion(){
-        let progress=this.state.gameProgress+1;
 
-        if(progress===this.state.questions.length)
-        {
-            this.setState({
-                gameProgress:progress,
-                succeedScreen:false,
-                failScreen:false
-            });
-        }
-        else{
-            this.setState({
-                gameProgress:progress,
-                currentQuestion:this.state.questions[progress],
-                succeedScreen:false,
-                failScreen:false
-            });
-        }
-    }
 
-    handleAnswer(e){
-        const answer=this.answerInput.value;
-        console.log("handle")
+    handleAnswer(input){
+        const answer=input.value;
         if(answer.toLowerCase() === this.state.currentQuestion.questionAnswer.toLowerCase())
         {
-            this.showSucceed();
-            this.setState({isError:false});
-            console.log(this.state.currentQuestion)
-            this.props.updateStatistics(this.state.currentQuestion.index,1);
+            this.rightAnswer(input);
+        }
+        else if(this.state.currentQuestion.type===questionTypes.test)
+        {
+            this.wrongAnswer(input);
         }
     }
 
     checkAnswer(){
-        const answer=this.answerInput.value;
+        const answer=this.state.answer;
         if(answer !== undefined && answer && answer.length>0)
         {
             if(answer.toLowerCase() === this.state.currentQuestion.questionAnswer.toLowerCase())
             {
-                this.showSucceed();
                 this.setState({isError:false});
                 this.props.updateStatistics(this.state.currentQuestion.index,1);
+                this.nextQuestion();
             }
             else{
                 this.setState({isError:true});
@@ -203,33 +240,72 @@ class Game extends React.Component{
         }
     }
 
-    skipQuestion(){
+    rightAnswer(input){
+        this.setState({isError:false});
+        this.props.updateStatistics(this.state.currentQuestion.index,1);
+        this.nextQuestion(input);
+        this.showSnackBar("Doğru cevap!");
+        
+    }
+
+    wrongAnswer(input){
         this.props.updateStatistics(this.state.currentQuestion.index,-1);
-        this.showFail();
+        this.nextQuestion(input);
+        this.showSnackBar("Yanlış cevap!");
     }
 
-    showSucceed(){
-        this.setState({succeedScreen:true});
+    showSnackBar(message)
+    {
+        this.setState({snackbarMessage:message,snackbarIsOpen:true});
     }
 
-    showFail(){
-        this.setState({failScreen:true});
+    nextQuestion(input){
+        let progress=this.state.gameProgress+1;
+
+        this.cleanInputs(input);
+        if(progress===this.state.questions.length)
+        {
+            this.setState({
+                gameProgress:progress,
+            });
+        }
+        else{
+            this.setState({
+                gameProgress:progress,
+                currentQuestion:this.state.questions[progress],
+            });
+        }
+
     }
+
+    cleanInputs(input){
+        input.value="";
+        input.checked=false;
+    }
+
 
     switchColorWeight(weight){
         this.setState({colorWeight:weight});
     }
 
-    renderQuestion(type){
-        const siteLang=this.props.settings.siteLanguage;
-        console.log(type)
-        console.log(type===questionTypes.test)
+    renderStatusBar(){
 
-        if(type === questionTypes.written)
+        const progress=this.state.gameProgress/this.state.totalQuestionCount;
+        return(
+            <div className="status-bar">
+                <LinearProgress progress={progress}></LinearProgress>
+            </div>
+        )
+    }
+    renderQuestion(){
+        const siteLang=this.props.settings.siteLanguage;
+        
+        
+        if(this.state.currentQuestion.type === questionTypes.written)
         {
             return this.renderWrittenQuestion(siteLang);
         }
-        else if(type===questionTypes.test)
+        else if(this.state.currentQuestion.type === questionTypes.test)
         {
             return this.renderTestQuestion(siteLang);
         }
@@ -252,7 +328,7 @@ class Game extends React.Component{
                                 label={language.game[siteLang].txt_answer} 
                                 fullwidth 
                                 inputRef={input => this.answerInput=input} 
-                                onChange={this.handleAnswer}
+                                onChange={(e)=>this.handleAnswer(e.target)}
                             />
                         </div>
                     </CardPrimary>
@@ -260,7 +336,7 @@ class Game extends React.Component{
                     </CardSupportingText>
                     <CardActions>
                         <CardAction onClick={this.checkAnswer}>{language.game[siteLang].btn_check}</CardAction>
-                        <CardAction onClick={this.skipQuestion}>{language.game[siteLang].btn_skip}</CardAction>
+                        <CardAction onClick={this.wrongAnswer}>{language.game[siteLang].btn_skip}</CardAction>
                     </CardActions>
                 </Card>
             </div>
@@ -270,47 +346,32 @@ class Game extends React.Component{
     renderTestQuestion(siteLang)
     {
         return (
-           <div className="question">
-                asdf
-           </div>
-        )
-    }
-
-    renderSucceed(){
-        const siteLang=this.props.settings.siteLanguage;
-        let index=this.getRandomIndex(images.rightImages);
-        return(
-            <div className="succeed">
+            <div className="question test">
                 <Card>
-                    <CardMedia style={{backgroundImage: `url(${images.rightImages[index]})`}}></CardMedia>
                     <CardPrimary>
-                        <CardTitle large="true">{language.game[siteLang].success}</CardTitle>
+                        <CardTitle large="true" >{language.game[siteLang].test_question}</CardTitle>
+                        <CardSubtitle large="true" >
+                            {this.state.currentQuestion.questionWord}
+                        </CardSubtitle>
+                        <div className="the-line"></div>
+                        <div className="answer options">
+                            {
+                                this.state.currentQuestion.choices.map((choice,i)=>{
+                                return (
+                                    <Radio
+                                        key={i}
+                                        label={choice}
+                                        value={choice}
+                                        name="answerGroup"  
+                                        onChange={e => this.handleAnswer( e.target)}
+                                    />)
+                            })}
+                        </div>
                     </CardPrimary>
                     <CardSupportingText>
                     </CardSupportingText>
-                    <CardAction autoFocus onClick={this.nextQuestion}>{language.game[siteLang].summary_skip}</CardAction>
                 </Card>
-            </div> 
-        )
-    }
-
-    renderFail(){
-        const siteLang=this.props.settings.siteLanguage;
-        let index=this.getRandomIndex(images.wrongImages);
-        return(
-            <div className="failure">
-                <Card>
-                    <CardMedia style={{backgroundImage: `url(${images.wrongImages[index]})`}}></CardMedia>
-                    <CardPrimary>
-                        <CardTitle large="true" >{language.game[siteLang].failure}</CardTitle>
-                        <CardSubtitle>{this.state.currentQuestion.questionWord}</CardSubtitle>
-                        <CardSubtitle>{this.state.currentQuestion.questionAnswer}</CardSubtitle>
-                    </CardPrimary>
-                    <CardSupportingText>
-                    </CardSupportingText>
-                    <CardAction autoFocus onClick={this.nextQuestion}>{language.game[siteLang].summary_skip}</CardAction>
-                </Card>
-            </div> 
+            </div>
         )
     }
 
@@ -343,27 +404,32 @@ class Game extends React.Component{
         );
     }
 
+    renderSnackbar(message){
+        return(
+            <Snackbar
+                show={this.state.snackbarIsOpen}
+                onClose={evt => this.setState({snackbarIsOpen: false})}
+                message={this.state.snackbarMessage}
+            />
+          );
+    }
+
     render(){
         if(this.state.gameProgress===this.state.questions.length)
         {
             return this.renderSummary();
         }
         else{
-            let HTML="";
-            if(this.state.succeedScreen)
-            {
-                HTML=this.renderSucceed();
-            }
-            else if(this.state.failScreen){
-                HTML=this.renderFail();
-            }
-            else{
-                HTML=this.renderQuestion(questionTypes.test);
-            }
             return(
-                <section className="game">
-                    {HTML}
-                </section>
+                <div>
+                    {this.renderStatusBar()}
+                    <section className="game">
+                        <Elevation z={5}>
+                            {this.renderQuestion()}
+                        </Elevation>
+                    </section>
+                    {this.renderSnackbar()}
+                </div>
             )
         }
     }

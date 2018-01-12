@@ -37,13 +37,13 @@ section.manageWords .mdc-fab{
   
   
   section.manageWords .addWords form,section.category .addCategory form{
-      max-width:500px;
+      max-width:600px;
       margin:auto;
       display: flex;
       justify-content: space-between;
   }
   
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
     section.manageWords .addWords.visible{
       height: 160px;
     }
@@ -77,14 +77,11 @@ section.manageWords .mdc-fab{
     width:100%;
     margin-top:50px; 
     margin-bottom:30px;
+    position: relative;
   }
   
   section.manageWords .words .mdc-icon-toggle:hover::before {
     opacity: 0.1;
-  }
-  
-  section.manageWords .words{
-    position: relative;
   }
   
   section.manageWords .words .mdc-fab--mini {
@@ -125,4 +122,17 @@ section.manageWords .mdc-fab{
   
   section.manageWords .words .wrong {
     color:darkred;
+  }
+
+  section.manageWords .gameSettings{
+    width:100%;
+    margin-top:50px; 
+    margin-bottom:30px;
+    position: relative;
+    background-color: white;
+    padding:50px;
+  }
+
+  section.manageWords .gameSettings .setting-group{
+    max-width: 300px;
   }

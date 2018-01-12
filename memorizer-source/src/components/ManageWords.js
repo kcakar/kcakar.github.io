@@ -2,7 +2,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import { Button,TextField,TextFieldIcon,Elevation,Fab } from 'rmwc';
+import { Slider,Checkbox,Button,TextField,TextFieldIcon,Elevation,Fab } from 'rmwc';
 import '../css/Table.css';
 import '../css/ManageWords.css';
 import language from '../Language';
@@ -96,12 +96,36 @@ class ManageWords extends React.Component{
         let filteredKeys=this.filterWordsByCategory(this.props.category);
         return(
            <section className="manageWords">
-                    <Fab mini onClick={this.showAddWords}>add</Fab>
-                    <Fab mini onClick={this.props.startGame}>play_arrow</Fab>
-                    <Fab mini onClick={this.props.startGame}>trending_up</Fab>
-                    <div className={this.state.addWord?"addWords visible":"addWords"}>
+                <Fab mini onClick={this.showAddWords}>add</Fab>
+                <Fab mini onClick={this.props.startGame}>play_arrow</Fab>
+                <Fab mini onClick={this.props.startGame}>trending_up</Fab>
+
+                <div className={this.state.addWord?"addWords visible":"addWords"}>
                     {this.renderAddWordForm()}
+                </div>
+
+                <Elevation z={3}>
+                    <div className="gameSettings">
+                        <h3>Soru Ayarları</h3>
+
+                        <div className="setting-group">
+                            <label>Soru tipleri</label>
+                            <Checkbox label="Test" value="Test" />
+                            <Checkbox label="Yazılı" value="Test"/>
+                        </div>
+                        <div className="setting-group">
+                            <label>Soru sayısı</label>
+                            <Slider 
+                                value={this.state.sliderValue3 === undefined ? Object.keys(this.props.words).length : this.state.sliderValue3} 
+                                onChange={evt => this.setState({sliderValue3: evt.target.value})}
+                                discrete
+                                max={Object.keys(this.props.words).length}
+                            />
+                        </div>
+                        <Button raised>Kaydet</Button>
                     </div>
+                </Elevation>
+
                 <Elevation z={3}>
                     <div className="words">
                         <table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
@@ -118,6 +142,7 @@ class ManageWords extends React.Component{
                         </table>
                     </div>
                 </Elevation>
+
            </section>
         );
     }
