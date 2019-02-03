@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/enneagram/precache-manifest.9af351cd9d4150cc8da5fce19ff8f7fc.js"
+  "/enneagram/precache-manifest.11dd4ba310b06865e7f1618455aad28e.js"
 );
 
 workbox.clientsClaim();
