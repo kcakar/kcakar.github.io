@@ -1,0 +1,86 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Time until peace</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+    </head>
+    <style>
+    
+            body{
+                font-family: 'Oswald', sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+    
+            .content{
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                vertical-align: middle;
+                justify-content: center;
+                position: fixed;
+            }
+    
+            .content *{
+                align-self: center;
+                text-align: center;
+                width:100%;
+            }
+
+            h2,h1{
+                margin:0;
+                padding: 0;
+            }
+    
+        </style>
+    <body style="background-color:#c5e1a5">
+        <div class="content">
+            <h1>It is coming closer and closer</h1>
+            <h2 class="text"></h2>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+    </body>
+
+    <script>
+        colors=["#ef9a9a","#f48fb1","#ce93d8","#b39ddb","#9fa8da","#90caf9",
+        "#81d4fa","#80deea","#80cbc4","#a5d6a7","#c5e1a5"];
+        var i=0;
+        var meet=new Date(2019,11, 30, 12, 30, 0, 0);
+
+        function getTimeString()
+        {
+            var today=new Date();
+            var diff = new Date( meet.getTime()-today.getTime());
+            var d, h, m, s;
+            s = Math.floor(diff / 1000);
+            m = Math.floor(s / 60);
+            s = s % 60;
+            h = Math.floor(m / 60);
+            m = m % 60;
+            d = Math.floor(h / 24);
+            h = h % 24;
+            
+            return  d+"&nbsp;days "+
+                    h+"&nbsp;hours "+
+                    m+"&nbsp;minutes "+
+                    s+"&nbsp;seconds";
+        }
+
+        $(".text").html(getTimeString());
+        setInterval(x=>{
+            $(".text").html(getTimeString());
+            $("body").attr("style","background-color:"+colors[i]);
+            i++;
+            if(i>colors.length-1)
+            {
+                i=0;
+            }
+        },1000);
+    </script>
+</html>
