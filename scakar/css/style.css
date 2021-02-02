@@ -1,8 +1,8 @@
 /*!------------------------------------------------------------------
 [MAIN STYLESHEET]
 
-Template Name: Constra - Construction Html5 Template
-Description: Constra - Construction Html5 Template
+Template Name: OSCA GmbH - Construction Html5 Template
+Description: OSCA GmbH - Construction Html5 Template
 -------------------------------------------------------------------*/
 /*------------------------------------------------------------------
 [TABLE OF CONTENTS]
@@ -736,7 +736,7 @@ ul.navbar-nav > li.active > a {
 /*-- Logo --*/
 .logo img {
   width: auto;
-  height: 35px;
+  height: 48px;
 }
 
 .header-two .logo img {
@@ -2462,7 +2462,7 @@ img.testimonial-thumb {
 /* Footer about us */
 .footer-logo {
   margin-bottom: 25px;
-  max-height: 35px;
+  max-height: 55px;
 }
 
 /* Footer social */
