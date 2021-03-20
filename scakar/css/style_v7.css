@@ -749,7 +749,7 @@ ul.navbar-nav>li.active>a {
 /*-- Logo --*/
 .logo img {
   width: auto;
-  height: 48px;
+  height: 95px;
 }
 
 .header-two .logo img {
@@ -2166,7 +2166,25 @@ ul.navbar-nav>li.header-get-a-quote:hover>a:after {
   margin-bottom: 10px;
   border-bottom: 1px solid #dfdfdf !important;
 }
-
+.logo-flex{
+  display: flex;
+  justify-content: center;
+}
+.logo-flex .mobile{
+  display: none;
+}
+@media (max-width: 768px) {
+  .logo-flex .mobile{
+    display: block;
+  }
+  .logo-flex .desktop{
+    display: none;
+  }
+  .logo img {
+    width: auto;
+    height: 45px;
+  }
+}
 .accordion-group .card-body {
   padding: 15px 20px;
 }
@@ -3605,7 +3623,7 @@ label {
 }
 
 .efficient-margin {
-  margin-top: 100px;
+  margin-top: 50px;
   max-width: 240px;
 }
 
@@ -3868,6 +3886,7 @@ tbody tr:hover {
 
 .message-field .form-group,.message-field textarea{
   height: 100%;
+  max-height: 524px;
 }
 
 .form-check input[type="checkbox"]{

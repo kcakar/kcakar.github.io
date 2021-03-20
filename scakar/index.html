@@ -31,7 +31,7 @@
   <!-- Colorbox -->
   <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
   <!-- Template styles-->
-  <link rel="stylesheet" href="css/style_v6.css">
+  <link rel="stylesheet" href="css/style_v7.css">
 
 </head>
 <body>
@@ -62,9 +62,10 @@
     <div class="container">
       <div class="logo-area">
           <div class="row align-items-center">
-            <div class="logo col-lg-3 col-md-3 text-center text-lg-left mb-3 mb-sm-0 mb-lg-0 mb-md-0">
-                <a class="d-block" href="index.html">
-                  <img loading="lazy" src="images/logo-osca.png" alt="OSCA GmbH">
+            <div class="logo col-lg-12 col-md-12 text-center text-lg-left mb-3 mb-sm-0 mb-lg-0 mb-md-0">
+                <a class="logo-flex" href="index.html">
+                  <img class="desktop" loading="lazy" src="images/logo-osca-desktop.png" alt="OSCA GmbH">
+                  <img class="mobile" loading="lazy" src="images/logo-osca.png" alt="OSCA GmbH">
                 </a>
             </div><!-- logo end -->
   
@@ -193,15 +194,21 @@
 <section id="ts-features" class="ts-features">
   <div class="container">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
           <div class="ts-intro">
               <h3 class="into-sub-title">Über uns</h3>
               <p>Unser Wissen und Expertise liegen im Transport und Handel mit der Türkei.</p>
               <p>Profitieren sie hierbei von unserer Langjährigen Erfahrung in&nbsp;diesem Sektor.</p>
               <p>Wir unterstützen Sie dabei, die unterschiedlichsten Herausforderungen im Handel mit der Türkei zu meistern.</p>
+              <h3 class="into-sub-title"></h3>
+              <p>Das gelingt nur mit einem Guten, Kompetenten und zuverlässigen Ansprechpartner in Deutschland sowie in der Türkei.</p>
+              <p>Unser Angebot orientiert sich immer an Ihren individuellen Wünschen und Anforderungen.</p>
+              <p>Wir übernehmen die Organisation und halten dabei Ihnen den Rücken frei für Ihr Kerngeschäft. </p>
+              <p>Ein fester Ansprechpartner, der sie Schritt für Schritt begleitet und Ihnen dadurch lange Kommunikationswege erspart.</p>
           </div><!-- Intro box end -->
         </div><!-- Col end -->
-
+    </div><!-- Row end -->
+    <div class="row mt-5">
         <div class="col-lg-6">
           <div class="ts-intro">
             <h3 class="into-sub-title">Relevante Handelsprodukte</h3>
@@ -278,21 +285,9 @@
             </div><!-- Content row 1 end -->
           </div><!-- Intro box end -->
         </div><!-- Col end -->
-    </div><!-- Row end -->
-    <div class="row">
         <div class="col-lg-6">
           <div class="ts-intro">
-              <h3 class="into-sub-title"></h3>
-              <p>Das gelingt nur mit einem Guten, Kompetenten und zuverlässigen Ansprechpartner in Deutschland sowie in der Türkei.</p>
-              <p>Unser Angebot orientiert sich immer an Ihren individuellen Wünschen und Anforderungen.</p>
-              <p>Wir übernehmen die Organisation und halten dabei Ihnen den Rücken frei für Ihr Kerngeschäft. </p>
-              <p>Ein fester Ansprechpartner, der sie Schritt für Schritt begleitet und Ihnen dadurch lange Kommunikationswege erspart.</p>
-          </div><!-- Intro box end -->
-        </div><!-- Col end -->
-
-        <div class="col-lg-6">
-          <div class="ts-intro">
-            <h3 class="into-sub-title">Systemrelevante Güter</h3>
+            <h3 class="into-sub-title">Systemrelevante <br>Güter</h3>
             <div class="gap-20"></div>
             <div class="row">
                 <div class="col-md-6">
@@ -384,6 +379,17 @@
 
           <div class="ts-service-box d-flex">
               <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/flexibility.svg" alt="service-icon">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title">Flexibel</h3>
+              </div>
+          </div><!-- Service 2 end -->
+        </div><!-- Col end -->
+
+        <div class="col-lg-6 efficient-margin">
+          <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
                 <img loading="lazy" src="images/icon-image/kunde.svg"  alt="service-icon">
               </div>
               <div class="ts-service-box-info">
@@ -391,9 +397,6 @@
               </div>
           </div><!-- Service 3 end -->
 
-        </div><!-- Col end -->
-
-        <div class="col-lg-6 mb-4 mb-lg-0 efficient-margin">
           <div class="ts-service-box d-flex">
               <div class="ts-service-box-img">
                 <img loading="lazy" src="images/icon-image/efficiency.svg" alt="service-icon">

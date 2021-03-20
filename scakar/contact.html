@@ -31,7 +31,7 @@
   <!-- Colorbox -->
   <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
   <!-- Template styles-->
-  <link rel="stylesheet" href="css/style_v6.css">
+  <link rel="stylesheet" href="css/style_v7.css">
 
 </head>
 <body>
@@ -62,10 +62,8 @@
     <div class="container">
       <div class="logo-area">
           <div class="row align-items-center">
-            <div class="logo col-lg-3 col-md-3 text-center text-lg-left mb-3 mb-sm-0 mb-lg-0 mb-md-0">
-                <a class="d-block" href="index.html">
-                  <img loading="lazy" src="images/logo-osca.png" alt="OSCA GmbH">
-                </a>
+            <div class="logo col-lg-12 col-md-12 text-center text-lg-left mb-3 mb-sm-0 mb-lg-0 mb-md-0">
+<a class="logo-flex" href="index.html">
             </div><!-- logo end -->
   
 
@@ -221,22 +219,22 @@
                     <input class="form-control form-control-weight" name="weight" id="weight" placeholder="" required>
                   </div>
                 </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label>Warenwert</label>
-                    <input class="form-control form-control-price" name="price" id="price" placeholder="" required>
-                  </div>
-                </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label>Verpackungsart</label>
                     <input class="form-control form-control-verpackungsart" name="verpackungsart" id="verpackungsart" placeholder="" required>
                   </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label>Abmessungen</label>
                     <input class="form-control form-control-abmessungen" name="abmessungen" id="abmessungen" placeholder="" required>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Warenwert</label>
+                    <input class="form-control form-control-price" name="price" id="price" placeholder="" required>
                   </div>
                 </div>
                 <div class="col-md-12">
@@ -260,14 +258,14 @@
             </div>
             <div class="col-md-6 message-field">
               <div class="form-group">
-                <label>Nachrich</label>
+                <label>Nachricht</label>
                 <textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10"
                   required></textarea>
               </div>
             </div>
           </div>
           <div class="text-right"><br>
-            <button class="btn btn-primary solid blank" type="submit">Nachrich senden</button>
+            <button class="btn btn-primary solid blank" type="submit">Nachricht senden</button>
           </div>
         </form>
       </div>
