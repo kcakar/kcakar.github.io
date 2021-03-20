@@ -3873,3 +3873,11 @@ tbody tr:hover {
 .form-check input[type="checkbox"]{
   margin-top: 7px;
 }
+
+.footer-menu a,.copyright{
+  color:white;
+}
+
+.footer-menu ul li a:hover{
+  color:black;
+}
