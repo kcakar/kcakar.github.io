@@ -946,6 +946,9 @@ ul.navbar-nav>li>a i {
   font-weight: 700;
 }
 
+ul.navbar-nav{
+  margin: 0 auto;
+}
 @media (max-width: 991px) {
   ul.navbar-nav>li>a i {
     float: right;
@@ -2638,6 +2641,18 @@ img.testimonial-thumb {
   margin-bottom: 30px;
 }
 
+.banner-fixed{
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 50% 50%;
+  background-size: cover;
+  min-height: 300px;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+}
 /*-- Banner --*/
 .banner-area {
   position: relative;
@@ -2653,6 +2668,7 @@ img.testimonial-thumb {
   font-size: 58px;
   font-weight: 900;
   line-height: 58px;
+  margin:0;
 }
 
 @media (max-width: 767px) {
@@ -2684,6 +2700,14 @@ img.testimonial-thumb {
 
 .banner-heading {
   text-align: center;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 26px;
+    display: inline-block;
+    margin:0 auto
+}
+
+.center-banner{
+  display: flex;
 }
 
 .breadcrumb {
@@ -2704,6 +2728,14 @@ img.testimonial-thumb {
 .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
   color: #fff;
 }
+@media (min-width: 910px) {
+  #page-slider{
+    width:900px;
+    height:900px;
+  }
+}
+
+
 
 /*-- About us page --*/
 /* Slider pages */
@@ -2748,7 +2780,9 @@ img.testimonial-thumb {
 
 .page-slider.small-bg .item {
   min-height: 500px;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .page-slider.small-bg .box-slider-content {
