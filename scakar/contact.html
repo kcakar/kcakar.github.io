@@ -31,7 +31,7 @@
   <!-- Colorbox -->
   <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
   <!-- Template styles-->
-  <link rel="stylesheet" href="css/style_v5.css">
+  <link rel="stylesheet" href="css/style_v6.css">
 
 </head>
 <body>
@@ -122,7 +122,7 @@
 </header>
 <!--/ Header end -->
 <div id="banner-area" class="banner-area">
-  <div class="banner-fixed" style="background: url(images/banner/banner4.jpg);"></div>
+  <div class="banner-fixed" style="background-image: url(images/banner/banner4.jpg);"></div>
   <div class="banner-text">
     <div class="container">
         <div class="row">
@@ -152,84 +152,119 @@
         <form id="contact-form" action="#" method="post" role="form">
           <div class="error-container"></div>
           <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label>Name</label>
-                <input class="form-control form-control-name" name="name" id="name" placeholder="" type="text" required>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <label>Firma</label>
-                <input class="form-control form-control-firma" name="firma" id="firma" placeholder="" type="firma"
-                  required>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <label>Email</label>
-                <input class="form-control form-control-email" name="email" id="email" placeholder="" type="email"
-                  required>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <label>Telefon</label>
-                <input class="form-control form-control-telefon" name="telefon" id="telefon" placeholder="" required>
-              </div>
-            </div>
-          </div>
-          <div class="row">
             <div class="col-md-6">
-              <div class="form-group">
-                <label>Abholort PLZ</label>
-                <input class="form-control form-control-abholort" name="abholort" id="abholort" placeholder="" type="text" required>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control form-control-name" name="name" id="name" placeholder="" type="text" required>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Firma</label>
+                    <input class="form-control form-control-firma" name="firma" id="firma" placeholder="" type="firma"
+                      required>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control form-control-email" name="email" id="email" placeholder="" type="email"
+                      required>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Telefon</label>
+                    <input class="form-control form-control-telefon" name="telefon" id="telefon" placeholder="" required>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Abholort PLZ</label>
+                    <input class="form-control form-control-abholort" name="abholort" id="abholort" placeholder="" type="text" required>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Abholort</label>
+                    <input class="form-control form-control-abholort" name="abholort" id="abholort" placeholder="" type="text" required>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Zustellort PLZ</label>
+                    <input class="form-control form-control-zustellort" name="zustellort" id="zustellort" placeholder="" type="firma"
+                      required>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Zustellort</label>
+                    <input class="form-control form-control-zustellort" name="zustellort" id="zustellort" placeholder="" type="firma"
+                      required>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Packstückanzahl</label>
+                    <input class="form-control form-control-pieces" name="pieces" id="pieces" placeholder="" type="pieces"
+                      required>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Bruttogewicht</label>
+                    <input class="form-control form-control-weight" name="weight" id="weight" placeholder="" required>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Warenwert</label>
+                    <input class="form-control form-control-price" name="price" id="price" placeholder="" required>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Verpackungsart</label>
+                    <input class="form-control form-control-verpackungsart" name="verpackungsart" id="verpackungsart" placeholder="" required>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Abmessungen</label>
+                    <input class="form-control form-control-abmessungen" name="abmessungen" id="abmessungen" placeholder="" required>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Versicherung eindecken</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <label class="form-check-label" for="defaultCheck1">
+                        Ja
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                      <label class="form-check-label" for="defaultCheck2">
+                        Nein
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 message-field">
               <div class="form-group">
-                <label>Abholort</label>
-                <input class="form-control form-control-abholort" name="abholort" id="abholort" placeholder="" type="text" required>
+                <label>Nachrich</label>
+                <textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10"
+                  required></textarea>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Zustellort PLZ</label>
-                <input class="form-control form-control-zustellort" name="zustellort" id="zustellort" placeholder="" type="firma"
-                  required>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Zustellort</label>
-                <input class="form-control form-control-zustellort" name="zustellort" id="zustellort" placeholder="" type="firma"
-                  required>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Packstückanzahl</label>
-                <input class="form-control form-control-pieces" name="pieces" id="pieces" placeholder="" type="pieces"
-                  required>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Bruttogewicht</label>
-                <input class="form-control form-control-weight" name="weight" id="weight" placeholder="" required>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <label>Warenwert</label>
-                <input class="form-control form-control-price" name="price" id="price" placeholder="" required>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Nachrich</label>
-            <textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10"
-              required></textarea>
           </div>
           <div class="text-right"><br>
             <button class="btn btn-primary solid blank" type="submit">Nachrich senden</button>

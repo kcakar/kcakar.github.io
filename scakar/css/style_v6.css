@@ -31,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #212121;
+  color: #e62e2d;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   text-rendering: optimizeLegibility;
@@ -292,7 +292,7 @@ a:focus {
   font-size: 36px;
   line-height: 46px;
   margin: 0 0 60px;
-  color: #212121;
+  color: #e62e2d;
 }
 
 @media (max-width: 575px) {
@@ -674,7 +674,14 @@ ul.top-info li p.info-text {
 
 .header-one,
 .header-one .site-navigation {
-  background: #23282d;
+  background: #fff;
+}
+
+.header-one .site-navigation {
+  background: #fff;
+  border-top: 1px solid #9e9e9e6b;
+  border-bottom: 1px solid #9e9e9e6b;
+  color: #e62e2d;
 }
 
 .header-one .navbar-collapse {
@@ -974,7 +981,7 @@ ul.navbar-nav>li>a:after {
 
 ul.navbar-nav>li>a {
   font-family: "Montserrat", sans-serif;
-  color: #fff !important;
+  color: #e62e2d !important;
   text-rendering: optimizeLegibility;
   font-weight: 700 !important;
   text-transform: uppercase;
@@ -1752,6 +1759,7 @@ ul.navbar-nav>li.header-get-a-quote:hover>a:after {
   font-size: 16px;
   margin-bottom: 10px;
   line-height: 28px;
+  color:black;
 }
 
 .ts-service-box .ts-service-box-info {
@@ -1762,6 +1770,7 @@ ul.navbar-nav>li.header-get-a-quote:hover>a:after {
 .service-box-title {
   font-size: 16px;
   margin: 0 0 10px;
+  color:black;
 }
 
 .service-box-title a {
@@ -2655,6 +2664,7 @@ img.testimonial-thumb {
 }
 /*-- Banner --*/
 .banner-area {
+  overflow: hidden;
   position: relative;
   min-height: 300px;
   color: #fff;
@@ -3847,10 +3857,19 @@ tbody tr:hover {
   }
 #contact-form .form-group{
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 #contact-form .form-group label{
   margin-right: 5px;
   min-width:120px;
+  max-width:120px;
+}
+
+.message-field .form-group,.message-field textarea{
+  height: 100%;
+}
+
+.form-check input[type="checkbox"]{
+  margin-top: 7px;
 }
