@@ -229,7 +229,7 @@ a:focus {
 }
 
 .bg-overlay:after {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgb(255, 255, 255);
   z-index: 0;
   position: absolute;
   content: '';
@@ -2469,12 +2469,14 @@ img.testimonial-thumb {
 ================================================== */
 /*- Footer common */
 .footer {
-  background-color: #0d0d0d;
+  background-color: #fff;
   color: #999;
+  border-top: 2px solid #ccc9c9;
 }
 
 .footer-main {
-  padding: 80px 0 60px;
+  padding: 40px 0 40px;
+  color:#000000b8;
 }
 
 .footer .widget-title {
@@ -3538,6 +3540,12 @@ label {
   width: 100%;
   display: inline-block
 }
+.ts-service-area .max-width{
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
 
 .ts-service-box.d-flex {
   height: 110px;
@@ -3554,11 +3562,13 @@ label {
 
 .efficient-margin {
   margin-top: 100px;
+  max-width: 240px;
 }
 
 .service-center-img {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .rumdun-margin {
@@ -3787,9 +3797,26 @@ tbody tr:hover {
   .footer-menu ul.list-arrow li:before{
     display: none;
   }
+}
+
   .footer-about{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
+
   }
+  .footer-about h2{
+    text-transform: none;
+    font-size: 36px;
+    color:#e63434
+  }
+#contact-form .form-group{
+  display: flex;
+  align-items: center;
+}
+
+#contact-form .form-group label{
+  margin-right: 5px;
+  min-width:120px;
 }
