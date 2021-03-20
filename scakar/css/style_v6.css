@@ -2624,7 +2624,7 @@ img.testimonial-thumb {
   line-height: 36px;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 3px;
-  color: #c3382d;
+  color: white;
   font-weight: 700;
   font-size: 16px;
   padding: 0;
@@ -2640,7 +2640,7 @@ img.testimonial-thumb {
 }
 
 #back-to-top .btn.btn-primary:hover {
-  color: #fff;
+  color: #c3382d;
 }
 
 /* Sub Pages
