@@ -1,0 +1,60 @@
+<!doctype html> 
+<html class="no-js" lang="tr-TR">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Sort</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <textarea id="txtSort"></textarea>
+        <button id="btn">Sırala</button>
+        
+        <button id="btnCopy">Sonucu kopyala</button>
+        <textarea style="display:none" id="resultCopy"></textarea>
+        <pre id="result"></pre>
+        <script>
+
+            const alphabets=["A","a","B","b","C","c","Ç","ç","D","d",
+                       "E","e","F","f","G","g","Ğ","ğ","H","h","I","ı",
+                       "İ","i","J","j","K","k","L","l","M","m","N","n",
+                       "O","o","Ö","ö","P","p","R","r","S","s","Ş","ş",
+                       "T","t","U","u","Ü","ü","V","v","Y","y","Z","z"];
+            const pre=document.querySelector("#result");
+            const txtSort=document.querySelector("#txtSort");
+            const resultCopy=document.querySelector("#resultCopy");
+
+            document.querySelector("#btnCopy").addEventListener("click",()=>{
+                let temp=document.createElement("textarea");
+                document.body.appendChild(temp);
+                temp.value=pre.textContent;
+                temp.select();
+                document.execCommand("copy");
+                temp.remove();
+            });
+
+            document.querySelector("#btn").addEventListener("click",()=>{
+                const result=txtSort.value
+                .split("\n")
+                .sort(function (a, b) {
+                    return CharCompare(a, b, 0);
+                });
+
+                pre.textContent=result.join("\n");
+                resultCopy.value=result.join("\n");
+            })
+
+            function CharCompare(a, b, index) {
+                if (index == a.length || index == b.length)
+                    return 0;
+                var aChar = alphabets.indexOf(a.charAt(index));
+                var bChar = alphabets.indexOf(b.charAt(index));
+                if (aChar != bChar)
+                    return aChar - bChar
+                else
+                    return CharCompare(a, b, index + 1)
+            }
+        </script>
+    </body>
+</html>

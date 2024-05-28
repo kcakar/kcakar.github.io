@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Selam Simulatörü</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="background"></div>
+        <section class="intro">
+            <div>
+                <div class="rules">
+                    Kurallar:
+                    <p>-Kendi selamını alamazsın</p>
+                    <p>-Selam almadan selam veremezsin</p>
+                    <p>-Selam aldıktan hemen sonra selam veremezsin</p>
+                    <p>-Aynı selamı birden fazla alamazsın</p>
+                </div>
+                <label for="name">Adın ne?</label>
+                <input id="name" type="text" maxlength="12">
+                <span class="start">Başla!</span>
+            </div>
+        </section>
+        <main>
+            <section class="points"><span class="time">00:30</span><p>Skor:0</p></section>
+            <section class="messages"></section>
+            <section class="user-control">
+                <div class="send-selam-button">Sa</div>
+                <div class="take-selam-button">As</div>
+            </section>
+        </main>
+        <section class="endgame">
+            <div class="container">
+                <h2>Sıralama:</h2>
+                <div class="leaderboard">
+                    <ol>
+                    </ol>
+                </div>
+                <span class="restart">Yeniden oyna!</span>
+            </div>
+        </section>
+        <script src="js/main.js"></script>
+    </body>
+</html>
