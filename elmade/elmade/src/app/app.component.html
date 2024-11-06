@@ -7,11 +7,78 @@
   <title>ELMADE</title>
 </head>
 
-<body>
-  <section class="hero">
-    <article class="logo-container fade-in">
+<body data-scroll-container>
+
+  <!-- app.component.html -->
+  <div class="container" >
+    <!-- Specific Stages -->
+    <div id="hero" class="stage" #stageHero>
+      <article class="logo-container fade-in">
         <img src="../assets/logo.png">
-    </article>
+      </article>
+    </div>
+
+    <div id="tshirt" class="stage" #stageTshirt>
+      <article class="tshirt-grid">
+        @for(tshirt of tshirts;track tshirt; let i = $index){
+          <div class="tshirt-container" [class]="tshirt.classes">
+            <img [src]="tshirt.src" alt="T-shirt {{ i + 1 }}">
+          </div>
+        }
+      </article>
+    </div>
+
+    <div id="cards" class="stage" #stageCards>
+      <article class="business-card-container">
+
+        <div class="business-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="../assets/cards/card-1-front.png">
+            </div>
+            <div class="card-back">
+              <img src="../assets/cards/card-1-back.png">
+            </div>
+          </div>
+        </div>
+        
+        <div class="business-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="../assets/cards/card-1-front.png">
+            </div>
+            <div class="card-back">
+              <img src="../assets/cards/card-1-back.png">
+            </div>
+          </div>
+        </div>
+  
+        <div class="business-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="../assets/cards/card-1-front.png">
+            </div>
+            <div class="card-back">
+              <img src="../assets/cards/card-1-back.png">
+            </div>
+          </div>
+        </div>
+  
+      </article>
+    </div>
+
+    <!-- Circle Control -->
+    <div class="circle-controls">
+      <div class="circle" (click)="goToStage('hero')" [class.active]="currentStage === 'hero'"></div>
+      <div class="circle" (click)="goToStage('tshirt')" [class.active]="currentStage === 'tshirt'"></div>
+      <div class="circle" (click)="goToStage('cards')" [class.active]="currentStage === 'cards'"></div>
+    </div>
+  </div>
+
+
+
+  <!-- <section class="hero">
+
     <article class="tshirt-grid">
       <div class="tshirt-container shadow-drop-2-center "><img src="../assets/tshirts/1.png"></div>
       <div class="tshirt-container shadow-drop-2-center delay-1"><img src="../assets/tshirts/2.png"></div>
@@ -26,7 +93,8 @@
       <div class="tshirt-container shadow-drop-2-center delay-10"><img src="../assets/tshirts/11.png"></div>
       <div class="tshirt-container shadow-drop-2-center delay-11"><img src="../assets/tshirts/12.png"></div>
     </article>
-  </section>
+    
+  </section> -->
 </body>
 
 </html>
