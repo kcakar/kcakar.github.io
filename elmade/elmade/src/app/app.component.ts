@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import LocomotiveScroll from 'locomotive-scroll';
+import { gsap } from 'gsap'
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 @Component({
   selector: 'app-root',
@@ -9,59 +10,81 @@ import LocomotiveScroll from 'locomotive-scroll';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements AfterViewInit, OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   tshirts = [
-    { src: '../assets/tshirts/1.png', classes:['delay-0']},
-    { src: '../assets/tshirts/2.png', classes:['delay-1']},
-    { src: '../assets/tshirts/3.png', classes:['delay-2']},
-    { src: '../assets/tshirts/4.png', classes:['delay-3']},
-    { src: '../assets/tshirts/5.png', classes:['delay-4']},
-    { src: '../assets/tshirts/6.png', classes:['delay-5']}
+    { src: '../assets/tshirts/1.png', classes: ['out-top-left'] },
+    { src: '../assets/tshirts/2.png', classes: ['out-top-mid'] },
+    { src: '../assets/tshirts/3.png', classes: ['out-top-right'] },
+    { src: '../assets/tshirts/4.png', classes: ['out-bottom-left'] },
+    { src: '../assets/tshirts/5.png', classes: ['out-bottom-mid'] },
+    { src: '../assets/tshirts/6.png', classes: ['out-bottom-right'] }
   ];
   currentStage: string = 'hero'; // Default to hero stage
   @ViewChild('stageHero') stageHero!: ElementRef;
   @ViewChild('stageTshirt') stageTshirt!: ElementRef;
-  @ViewChild('stageCards') stageCards!: ElementRef;
-  scroll!: LocomotiveScroll;  
-  
-  ngOnInit() {
-    this.scroll = new LocomotiveScroll({
-      el: document.querySelector('[data-scroll-container]') as HTMLElement,
-      smooth: true
-    });
+
+  constructor(private cdr: ChangeDetectorRef) { }
+
+  ngAfterViewInit() {
+    console.log("ngAfterViewInit")
+    this.initGSAP();
+
+    // After dynamically adding the content, call refresh to recalculate positions
+    this.cdr.detectChanges();
+    ScrollTrigger.refresh()
   }
 
-  ngAfterViewInit(): void {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.removeActiveClassFromAllStages();
-          entry.target.classList.add('active');
-          this.currentStage = entry.target.id;
-          console.log(this.currentStage)
-          if(this.currentStage == 'tshirt' && this.tshirts[0].classes.indexOf('shadow-drop-2-center') == -1){
-            setTimeout(() => {
-              this.tshirts = this.tshirts.map(tshirt => ({
-                ...tshirt,
-                classes: [...tshirt.classes, 'shadow-drop-2-center']
-              }));
-            }, 1000);
-          }
-        } else {
-          entry.target.classList.remove('active');
-        }
-      });
-    }, {
-      threshold: 0.1
+  ngOnInit() {
+
+  }
+
+  initGSAP() {
+    console.log("initGSAP")
+
+    const element = document.querySelector('.logo-container');
+    const yCoordinate = element!.getBoundingClientRect().top + window.scrollY; // absolute y-coordinate
+
+    gsap.registerPlugin(ScrollTrigger);
+    // First animation for the logo
+    // First animation: Moves the logo container
+    gsap.to(".logo-container", {
+      scrollTrigger: {
+        trigger: "#tshirt",
+        start: "top bottom",
+        end: "50vh",
+        scrub: 3,
+      },
+      y: -yCoordinate - 60,
     });
 
-    observer.observe(this.stageHero.nativeElement);
-    observer.observe(this.stageTshirt.nativeElement);
-    observer.observe(this.stageCards.nativeElement);
+    // Create a GSAP timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#tshirt",
+        start: "top top",  // Start when #tshirt reaches the top of the viewport
+        end: "top+=3000px", // End when #tshirt scrolls up by 1000px
+        pin: true,
+        scrub: true,       // Sync with scroll position
+        markers: true,     // Show debug markers
+      }
+    });
+
+    // Box-shadow animation (first)
+    tl.to(".tshirt-container", {
+      boxShadow: "20px 20px 60px #bebebe, -20px -20px 60px #ffffff",
+      duration: 1, // Duration of the box-shadow animation
+    });
+
+    tl.to(".tshirt-container.out-top-left", { x: -200, y: -200, ease: "power2.inOut" , duration:1}, 2)
+      .to(".tshirt-container.out-top-mid", { y: -200, ease: "power2.inOut" , duration:1}, 2)
+      .to(".tshirt-container.out-top-right", { x: 200, y: -200, ease: "power2.inOut" , duration:1}, 2)
+      .to(".tshirt-container.out-bottom-left", { x: -200, y: 200, ease: "power2.inOut" , duration:1}, 2)
+      .to(".tshirt-container.out-bottom-mid", { y: 200, ease: "power2.inOut" , duration:1}, 2)
+      .to(".tshirt-container.out-bottom-right", { x: 200, y: 200, ease: "power2.inOut" , duration:1}, 2); 
   }
 
   removeActiveClassFromAllStages() {
-    const stages = [this.stageHero.nativeElement, this.stageTshirt.nativeElement, this.stageCards.nativeElement];
+    const stages = [this.stageHero.nativeElement, this.stageTshirt.nativeElement];
     stages.forEach(stage => {
       stage.classList.remove('active');
     });
