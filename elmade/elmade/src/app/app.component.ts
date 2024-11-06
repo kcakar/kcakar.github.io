@@ -54,7 +54,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         end: "50vh",
         scrub: 3,
       },
-      y: -yCoordinate - 60,
+      y: -yCoordinate - 100,
     });
 
     // Create the main GSAP timeline
@@ -66,7 +66,6 @@ export class AppComponent implements OnInit, AfterViewInit {
         pin: true,                   // Pin the element during the scroll
         pinSpacing: true,            // Ensure space is added when pinned
         scrub: true,                 // Sync with scroll position
-        markers: true,               // Show debug markers
       }
     });
 
@@ -75,6 +74,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       boxShadow: "20px 20px 60px #bebebe, -20px -20px 60px #ffffff",
       duration: 1,  // Duration of the box-shadow animation
     });
+
+
+
 
     // Animations for the other elements (moving them based on scroll)
     tl.to(".tshirt-container.out-top-left", { x: -200, y: -200, ease: "power2.inOut", duration: 1 }, 2)
