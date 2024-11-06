@@ -19,6 +19,10 @@
     </div>
 
     <div id="tshirt" class="stage" #stageTshirt>
+      <div class="tshirt-text">
+        <h2>Handmade T-Shirts: Crafted with Love</h2>
+        <p>Made from high-quality, sustainable materials, our t-shirts offer both comfort and style. Wear something special — designed and crafted just for you.</p>
+      </div>
       <article class="tshirt-grid">
         @for(tshirt of tshirts;track tshirt; let i = $index){
           <div class="tshirt-container" [class]="tshirt.classes">

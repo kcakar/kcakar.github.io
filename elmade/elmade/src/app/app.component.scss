@@ -19,6 +19,20 @@
     }
 }
 
+#tshirt{
+    position: relative;
+
+    .tshirt-text{
+        height: 100px;
+        background-color: aliceblue;
+        position: absolute;
+        top: calc(50% - 50px);
+        transform: translateY(-50%);
+        z-index: 9;
+        opacity: 0;
+    }
+}
+
 .tshirt-grid {
     padding: 10px 0 100px 0;
     max-width: 100vw;

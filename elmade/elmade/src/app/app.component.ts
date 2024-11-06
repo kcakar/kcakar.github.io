@@ -57,30 +57,35 @@ export class AppComponent implements OnInit, AfterViewInit {
       y: -yCoordinate - 60,
     });
 
-    // Create a GSAP timeline
+    // Create the main GSAP timeline
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "#tshirt",
-        start: "top top",  // Start when #tshirt reaches the top of the viewport
-        end: "top+=3000px", // End when #tshirt scrolls up by 1000px
-        pin: true,
-        scrub: true,       // Sync with scroll position
-        markers: true,     // Show debug markers
+        trigger: "#tshirt",          // The element to trigger the scroll animation
+        start: "top top",            // Start when #tshirt reaches the top of the viewport
+        end: "top+=1500px",          // End when #tshirt scrolls up by 1500px (for the main animation)
+        pin: true,                   // Pin the element during the scroll
+        pinSpacing: true,            // Ensure space is added when pinned
+        scrub: true,                 // Sync with scroll position
+        markers: true,               // Show debug markers
       }
     });
 
     // Box-shadow animation (first)
     tl.to(".tshirt-container", {
       boxShadow: "20px 20px 60px #bebebe, -20px -20px 60px #ffffff",
-      duration: 1, // Duration of the box-shadow animation
+      duration: 1,  // Duration of the box-shadow animation
     });
 
-    tl.to(".tshirt-container.out-top-left", { x: -200, y: -200, ease: "power2.inOut" , duration:1}, 2)
-      .to(".tshirt-container.out-top-mid", { y: -200, ease: "power2.inOut" , duration:1}, 2)
-      .to(".tshirt-container.out-top-right", { x: 200, y: -200, ease: "power2.inOut" , duration:1}, 2)
-      .to(".tshirt-container.out-bottom-left", { x: -200, y: 200, ease: "power2.inOut" , duration:1}, 2)
-      .to(".tshirt-container.out-bottom-mid", { y: 200, ease: "power2.inOut" , duration:1}, 2)
-      .to(".tshirt-container.out-bottom-right", { x: 200, y: 200, ease: "power2.inOut" , duration:1}, 2); 
+    // Animations for the other elements (moving them based on scroll)
+    tl.to(".tshirt-container.out-top-left", { x: -200, y: -200, ease: "power2.inOut", duration: 1 }, 2)
+      .to(".tshirt-container.out-top-mid", { y: -200, ease: "power2.inOut", duration: 1 }, 2)
+      .to(".tshirt-container.out-top-right", { x: 200, y: -200, ease: "power2.inOut", duration: 1 }, 2)
+      .to(".tshirt-container.out-bottom-left", { x: -200, y: 200, ease: "power2.inOut", duration: 1 }, 2)
+      .to(".tshirt-container.out-bottom-mid", { y: 200, ease: "power2.inOut", duration: 1 }, 2)
+      .to(".tshirt-container.out-bottom-right", { x: 200, y: 200, ease: "power2.inOut", duration: 1 }, 2);
+
+    tl.to(".tshirt-text", { opacity: "1", duration: 1 })
+
   }
 
   removeActiveClassFromAllStages() {
