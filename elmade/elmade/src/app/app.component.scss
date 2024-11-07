@@ -1,6 +1,6 @@
 #hero {
     position: relative;
-    background: #fff;
+    background: linear-gradient(0deg, rgba(224, 224, 224, 1) 0%, rgba(224, 224, 224, 0.12657563025210083) 35%, rgba(224, 224, 224, 0) 100%);
     height: 100vh;
 
     .logo-container {
@@ -10,19 +10,76 @@
         left: 0;
         right: 0;
         margin-inline: auto;
-        width: fit-content;
+        width: 450px;
         z-index: 9;
 
         img {
-            max-width: 290px
+            max-width: 450px
+        }
+    }
+
+    .hero-text {
+        position: absolute;
+        top: -80px;
+        z-index: 9;
+    }
+
+    h2 {
+        width: 450px;
+        text-align: center;
+    }
+
+    p {
+        max-width: 350px;
+        text-align: center;
+    }
+}
+
+.scrolling-background {
+    z-index: 1;
+    position: absolute;
+
+    &.front {
+        left: 10px;
+    }
+
+    &.back {
+        right: 10px;
+    }
+
+    overflow: hidden;
+    width: 250px;
+    height: 100vh; // Adjust to the desired height of the background
+
+    .image-container {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 25px;
+        flex-direction: row;
+        z-index: 99999;
+        width: 200px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .scrolling-image {
+            cursor: pointer;
+            width: 200px;
+            margin-bottom: 50px;
+            height: auto;
+            border: 1px solid #e0e0e0;
+
+            &:hover{
+                box-shadow: 0px 0px 21px 0px #000000;
+            }
         }
     }
 }
 
-#tshirt{
+#tshirt {
     position: relative;
 
-    .tshirt-text{
+    .tshirt-text {
         height: 100px;
         max-width: 50vw;
         text-align: center;
@@ -51,7 +108,7 @@
         justify-content: center;
         align-items: center;
         width: calc(30vw - 30px);
-        margin-bottom:20px;
+        margin-bottom: 20px;
 
         img {
             width: calc(100% - 10px);
@@ -130,3 +187,85 @@
     }
 
 }
+
+.background-blur{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(40px); /* Apply a blur effect */
+}
+
+.card-viewer{
+    z-index: 999;
+    position: fixed;        /* Make it fixed relative to the viewport */
+    top: 50%;                /* Position the element 50% from the top */
+    left: 50%;               /* Position the element 50% from the left */
+    width: 400px;            /* Set width */
+    height: 200px;           /* Set height */
+    transform: translate(-50%, -50%); /* Adjust the element to perfectly center it */
+
+    img{
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+
+.flip-card {
+    background-color: transparent;
+    width: 400px;
+    height: 200px;
+    perspective: 1000px;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid coral;
+    border-radius: 1rem;
+  }
+  
+  .flip-card-front {
+    background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
+       rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
+    color: coral;
+  }
+  
+  .flip-card-back {
+    background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
+       bisque 40%, rgb(255, 185, 160) 78%);
+    color: white;
+    transform: rotateY(180deg);
+  }

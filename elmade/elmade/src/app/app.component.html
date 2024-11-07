@@ -8,45 +8,77 @@
 </head>
 
 <body data-scroll-container>
-
   <!-- app.component.html -->
-  <div>
-    <!-- Specific Stages -->
-    <div id="hero" class="stage container mx-auto" #stageHero>
-      <article class="logo-container fade-in">
-        <img src="../assets/logo.png">
-      </article>
-    </div>
-
-    <div id="tshirt" class="stage" #stageTshirt>
-      <div class="tshirt-text">
-        <h2  class="font-bold leading-snug tracking-tight text-slate-800 mx-auto my-6 w-full text-2xl lg:max-w-3xl lg:text-5xl">Crafted with Love</h2>
-        <p class="font-normal leading-relaxed mx-auto text-slate-500 lg:text-lg text-base max-w-3xl">Made from high-quality, sustainable materials, our t-shirts offer both comfort and style. Wear something special — designed and crafted just for you.</p>
+  <!-- Specific Stages -->
+  <div id="hero" class="stage">
+    <article class="logo-container fade-in">
+      <img src="../assets/logo.png">
+      <div class="hero-text">
+        <h2
+          class="font-bold leading-snug tracking-tight text-slate-800 mx-auto my-6 w-full text-2xl lg:max-w-3xl lg:text-5xl">
+          <span class="red">C</span>
+          <span class="orange">r</span>
+          <span class="yellow">a</span>
+          <span class="green">f</span>
+          <span class="blue">t</span>
+          <span class="indigo">e</span>
+          <span class="violet">d</span> 
+          for <span class="you">You</span>. Delivered with Pride.</h2>
+        <p class="font-normal leading-relaxed mx-auto text-slate-500 lg:text-lg text-base max-w-3xl">We design custom
+          business cards and t&#8209;shirts that stand out. Each piece is handmade to ensure quality and uniqueness.
+          Start creating something special today. <span class="click">Click</span> them to see our craft closer.</p>
       </div>
-      <article class="tshirt-grid">
-        @for(tshirt of tshirts;track tshirt; let i = $index){
-          <div class="tshirt-container" [class]="tshirt.classes">
-            <img [src]="tshirt.src" alt="T-shirt {{ i + 1 }}">
-          </div>
+    </article>
+    <article class="cards-background scrolling-background front">
+      <div class="image-container front">
+        @for(card of cards; track card; let i = $index){
+        <img [attr.data-cardid]="card.id" [src]="card.srcFront" alt="{{i+1}}" class="scrolling-image" />
         }
-      </article>
+      </div>
+    </article>
+
+    <article class="cards-background scrolling-background back">
+      <div class="image-container back">
+        @for(card of cards; track card; let i = $index){
+        <img [attr.data-cardid]="card.id" [src]="card.srcBack" alt="{{i+1}}" class="scrolling-image" />
+        }
+      </div>
+    </article>
+  </div>
+
+  <div id="tshirt" class="stage">
+    <div class="tshirt-text">
+      <h2
+        class="font-bold leading-snug tracking-tight text-slate-800 mx-auto my-6 w-full text-2xl lg:max-w-3xl lg:text-5xl">
+        Crafted with Love</h2>
+      <p class="font-normal leading-relaxed mx-auto text-slate-500 lg:text-lg text-base max-w-3xl">Made from
+        high-quality, sustainable materials, our t-shirts offer both comfort and style. Wear something special —
+        designed and crafted just for you.</p>
     </div>
+    <article class="tshirt-grid">
+      @for(tshirt of tshirts;track tshirt; let i = $index){
+      <div class="tshirt-container" [class]="tshirt.classes">
+        <img [src]="tshirt.src" alt="T-shirt {{ i + 1 }}">
+      </div>
+      }
+    </article>
+  </div>
 
-    <!-- <div id="cards" class="stage" #stageCards>
-      <article class="business-card-container">
-
-        <div class="business-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="../assets/cards/card-1-front.png">
-            </div>
-            <div class="card-back">
-              <img src="../assets/cards/card-1-back.png">
-            </div>
+  <div [hidden]="selectedCard === null" class="background-blur" (click)="closeViewer()">
+    @if(selectedCard){
+    <div class="card-viewer">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img [src]="selectedCard!.srcFront">
+          </div>
+          <div class="flip-card-back">
+            <img [src]="selectedCard!.srcBack">
           </div>
         </div>
-      </article>
-    </div> -->
+      </div>
+    </div>
+    }
   </div>
 </body>
 
