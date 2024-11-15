@@ -1,0 +1,212 @@
+@import '../fonts/AesteticoFormal/AesteticoFormal.css';
+@import '../fonts/LFTetica/LFTetica.css';
+@import '../fonts/TOMOBossa/TOMOBossa.css';
+
+$header-height: 125px;
+
+html,
+body {
+  // font-family: 'Aestetico Formal','LFT Etica','TOMO Bossa';
+  font-family: 'Aestetico Formal';
+  color: #edebe5;
+  font-size: 1em;
+  line-height: 1.4;
+  margin: 0;
+  background-color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'TOMO Bossa';
+  text-align: center;
+  font-size: 45px;
+
+}
+
+h1 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+img {
+  max-width: calc(100vw - 17px);
+  width: 100%;
+  height: auto;
+}
+
+::-moz-selection,
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+header {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: $header-height;
+
+  img {
+    width: auto;
+    height: 50px;
+  }
+}
+
+nav {
+  width: calc(100vw - 17px);
+}
+
+.menu {
+  justify-content: center;
+  background-color: black;
+  list-style: none;
+  z-index: 999;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  li:not(:first-of-type) {
+    margin-left: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #edebe5;
+    font-size: 20px;
+    // text-shadow:
+    // 0.05em 0 black,
+    // 0 0.05em black,
+    // -0.05em 0 black,
+    // 0 -0.05em black,
+    // -0.05em -0.05em black,
+    // -0.05em 0.05em black,
+    // 0.05em -0.05em black,
+    // 0.05em 0.05em black;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    &:visited,
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.hero {
+  .slider {
+    position: relative;
+    height: calc(100vh - $header-height);
+    max-width: calc(100vw - 17px);
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: calc(100vw - 17px);
+      height: calc(100vh - $header-height);
+      object-fit: contain;
+      right: 0;
+      margin: 0 auto;
+    }
+
+    .slide:not(:first-child) {
+      opacity: 0;
+    }
+  }
+}
+
+.services {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+
+  span {
+    margin-right: 50px;
+    font-size: 24px;
+    color: #fff;
+  }
+}
+
+
+.airplane {
+  position: relative;
+
+  .text-bubble {
+
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border-radius: 30px;
+    height: 220px;
+    width: 340px;
+    background-color: black;
+
+    h3 {
+      font-family: 'LFT Etica';
+      font-size: 20px;
+      color: black;
+      background-color: white;
+      margin: 0;
+      border-radius: 30px 30px 0 0;
+      padding: 5px 0 0 0;
+    }
+
+    h3.inverted {
+      color: white;
+      background-color: black;
+      border-radius: 0;
+      padding: 0 2px;
+    }
+
+    p {
+      padding: 0 30px;
+      text-align: center;
+    }
+
+  }
+}
