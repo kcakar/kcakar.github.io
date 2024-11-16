@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'TOMO Bossa Black Rough';
-    src: url('TOMOBossa-BlackRough.eot');
-    src: local('TOMO Bossa Black Rough'), local('TOMOBossa-BlackRough'),
+    data-src: url('TOMOBossa-BlackRough.eot');
+    data-src: local('TOMO Bossa Black Rough'), local('TOMOBossa-BlackRough'),
         url('TOMOBossa-BlackRough.eot?#iefix') format('embedded-opentype'),
         url('TOMOBossa-BlackRough.woff2') format('woff2'),
         url('TOMOBossa-BlackRough.woff') format('woff'),
@@ -12,8 +12,8 @@
 
 @font-face {
     font-family: 'TOMO Bossa';
-    src: url('TOMOBossa-Black.eot');
-    src: local('TOMO Bossa Black'), local('TOMOBossa-Black'),
+    data-src: url('TOMOBossa-Black.eot');
+    data-src: local('TOMO Bossa Black'), local('TOMOBossa-Black'),
         url('TOMOBossa-Black.eot?#iefix') format('embedded-opentype'),
         url('TOMOBossa-Black.woff2') format('woff2'),
         url('TOMOBossa-Black.woff') format('woff'),

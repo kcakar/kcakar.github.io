@@ -95,7 +95,7 @@ TODO         text
 .csslintrc    text
 .eslintrc     text
 .htmlhintrc   text
-.jscsrc       text
+.jscdata-src       text
 .jshintrc     text
 .jshintignore text
 .prettierrc   text
