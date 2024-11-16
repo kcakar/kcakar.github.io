@@ -18,6 +18,11 @@ module.exports = merge(common, {
       },
     ],
   },
+  output: {
+    filename: 'js/[name].[contenthash].js', // Use contenthash for cache busting
+    clean: true,
+    publicPath: '/rockbride-publish/', // Adjust this based on your deployment path
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html', // Use your root index.html
