@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Aestetico Formal Semi';
-    data-src: url('AesteticoFormal-SemiBoldIt.eot');
-    data-src: local('Aestetico Formal Semi Bold Italic'), local('AesteticoFormal-SemiBoldIt'),
+    src: url('AesteticoFormal-SemiBoldIt.eot');
+    src: local('Aestetico Formal Semi Bold Italic'), local('AesteticoFormal-SemiBoldIt'),
         url('AesteticoFormal-SemiBoldIt.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-SemiBoldIt.woff2') format('woff2'),
         url('AesteticoFormal-SemiBoldIt.woff') format('woff'),
@@ -12,8 +12,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-BlackIt.eot');
-    data-src: local('Aestetico Formal Black Italic'), local('AesteticoFormal-BlackIt'),
+    src: url('AesteticoFormal-BlackIt.eot');
+    src: local('Aestetico Formal Black Italic'), local('AesteticoFormal-BlackIt'),
         url('AesteticoFormal-BlackIt.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-BlackIt.woff2') format('woff2'),
         url('AesteticoFormal-BlackIt.woff') format('woff'),
@@ -24,8 +24,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal Extra';
-    data-src: url('AesteticoFormal-ExtraLight.eot');
-    data-src: local('Aestetico Formal Extra Light'), local('AesteticoFormal-ExtraLight'),
+    src: url('AesteticoFormal-ExtraLight.eot');
+    src: local('Aestetico Formal Extra Light'), local('AesteticoFormal-ExtraLight'),
         url('AesteticoFormal-ExtraLight.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-ExtraLight.woff2') format('woff2'),
         url('AesteticoFormal-ExtraLight.woff') format('woff'),
@@ -36,8 +36,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-BoldIt.eot');
-    data-src: local('Aestetico Formal Bold Italic'), local('AesteticoFormal-BoldIt'),
+    src: url('AesteticoFormal-BoldIt.eot');
+    src: local('Aestetico Formal Bold Italic'), local('AesteticoFormal-BoldIt'),
         url('AesteticoFormal-BoldIt.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-BoldIt.woff2') format('woff2'),
         url('AesteticoFormal-BoldIt.woff') format('woff'),
@@ -48,8 +48,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-Medium.eot');
-    data-src: local('Aestetico Formal Medium'), local('AesteticoFormal-Medium'),
+    src: url('AesteticoFormal-Medium.eot');
+    src: local('Aestetico Formal Medium'), local('AesteticoFormal-Medium'),
         url('AesteticoFormal-Medium.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-Medium.woff2') format('woff2'),
         url('AesteticoFormal-Medium.woff') format('woff'),
@@ -60,8 +60,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-LightIt.eot');
-    data-src: local('Aestetico Formal Light Italic'), local('AesteticoFormal-LightIt'),
+    src: url('AesteticoFormal-LightIt.eot');
+    src: local('Aestetico Formal Light Italic'), local('AesteticoFormal-LightIt'),
         url('AesteticoFormal-LightIt.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-LightIt.woff2') format('woff2'),
         url('AesteticoFormal-LightIt.woff') format('woff'),
@@ -72,8 +72,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal Extra';
-    data-src: url('AesteticoFormal-ExtraBoldIt.eot');
-    data-src: local('Aestetico Formal Extra Bold Italic'), local('AesteticoFormal-ExtraBoldIt'),
+    src: url('AesteticoFormal-ExtraBoldIt.eot');
+    src: local('Aestetico Formal Extra Bold Italic'), local('AesteticoFormal-ExtraBoldIt'),
         url('AesteticoFormal-ExtraBoldIt.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-ExtraBoldIt.woff2') format('woff2'),
         url('AesteticoFormal-ExtraBoldIt.woff') format('woff'),
@@ -84,8 +84,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-RegularIt.eot');
-    data-src: local('Aestetico Formal Italic'), local('AesteticoFormal-RegularIt'),
+    src: url('AesteticoFormal-RegularIt.eot');
+    src: local('Aestetico Formal Italic'), local('AesteticoFormal-RegularIt'),
         url('AesteticoFormal-RegularIt.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-RegularIt.woff2') format('woff2'),
         url('AesteticoFormal-RegularIt.woff') format('woff'),
@@ -96,8 +96,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-Light.eot');
-    data-src: local('Aestetico Formal Light'), local('AesteticoFormal-Light'),
+    src: url('AesteticoFormal-Light.eot');
+    src: local('Aestetico Formal Light'), local('AesteticoFormal-Light'),
         url('AesteticoFormal-Light.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-Light.woff2') format('woff2'),
         url('AesteticoFormal-Light.woff') format('woff'),
@@ -108,8 +108,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal Extra';
-    data-src: url('AesteticoFormal-ExtraBold.eot');
-    data-src: local('Aestetico Formal Extra Bold'), local('AesteticoFormal-ExtraBold'),
+    src: url('AesteticoFormal-ExtraBold.eot');
+    src: local('Aestetico Formal Extra Bold'), local('AesteticoFormal-ExtraBold'),
         url('AesteticoFormal-ExtraBold.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-ExtraBold.woff2') format('woff2'),
         url('AesteticoFormal-ExtraBold.woff') format('woff'),
@@ -120,8 +120,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-MediumIt.eot');
-    data-src: local('Aestetico Formal Medium Italic'), local('AesteticoFormal-MediumIt'),
+    src: url('AesteticoFormal-MediumIt.eot');
+    src: local('Aestetico Formal Medium Italic'), local('AesteticoFormal-MediumIt'),
         url('AesteticoFormal-MediumIt.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-MediumIt.woff2') format('woff2'),
         url('AesteticoFormal-MediumIt.woff') format('woff'),
@@ -132,8 +132,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal Extra';
-    data-src: url('AesteticoFormal-ExtraLightIt.eot');
-    data-src: local('Aestetico Formal Extra Light Italic'), local('AesteticoFormal-ExtraLightIt'),
+    src: url('AesteticoFormal-ExtraLightIt.eot');
+    src: local('Aestetico Formal Extra Light Italic'), local('AesteticoFormal-ExtraLightIt'),
         url('AesteticoFormal-ExtraLightIt.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-ExtraLightIt.woff2') format('woff2'),
         url('AesteticoFormal-ExtraLightIt.woff') format('woff'),
@@ -144,8 +144,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-Black.eot');
-    data-src: local('Aestetico Formal Black'), local('AesteticoFormal-Black'),
+    src: url('AesteticoFormal-Black.eot');
+    src: local('Aestetico Formal Black'), local('AesteticoFormal-Black'),
         url('AesteticoFormal-Black.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-Black.woff2') format('woff2'),
         url('AesteticoFormal-Black.woff') format('woff'),
@@ -156,8 +156,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-Bold.eot');
-    data-src: local('Aestetico Formal Bold'), local('AesteticoFormal-Bold'),
+    src: url('AesteticoFormal-Bold.eot');
+    src: local('Aestetico Formal Bold'), local('AesteticoFormal-Bold'),
         url('AesteticoFormal-Bold.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-Bold.woff2') format('woff2'),
         url('AesteticoFormal-Bold.woff') format('woff'),
@@ -168,8 +168,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-ThinIt.eot');
-    data-src: local('Aestetico Formal Thin Italic'), local('AesteticoFormal-ThinIt'),
+    src: url('AesteticoFormal-ThinIt.eot');
+    src: local('Aestetico Formal Thin Italic'), local('AesteticoFormal-ThinIt'),
         url('AesteticoFormal-ThinIt.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-ThinIt.woff2') format('woff2'),
         url('AesteticoFormal-ThinIt.woff') format('woff'),
@@ -180,8 +180,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-Thin.eot');
-    data-src: local('Aestetico Formal Thin'), local('AesteticoFormal-Thin'),
+    src: url('AesteticoFormal-Thin.eot');
+    src: local('Aestetico Formal Thin'), local('AesteticoFormal-Thin'),
         url('AesteticoFormal-Thin.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-Thin.woff2') format('woff2'),
         url('AesteticoFormal-Thin.woff') format('woff'),
@@ -192,8 +192,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal Semi';
-    data-src: url('AesteticoFormal-SemiBold.eot');
-    data-src: local('Aestetico Formal Semi Bold'), local('AesteticoFormal-SemiBold'),
+    src: url('AesteticoFormal-SemiBold.eot');
+    src: local('Aestetico Formal Semi Bold'), local('AesteticoFormal-SemiBold'),
         url('AesteticoFormal-SemiBold.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-SemiBold.woff2') format('woff2'),
         url('AesteticoFormal-SemiBold.woff') format('woff'),
@@ -204,8 +204,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url('AesteticoFormal-Regular.eot');
-    data-src: local('Aestetico Formal'), local('AesteticoFormal-Regular'),
+    src: url('AesteticoFormal-Regular.eot');
+    src: local('Aestetico Formal'), local('AesteticoFormal-Regular'),
         url('AesteticoFormal-Regular.eot?#iefix') format('embedded-opentype'),
         url('AesteticoFormal-Regular.woff2') format('woff2'),
         url('AesteticoFormal-Regular.woff') format('woff'),

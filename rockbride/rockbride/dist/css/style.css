@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Aestetico Formal Semi';
-    data-src: url(../7766291784015e276277.eot);
-    data-src: local('Aestetico Formal Semi Bold Italic'), local('AesteticoFormal-SemiBoldIt'),
+    src: url(../7766291784015e276277.eot);
+    src: local('Aestetico Formal Semi Bold Italic'), local('AesteticoFormal-SemiBoldIt'),
         url(../7766291784015e276277.eot?#iefix) format('embedded-opentype'),
         url(../1e618eacf790a062eeaa.woff2) format('woff2'),
         url(../e7d24f2d811c7cbf1f54.woff) format('woff'),
@@ -12,8 +12,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../54d06a4fc94d50220c01.eot);
-    data-src: local('Aestetico Formal Black Italic'), local('AesteticoFormal-BlackIt'),
+    src: url(../54d06a4fc94d50220c01.eot);
+    src: local('Aestetico Formal Black Italic'), local('AesteticoFormal-BlackIt'),
         url(../54d06a4fc94d50220c01.eot?#iefix) format('embedded-opentype'),
         url(../5ad9971a4c561ee8cb72.woff2) format('woff2'),
         url(../2dd75834e2a2cd39c7f4.woff) format('woff'),
@@ -24,8 +24,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal Extra';
-    data-src: url(../931e1b2285e48bb672e0.eot);
-    data-src: local('Aestetico Formal Extra Light'), local('AesteticoFormal-ExtraLight'),
+    src: url(../931e1b2285e48bb672e0.eot);
+    src: local('Aestetico Formal Extra Light'), local('AesteticoFormal-ExtraLight'),
         url(../931e1b2285e48bb672e0.eot?#iefix) format('embedded-opentype'),
         url(../f689b9f161a4a6f3f671.woff2) format('woff2'),
         url(../e8fd47dca88202c047a6.woff) format('woff'),
@@ -36,8 +36,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../508e7a385b0811c290ee.eot);
-    data-src: local('Aestetico Formal Bold Italic'), local('AesteticoFormal-BoldIt'),
+    src: url(../508e7a385b0811c290ee.eot);
+    src: local('Aestetico Formal Bold Italic'), local('AesteticoFormal-BoldIt'),
         url(../508e7a385b0811c290ee.eot?#iefix) format('embedded-opentype'),
         url(../f4dcc6aefc50ad063265.woff2) format('woff2'),
         url(../c0a0e29e86faebafc871.woff) format('woff'),
@@ -48,8 +48,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../5f34bd8e7ba51df4830f.eot);
-    data-src: local('Aestetico Formal Medium'), local('AesteticoFormal-Medium'),
+    src: url(../5f34bd8e7ba51df4830f.eot);
+    src: local('Aestetico Formal Medium'), local('AesteticoFormal-Medium'),
         url(../5f34bd8e7ba51df4830f.eot?#iefix) format('embedded-opentype'),
         url(../eb6f35599641d0c8c744.woff2) format('woff2'),
         url(../cae282a1e5f7613099f1.woff) format('woff'),
@@ -60,8 +60,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../e826d7e1a6184fddc83d.eot);
-    data-src: local('Aestetico Formal Light Italic'), local('AesteticoFormal-LightIt'),
+    src: url(../e826d7e1a6184fddc83d.eot);
+    src: local('Aestetico Formal Light Italic'), local('AesteticoFormal-LightIt'),
         url(../e826d7e1a6184fddc83d.eot?#iefix) format('embedded-opentype'),
         url(../02197f3b2bb053fce3b0.woff2) format('woff2'),
         url(../225dea91182846bf70da.woff) format('woff'),
@@ -72,8 +72,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal Extra';
-    data-src: url(../1ace69c41b5fe447d45c.eot);
-    data-src: local('Aestetico Formal Extra Bold Italic'), local('AesteticoFormal-ExtraBoldIt'),
+    src: url(../1ace69c41b5fe447d45c.eot);
+    src: local('Aestetico Formal Extra Bold Italic'), local('AesteticoFormal-ExtraBoldIt'),
         url(../1ace69c41b5fe447d45c.eot?#iefix) format('embedded-opentype'),
         url(../38d04bb39156d5f11327.woff2) format('woff2'),
         url(../6a2608459e7a5f53b337.woff) format('woff'),
@@ -84,8 +84,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../6101e43473917750ead3.eot);
-    data-src: local('Aestetico Formal Italic'), local('AesteticoFormal-RegularIt'),
+    src: url(../6101e43473917750ead3.eot);
+    src: local('Aestetico Formal Italic'), local('AesteticoFormal-RegularIt'),
         url(../6101e43473917750ead3.eot?#iefix) format('embedded-opentype'),
         url(../e5311449fa3424000a23.woff2) format('woff2'),
         url(../494c7ec2b9146f808b12.woff) format('woff'),
@@ -96,8 +96,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../3ea6da8b85b30724aff1.eot);
-    data-src: local('Aestetico Formal Light'), local('AesteticoFormal-Light'),
+    src: url(../3ea6da8b85b30724aff1.eot);
+    src: local('Aestetico Formal Light'), local('AesteticoFormal-Light'),
         url(../3ea6da8b85b30724aff1.eot?#iefix) format('embedded-opentype'),
         url(../95a612bfb7697cb944d7.woff2) format('woff2'),
         url(../aa81d3488516321b67f6.woff) format('woff'),
@@ -108,8 +108,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal Extra';
-    data-src: url(../5b1aa268ff2442ea45de.eot);
-    data-src: local('Aestetico Formal Extra Bold'), local('AesteticoFormal-ExtraBold'),
+    src: url(../5b1aa268ff2442ea45de.eot);
+    src: local('Aestetico Formal Extra Bold'), local('AesteticoFormal-ExtraBold'),
         url(../5b1aa268ff2442ea45de.eot?#iefix) format('embedded-opentype'),
         url(../4fd95abc4e02f32b9a7c.woff2) format('woff2'),
         url(../f12479cd86003f6673c9.woff) format('woff'),
@@ -120,8 +120,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../35e6eae2774fbac2a582.eot);
-    data-src: local('Aestetico Formal Medium Italic'), local('AesteticoFormal-MediumIt'),
+    src: url(../35e6eae2774fbac2a582.eot);
+    src: local('Aestetico Formal Medium Italic'), local('AesteticoFormal-MediumIt'),
         url(../35e6eae2774fbac2a582.eot?#iefix) format('embedded-opentype'),
         url(../0d704b9c43acf23bae0a.woff2) format('woff2'),
         url(../515715993b4d7fc53853.woff) format('woff'),
@@ -132,8 +132,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal Extra';
-    data-src: url(../f56a7ef0135be027d58c.eot);
-    data-src: local('Aestetico Formal Extra Light Italic'), local('AesteticoFormal-ExtraLightIt'),
+    src: url(../f56a7ef0135be027d58c.eot);
+    src: local('Aestetico Formal Extra Light Italic'), local('AesteticoFormal-ExtraLightIt'),
         url(../f56a7ef0135be027d58c.eot?#iefix) format('embedded-opentype'),
         url(../7e3e07164ad0116fb55b.woff2) format('woff2'),
         url(../fd0d2d6bdf707d673cfc.woff) format('woff'),
@@ -144,8 +144,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../5c81b7eb036ac03f44a2.eot);
-    data-src: local('Aestetico Formal Black'), local('AesteticoFormal-Black'),
+    src: url(../5c81b7eb036ac03f44a2.eot);
+    src: local('Aestetico Formal Black'), local('AesteticoFormal-Black'),
         url(../5c81b7eb036ac03f44a2.eot?#iefix) format('embedded-opentype'),
         url(../3be0458b9a8230fcc0e0.woff2) format('woff2'),
         url(../de3d2366c4fd79bd4609.woff) format('woff'),
@@ -156,8 +156,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../f10f0b052db86b10d638.eot);
-    data-src: local('Aestetico Formal Bold'), local('AesteticoFormal-Bold'),
+    src: url(../f10f0b052db86b10d638.eot);
+    src: local('Aestetico Formal Bold'), local('AesteticoFormal-Bold'),
         url(../f10f0b052db86b10d638.eot?#iefix) format('embedded-opentype'),
         url(../b52bd92e8fc115d06def.woff2) format('woff2'),
         url(../6293b14c51e304199724.woff) format('woff'),
@@ -168,8 +168,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../caa5bec9fb758f5889e4.eot);
-    data-src: local('Aestetico Formal Thin Italic'), local('AesteticoFormal-ThinIt'),
+    src: url(../caa5bec9fb758f5889e4.eot);
+    src: local('Aestetico Formal Thin Italic'), local('AesteticoFormal-ThinIt'),
         url(../caa5bec9fb758f5889e4.eot?#iefix) format('embedded-opentype'),
         url(../b9847c5a51c88202ac8d.woff2) format('woff2'),
         url(../761abc9e3aa44638752b.woff) format('woff'),
@@ -180,8 +180,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../10e21e99295d18ff0d5a.eot);
-    data-src: local('Aestetico Formal Thin'), local('AesteticoFormal-Thin'),
+    src: url(../10e21e99295d18ff0d5a.eot);
+    src: local('Aestetico Formal Thin'), local('AesteticoFormal-Thin'),
         url(../10e21e99295d18ff0d5a.eot?#iefix) format('embedded-opentype'),
         url(../858daf8a1e8cc2366ee9.woff2) format('woff2'),
         url(../e480a05d4775e5401901.woff) format('woff'),
@@ -192,8 +192,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal Semi';
-    data-src: url(../a5f4fb73961ba48bc97c.eot);
-    data-src: local('Aestetico Formal Semi Bold'), local('AesteticoFormal-SemiBold'),
+    src: url(../a5f4fb73961ba48bc97c.eot);
+    src: local('Aestetico Formal Semi Bold'), local('AesteticoFormal-SemiBold'),
         url(../a5f4fb73961ba48bc97c.eot?#iefix) format('embedded-opentype'),
         url(../d7a7b426f19cd1f7c4af.woff2) format('woff2'),
         url(../e9adfbc9dfc2b27f459c.woff) format('woff'),
@@ -204,8 +204,8 @@
 
 @font-face {
     font-family: 'Aestetico Formal';
-    data-src: url(../45b3cccb3c6089e49869.eot);
-    data-src: local('Aestetico Formal'), local('AesteticoFormal-Regular'),
+    src: url(../45b3cccb3c6089e49869.eot);
+    src: local('Aestetico Formal'), local('AesteticoFormal-Regular'),
         url(../45b3cccb3c6089e49869.eot?#iefix) format('embedded-opentype'),
         url(../e99122e5ef95f0bbd917.woff2) format('woff2'),
         url(../aeabea6e960fbee954f3.woff) format('woff'),
@@ -217,8 +217,8 @@
 
 @font-face {
     font-family: 'LFT Etica';
-    data-src: url(../be9ef354c101c934bfef.eot);
-    data-src: local('LFTEtica-Italic'),
+    src: url(../be9ef354c101c934bfef.eot);
+    src: local('LFTEtica-Italic'),
         url(../be9ef354c101c934bfef.eot?#iefix) format('embedded-opentype'),
         url(../b072b3877716d86e1288.woff2) format('woff2'),
         url(../494e3501a00dd4728136.woff) format('woff'),
@@ -229,8 +229,8 @@
 
 @font-face {
     font-family: 'LFT Etica Lt';
-    data-src: url(../8615817afeca6f6864d5.eot);
-    data-src: local('LFTEticaLt-Italic'),
+    src: url(../8615817afeca6f6864d5.eot);
+    src: local('LFTEticaLt-Italic'),
         url(../8615817afeca6f6864d5.eot?#iefix) format('embedded-opentype'),
         url(../87f97afdb54a4bc0e4dd.woff2) format('woff2'),
         url(../875ce5456bb6a3e34d8a.woff) format('woff'),
@@ -241,8 +241,8 @@
 
 @font-face {
     font-family: 'LFT Etica Bk';
-    data-src: url(../69aab6bd70f3f6bbfcdc.eot);
-    data-src: local('LFTEticaBk-Italic'),
+    src: url(../69aab6bd70f3f6bbfcdc.eot);
+    src: local('LFTEticaBk-Italic'),
         url(../69aab6bd70f3f6bbfcdc.eot?#iefix) format('embedded-opentype'),
         url(../ca4ac6979ec71d6cba06.woff2) format('woff2'),
         url(../77f6a987971f62ea5705.woff) format('woff'),
@@ -253,8 +253,8 @@
 
 @font-face {
     font-family: 'LFT Etica XB';
-    data-src: url(../cd1875a4e968d7e77328.eot);
-    data-src: local('LFTEticaXB'),
+    src: url(../cd1875a4e968d7e77328.eot);
+    src: local('LFTEticaXB'),
         url(../cd1875a4e968d7e77328.eot?#iefix) format('embedded-opentype'),
         url(../49087a459185e8d7f490.woff2) format('woff2'),
         url(../f48eed552cba660bceb4.woff) format('woff'),
@@ -265,8 +265,8 @@
 
 @font-face {
     font-family: 'LFT Etica XB';
-    data-src: url(../21b669459fca422475c8.eot);
-    data-src: local('LFTEticaXB-Italic'),
+    src: url(../21b669459fca422475c8.eot);
+    src: local('LFTEticaXB-Italic'),
         url(../21b669459fca422475c8.eot?#iefix) format('embedded-opentype'),
         url(../51d0737ba70590489712.woff2) format('woff2'),
         url(../2f0052e5f9e7c10313c6.woff) format('woff'),
@@ -277,8 +277,8 @@
 
 @font-face {
     font-family: 'LFT Etica Sb';
-    data-src: url(../a9fa2cd69812e566c315.eot);
-    data-src: local('LFTEticaSb-Italic'),
+    src: url(../a9fa2cd69812e566c315.eot);
+    src: local('LFTEticaSb-Italic'),
         url(../a9fa2cd69812e566c315.eot?#iefix) format('embedded-opentype'),
         url(../e6e45e98189c3bf38565.woff2) format('woff2'),
         url(../f6393ca3bb2ff33f3ba8.woff) format('woff'),
@@ -289,8 +289,8 @@
 
 @font-face {
     font-family: 'LFT Etica Lt';
-    data-src: url(../572ddaf23b169f64c4c9.eot);
-    data-src: local('LFTEticaLt'),
+    src: url(../572ddaf23b169f64c4c9.eot);
+    src: local('LFTEticaLt'),
         url(../572ddaf23b169f64c4c9.eot?#iefix) format('embedded-opentype'),
         url(../9514effcd13c1d35d2d6.woff2) format('woff2'),
         url(../4e09b7a81f637c742dea.woff) format('woff'),
@@ -301,8 +301,8 @@
 
 @font-face {
     font-family: 'LFT Etica Sb';
-    data-src: url(../a68da808f138117d0177.eot);
-    data-src: local('LFTEticaSb'),
+    src: url(../a68da808f138117d0177.eot);
+    src: local('LFTEticaSb'),
         url(../a68da808f138117d0177.eot?#iefix) format('embedded-opentype'),
         url(../4b23738943953f21ae2b.woff2) format('woff2'),
         url(../f3712fb537ba2a3d39b3.woff) format('woff'),
@@ -313,8 +313,8 @@
 
 @font-face {
     font-family: 'LFT Etica';
-    data-src: url(../a04379789156cdd37ba2.eot);
-    data-src: local('LFTEtica-BoldItalic'),
+    src: url(../a04379789156cdd37ba2.eot);
+    src: local('LFTEtica-BoldItalic'),
         url(../a04379789156cdd37ba2.eot?#iefix) format('embedded-opentype'),
         url(../27fe804cb66705b2f85b.woff2) format('woff2'),
         url(../11b6a925934488683c21.woff) format('woff'),
@@ -325,8 +325,8 @@
 
 @font-face {
     font-family: 'LFT Etica';
-    data-src: url(../298d1217ab039aef3659.eot);
-    data-src: local('LFTEtica-Bold'),
+    src: url(../298d1217ab039aef3659.eot);
+    src: local('LFTEtica-Bold'),
         url(../298d1217ab039aef3659.eot?#iefix) format('embedded-opentype'),
         url(../a837ccff0914b0e666ab.woff2) format('woff2'),
         url(../63aeac905937e117db56.woff) format('woff'),
@@ -337,8 +337,8 @@
 
 @font-face {
     font-family: 'LFT Etica Bk';
-    data-src: url(../bb092eec616855f72fbc.eot);
-    data-src: local('LFTEticaBk'),
+    src: url(../bb092eec616855f72fbc.eot);
+    src: local('LFTEticaBk'),
         url(../bb092eec616855f72fbc.eot?#iefix) format('embedded-opentype'),
         url(../bc4a06761c8590033046.woff2) format('woff2'),
         url(../e2644b228b69b4f5414a.woff) format('woff'),
@@ -349,8 +349,8 @@
 
 @font-face {
     font-family: 'LFT Etica';
-    data-src: url(../a23f2c81b7d20697b148.eot);
-    data-src: local('LFTEtica'),
+    src: url(../a23f2c81b7d20697b148.eot);
+    src: local('LFTEtica'),
         url(../a23f2c81b7d20697b148.eot?#iefix) format('embedded-opentype'),
         url(../f8959ea2062eed1fb9b8.woff2) format('woff2'),
         url(../a14b580c7866e3dd58da.woff) format('woff'),
@@ -362,8 +362,8 @@
 
 @font-face {
     font-family: 'TOMO Bossa Black Rough';
-    data-src: url(../728696ecf311af185339.eot);
-    data-src: local('TOMO Bossa Black Rough'), local('TOMOBossa-BlackRough'),
+    src: url(../728696ecf311af185339.eot);
+    src: local('TOMO Bossa Black Rough'), local('TOMOBossa-BlackRough'),
         url(../728696ecf311af185339.eot?#iefix) format('embedded-opentype'),
         url(../d6d913733a0834454812.woff2) format('woff2'),
         url(../581d0f6513dcd251eafb.woff) format('woff'),
@@ -374,8 +374,8 @@
 
 @font-face {
     font-family: 'TOMO Bossa';
-    data-src: url(../f6e08eb8917fbabdca93.eot);
-    data-src: local('TOMO Bossa Black'), local('TOMOBossa-Black'),
+    src: url(../f6e08eb8917fbabdca93.eot);
+    src: local('TOMO Bossa Black'), local('TOMOBossa-Black'),
         url(../f6e08eb8917fbabdca93.eot?#iefix) format('embedded-opentype'),
         url(../d3d6630e2c39993df3e0.woff2) format('woff2'),
         url(../9c74dd278aa74ef5eb41.woff) format('woff'),
@@ -6609,7 +6609,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  data-src: url(../bb8d5a145e22822103fb.woff2) format("woff2"), url(../0ff70dcbf135d859ebf3.ttf) format("truetype"); }
+  src: url(../bb8d5a145e22822103fb.woff2) format("woff2"), url(../0ff70dcbf135d859ebf3.ttf) format("truetype"); }
 
 .fab,
 .fa-brands {
@@ -8204,7 +8204,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  data-src: url(../bc3722686635b5f86132.woff2) format("woff2"), url(../17a6e1aebccdbaa39e78.ttf) format("truetype"); }
+  src: url(../bc3722686635b5f86132.woff2) format("woff2"), url(../17a6e1aebccdbaa39e78.ttf) format("truetype"); }
 
 .far,
 .fa-regular {
@@ -8218,7 +8218,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  data-src: url(../93f719f4d62bfa3e748c.woff2) format("woff2"), url(../07ed6d5fa32c1d54af0f.ttf) format("truetype"); }
+  src: url(../93f719f4d62bfa3e748c.woff2) format("woff2"), url(../07ed6d5fa32c1d54af0f.ttf) format("truetype"); }
 
 .fas,
 .fa-solid {
@@ -8227,39 +8227,39 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Brands';
   font-display: block;
   font-weight: 400;
-  data-src: url(../bb8d5a145e22822103fb.woff2) format("woff2"), url(../0ff70dcbf135d859ebf3.ttf) format("truetype"); }
+  src: url(../bb8d5a145e22822103fb.woff2) format("woff2"), url(../0ff70dcbf135d859ebf3.ttf) format("truetype"); }
 
 @font-face {
   font-family: 'Font Awesome 5 Free';
   font-display: block;
   font-weight: 900;
-  data-src: url(../93f719f4d62bfa3e748c.woff2) format("woff2"), url(../07ed6d5fa32c1d54af0f.ttf) format("truetype"); }
+  src: url(../93f719f4d62bfa3e748c.woff2) format("woff2"), url(../07ed6d5fa32c1d54af0f.ttf) format("truetype"); }
 
 @font-face {
   font-family: 'Font Awesome 5 Free';
   font-display: block;
   font-weight: 400;
-  data-src: url(../bc3722686635b5f86132.woff2) format("woff2"), url(../17a6e1aebccdbaa39e78.ttf) format("truetype"); }
+  src: url(../bc3722686635b5f86132.woff2) format("woff2"), url(../17a6e1aebccdbaa39e78.ttf) format("truetype"); }
 @font-face {
   font-family: 'FontAwesome';
   font-display: block;
-  data-src: url(../93f719f4d62bfa3e748c.woff2) format("woff2"), url(../07ed6d5fa32c1d54af0f.ttf) format("truetype"); }
+  src: url(../93f719f4d62bfa3e748c.woff2) format("woff2"), url(../07ed6d5fa32c1d54af0f.ttf) format("truetype"); }
 
 @font-face {
   font-family: 'FontAwesome';
   font-display: block;
-  data-src: url(../bb8d5a145e22822103fb.woff2) format("woff2"), url(../0ff70dcbf135d859ebf3.ttf) format("truetype"); }
+  src: url(../bb8d5a145e22822103fb.woff2) format("woff2"), url(../0ff70dcbf135d859ebf3.ttf) format("truetype"); }
 
 @font-face {
   font-family: 'FontAwesome';
   font-display: block;
-  data-src: url(../bc3722686635b5f86132.woff2) format("woff2"), url(../17a6e1aebccdbaa39e78.ttf) format("truetype");
+  src: url(../bc3722686635b5f86132.woff2) format("woff2"), url(../17a6e1aebccdbaa39e78.ttf) format("truetype");
   unicode-range: U+F003,U+F006,U+F014,U+F016-F017,U+F01A-F01B,U+F01D,U+F022,U+F03E,U+F044,U+F046,U+F05C-F05D,U+F06E,U+F070,U+F087-F088,U+F08A,U+F094,U+F096-F097,U+F09D,U+F0A0,U+F0A2,U+F0A4-F0A7,U+F0C5,U+F0C7,U+F0E5-F0E6,U+F0EB,U+F0F6-F0F8,U+F10C,U+F114-F115,U+F118-F11A,U+F11C-F11D,U+F133,U+F147,U+F14E,U+F150-F152,U+F185-F186,U+F18E,U+F190-F192,U+F196,U+F1C1-F1C9,U+F1D9,U+F1DB,U+F1E3,U+F1EA,U+F1F7,U+F1F9,U+F20A,U+F247-F248,U+F24A,U+F24D,U+F255-F25B,U+F25D,U+F271-F274,U+F278,U+F27B,U+F28C,U+F28E,U+F29C,U+F2B5,U+F2B7,U+F2BA,U+F2BC,U+F2BE,U+F2C0-F2C1,U+F2C3,U+F2D0,U+F2D2,U+F2D4,U+F2DC; }
 
 @font-face {
   font-family: 'FontAwesome';
   font-display: block;
-  data-src: url(../6cfec8414be20e2c3426.woff2) format("woff2"), url(../0f6cb412603527bda691.ttf) format("truetype");
+  src: url(../6cfec8414be20e2c3426.woff2) format("woff2"), url(../0f6cb412603527bda691.ttf) format("truetype");
   unicode-range: U+F041,U+F047,U+F065-F066,U+F07D-F07E,U+F080,U+F08B,U+F08E,U+F090,U+F09A,U+F0AC,U+F0AE,U+F0B2,U+F0D0,U+F0D6,U+F0E4,U+F0EC,U+F10A-F10B,U+F123,U+F13E,U+F148-F149,U+F14C,U+F156,U+F15E,U+F160-F161,U+F163,U+F175-F178,U+F195,U+F1F8,U+F219,U+F27A; }
 
 html,body{font-family:"Aestetico Formal";color:#edebe5;font-size:1em;line-height:1.4;margin:0;background-color:#000}html.loading article,html.loading section,html.loading header,body.loading article,body.loading section,body.loading header{display:none}h1,h2,h3,h4,h5,h6{font-family:"TOMO Bossa";text-align:center;font-size:45px}@media(max-width: 700px){h1,h2,h3,h4,h5,h6{font-size:25px;padding:0 20px}}h3{font-size:20px}h1{margin-top:100px;margin-bottom:100px}img{max-width:calc(100vw - 17px);width:100%;height:auto}::-moz-selection,::selection{background:#b3d4fc;text-shadow:none}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}audio,canvas,iframe,img,svg,video{vertical-align:middle}fieldset{border:0;margin:0;padding:0}textarea{resize:vertical}section:not(.white):not(.testimonials),footer{max-width:800px;margin:0 auto}header{background-color:#000;display:flex;align-items:center;flex-direction:column;justify-content:flex-end;height:125px}header img{width:auto;height:50px;padding-bottom:15px}@media(max-width: 700px){header img{height:30px;padding:0 0 0 20px}}@media(max-width: 700px){header{flex-direction:row;justify-content:space-between;height:50px}}nav{width:calc(100vw - 17px)}@media(max-width: 700px){nav{width:initial;padding:0 20px}}nav .hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}nav .hamburger span{display:block;width:25px;height:3px;background:#fff;transition:all .3s ease}@media(max-width: 700px){nav .hamburger{display:flex}nav .menu{display:none;flex-direction:column;position:absolute;top:50px;right:10px;background:#fff;padding:10px;box-shadow:0 4px 6px rgba(0,0,0,.1)}nav .menu.visible{display:flex}nav .menu li{margin:5px 0}}.menu{justify-content:center;background-color:#000;list-style:none;z-index:999;display:flex;margin:0;padding:0;padding-top:5px;padding-bottom:5px}.menu li:not(:first-of-type){margin-left:20px}.menu a{text-decoration:none;color:#edebe5;font-size:20px;font-weight:300;font-size:14px;letter-spacing:3px;text-transform:uppercase}.menu a:visited{color:#fff}.menu a:hover{color:#a84a00}.hero .slider{position:relative;height:calc(100vh - 125px);max-width:calc(100vw - 17px);max-height:650px}@media(orientation: portrait){.hero .slider{height:auto;aspect-ratio:3456/2304;width:100vw;max-width:100vw}}@media(orientation: portrait)and (min-width: 700px){.hero .slider{max-width:800px}}.hero .slider .slide{position:absolute;top:0;left:0;max-width:calc(100vw - 17px);height:calc(100vh - 125px);object-fit:contain;right:0;margin:0 auto;max-height:650px}@media(orientation: portrait){.hero .slider .slide{height:auto;aspect-ratio:3456/2304;width:100vw;max-width:100vw}}@media(orientation: portrait)and (min-width: 700px){.hero .slider .slide{max-width:800px}}.hero .slider .slide:not(:first-child){opacity:0}.services{display:flex;white-space:nowrap;overflow:hidden;width:100%;padding:10px 0 10px}.services span{font-family:"LFT Etica";margin-right:50px;font-size:22px;color:#fff}@media(orientation: portrait){.services span{font-size:14px;margin-right:20px}}.airplane{position:relative;padding-bottom:100px}@media(max-width: 700px){.airplane{display:flex;flex-direction:column-reverse}.airplane img{max-width:initial;width:100vw}}.airplane .text-bubble{position:absolute;top:100px;left:30px;border-radius:30px;height:180px;width:340px;background-color:#000}@media(max-width: 700px){.airplane .text-bubble{position:initial;width:100%;height:100px}}.airplane .text-bubble h3{font-family:"LFT Etica";font-size:20px;color:#000;background-color:#fff;margin:0;border-radius:30px 30px 0 0;padding:5px 0 0 0}@media(max-width: 700px){.airplane .text-bubble h3{border-radius:0}}.airplane .text-bubble h3.inverted{color:#fff;background-color:#000;border-radius:0;padding:0 2px}.airplane .text-bubble p{padding:0 30px;text-align:center}.fun-headline{background-color:#edebe5}.fun-headline .headline.white{margin:0 auto;max-width:800px;color:#000;padding:30px 20px 30px 20px}.fun{display:flex;justify-content:space-between;align-items:center;padding:80px 10px 80px}@media(max-width: 700px){.fun{flex-direction:column}}.fun .mini-slider{width:300px;height:300px;position:relative;border:1px solid #2c2c2c;border-radius:10px}.fun .mini-slider .slide{border-radius:10px;position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover}.fun .mini-slider .slide:not(:first-child){opacity:0}.fun .description{max-width:200px;padding:0px 40px;text-align:center;font-weight:200;font-family:"LFT Etica","TOMO Bossa"}@media(max-width: 700px){.fun .description{padding:50px 10px 50px 10px;max-width:initial}}.slider-indicators{position:absolute;bottom:-20px;left:0;right:0;display:flex;justify-content:center}.slider-indicators .indicator{border-radius:10px;width:10px;height:10px;margin:0 5px;background-color:#000;border:1px solid #2c2c2c}.slider-indicators .indicator.active{background-color:#edebe5}.slider-indicators .indicator:hover{cursor:pointer;border:1px solid #fff !important}.photoshoots{background-color:#edebe5}.photoshoots h3{margin:0}.photoshoots .limit{position:relative;max-width:800px;margin:0 auto;height:100vh;justify-content:flex-end;align-items:center;display:flex;overflow:hidden;max-height:600px}@media(max-width: 700px){.photoshoots .limit{display:flex;flex-direction:column;justify-content:center;height:initial;padding:10px 0 30px 0}}.photoshoots .limit .description{text-align:center}.photoshoots .description{position:absolute;left:0;max-width:250px;top:0;bottom:0;color:#000;display:flex;flex-direction:column;align-items:center;justify-content:center}@media(max-width: 700px){.photoshoots .description{position:initial;max-width:initial;padding:20px 20px 20px 20px}}.photoshoots .collage{max-width:500px;display:flex;flex-wrap:wrap}.photoshoots .collage img{width:33%;height:auto;object-fit:contain;position:relative}.photoshoots .collage img:nth-child(1){left:5px;top:8px;transform:rotate(-2deg);z-index:2}.photoshoots .collage img:nth-child(2){left:-2px;top:10px;transform:rotate(3deg)}.photoshoots .collage img:nth-child(3){left:-7px;top:7px;transform:rotate(6deg);z-index:4}.photoshoots .collage img:nth-child(4){left:4px;top:0;transform:rotate(3deg)}.photoshoots .collage img:nth-child(5){z-index:9;transform:rotate(-2deg)}.photoshoots .collage img:nth-child(6){left:-9px;top:0;z-index:3;transform:rotate(2deg)}.photoshoots .collage img:nth-child(7){left:7px;top:-10px;z-index:3;transform:rotate(8deg)}.photoshoots .collage img:nth-child(8){left:0;top:-5px;transform:rotate(2deg)}.photoshoots .collage img:nth-child(9){left:-7px;top:-8px;transform:rotate(-3deg)}section.testimonials .testimonial{overflow:hidden;display:flex;height:30vh;justify-content:center;align-items:center}section.testimonials .testimonial.white{background-color:#edebe5;flex-direction:row-reverse;color:#000}@media(max-width: 700px){section.testimonials .testimonial{display:flex;flex-direction:column-reverse;justify-content:center;align-items:center;height:350px}section.testimonials .testimonial.white{flex-direction:column-reverse}}section.testimonials .testimonial img{z-index:1;height:26vh;border-radius:50px;width:auto}@media(max-width: 700px){section.testimonials .testimonial img{height:200px;border-radius:0}}section.testimonials .testimonial h5{font-family:"Aestetico Formal","LFT Etica";font-weight:100;position:relative;z-index:2;max-width:50vw;margin-right:50px;font-size:16px}@media(max-width: 700px){section.testimonials .testimonial h5{font-size:12px;margin:10px 0;max-width:initial;padding:0 10px 0 30px}}section.testimonials .testimonial.white h5{margin-left:50px}@media(max-width: 700px){section.testimonials .testimonial.white h5{font-size:12px;margin:10px 0}}section.testimonials .testimonial span{font-weight:400;position:absolute;right:0;bottom:-30px}@media(max-width: 700px){section.testimonials .testimonial span{bottom:-20px;left:0}}section.about{display:flex;flex-direction:row-reverse;justify-content:space-between;align-items:center;max-width:800px;padding:100px 10px 100px 10px}@media(max-width: 700px){section.about{display:flex;flex-direction:column-reverse;justify-content:center;align-items:center;padding:20px 10px 20px 10px}}section.about .description{text-align:center;font-family:"Aestetico Formal";max-width:400px;font-size:30px;font-weight:800;text-transform:uppercase;margin-right:50px}@media(max-width: 700px){section.about .description{margin-right:0}}section.about .card{position:relative;width:30vw;max-width:250px;aspect-ratio:1536/2277;background:red;display:flex;justify-content:center;align-items:center}section.about .card::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(315deg, #194e00, #894000)}section.about .card::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(315deg, #194e00, #894000);filter:blur(30px)}section.about .card .content{height:calc(100% - 10px);position:absolute;z-index:3;display:flex;flex-direction:column;align-items:center;overflow:hidden}section.about .content img{position:relative;width:calc(100% - 10px);height:auto;z-index:9}section.about .social-icons a,section.about .social-icons a:visited{color:#ebebeb;text-decoration:none}section.about .social-icons a:hover,section.about .social-icons a:visited:hover{color:#a84a00}section.about .social-icons a:nth-child(1){font-size:27px}section.about .social-icons a:not(:nth-child(1)){margin-left:20px}footer{display:flex;justify-content:space-between;align-items:center;height:50px;padding:0 20px}footer ul{display:flex;list-style:none;margin:0;padding:0}footer ul a,footer ul a:visited{color:#ebebeb;text-decoration:none}footer ul a:hover,footer ul a:visited:hover{color:#a84a00}footer ul li:not(:nth-child(1)){margin-left:20px}#loading-screen{position:fixed;top:0;left:0;right:0;bottom:0;background-color:hsla(0,0%,100%,.9);display:flex;justify-content:center;align-items:center;z-index:9999}.spinner{border:4px solid hsla(0,0%,100%,.3);border-top:4px solid #000;border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
