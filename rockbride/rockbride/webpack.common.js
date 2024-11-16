@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './js/app.js', // JavaScript entry point
@@ -20,14 +19,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html', // Use your root index.html
-      filename: 'index.html', // Output index.html in `dist`
-    }),
-    new HtmlWebpackPlugin({
-      template: './photography.html',  // This is for photography.html
-      filename: 'photography.html',  // Output file in dist
-    })
-  ],
 };
