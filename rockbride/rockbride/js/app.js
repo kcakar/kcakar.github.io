@@ -1,42 +1,103 @@
 import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { slider } from './slider';
+import { heroSlider, servicesSlider, menuAndLogoAnimations } from './slider';
 import '../css/style.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
-slider();
+heroSlider();
+servicesSlider();
+menuAndLogoAnimations();
 
-const tl = gsap.timeline();
-tl.fromTo('.logo', { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
+gsap.fromTo(".hero",
+    { opacity: 0 },
+    {
+        opacity: 1,
+        duration: 1,
+        delay: 1
+    });
 
-const menuLinks = document.querySelectorAll(".menu li");
+gsap.fromTo(".secondary h1",
+    { opacity: 0 },
+    {
+        scrollTrigger: {
+            trigger: ".secondary h1", // The element that will trigger the animation
+            start: "top center", // Start the animation when the element's top is 80% from the top of the viewport
+            end: "center center",
+        },
+        opacity: 1,
+        duration: 1
+    });
 
-let delay = 0.5;
-menuLinks.forEach((link, key) => {
-    tl.fromTo(link, { opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 })
-})
 
-gsap.to(".navbar", {
-    scrollTrigger: {
-        trigger: ".menu",
-        start: "top top",
-        end: "max",
-        pin: true,
-        pinSpacing: false
-    }
-});
-// Wrap the entire content in a GSAP animation loop
-// Get the total width of the services container (combined width of all items inside it)
-const services = document.querySelector(".services");
-const serviceWidth = services.scrollWidth;
+const headline = document.querySelector('.headline');
+const letters = headline.querySelectorAll('span');
+gsap.fromTo(letters,
+    { opacity: 0 },
+    {
+        scrollTrigger: {
+            trigger: ".secondary .headline", // The element that will trigger the animation
+            start: "top center", // Start the animation when the element's top is 80% from the top of the viewport
+            end: "center center",   // End the animation when the element's top reaches 30% from the top of the viewport
+        },
+        opacity: 1,
+        y: 50,              // Slide from bottom
+        duration: 1,        // Duration of each letter's animation
+        stagger: 0.05,      // Delay between each letter's appearance
+        ease: "power4.out", // Easing for smooth animation
+    });
 
-// Use GSAP to animate the services container
-gsap.to(".services", {
-  x: `-${serviceWidth}px`,  // Move the container to the left by its total width
-  duration: 20,             // Set the speed of the scroll
-  repeat: -1,               // Repeat infinitely
-  ease: "none",             // Use a linear ease for a smooth constant speed
-});
+    
+    gsap.fromTo('.text-bubble',
+        { opacity: 0},
+        {
+            scrollTrigger: {
+                trigger: ".secondary .airplane", // The element that will trigger the animation
+                start: "top center", // Start the animation when the element's top is 80% from the top of the viewport
+                end: "center center",   // End the animation when the element's top reaches 30% from the top of the viewport
+            },
+            opacity: 1,
+            duration: 2,        // Duration of each letter's animation
+            delay:0.3
+        });
 
+    gsap.fromTo('.text-bubble h3:not(.inverted)',
+        { opacity: 0},
+        {
+            scrollTrigger: {
+                trigger: ".secondary .airplane", // The element that will trigger the animation
+                start: "top center", // Start the animation when the element's top is 80% from the top of the viewport
+                end: "center center",   // End the animation when the element's top reaches 30% from the top of the viewport
+            },
+            opacity: 1,
+            duration: 2,        // Duration of each letter's animation
+            delay:0.6
+        });
+        
+    gsap.fromTo('.text-bubble h3.inverted',
+        { opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".secondary .airplane", // The element that will trigger the animation
+                start: "top center", // Start the animation when the element's top is 80% from the top of the viewport
+                end: "center center",   // End the animation when the element's top reaches 30% from the top of the viewport
+            },
+            opacity: 1,
+            duration: 2,        // Duration of each letter's animation
+            delay:0.9
+        });
+             
+    gsap.fromTo('.text-bubble p',
+        { opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".secondary .airplane", // The element that will trigger the animation
+                start: "top center", // Start the animation when the element's top is 80% from the top of the viewport
+                end: "center center",   // End the animation when the element's top reaches 30% from the top of the viewport
+            },
+            opacity: 1,
+            duration: 2,        // Duration of each letter's animation
+            delay:1.2
+        });
+    
     

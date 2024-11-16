@@ -129,9 +129,12 @@ nav {
     letter-spacing: 3px;
     text-transform: uppercase;
 
-    &:visited,
-    &:hover {
+    &:visited{
       color: white;
+    }
+
+    &:hover{
+      color:#a84a00
     }
   }
 }
@@ -159,11 +162,13 @@ nav {
   }
 }
 
+
 .services {
   display: flex;
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
+  padding: 10px 0 10px;
 
   span {
     margin-right: 50px;
