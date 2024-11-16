@@ -22,12 +22,12 @@ module.exports = merge(common, {
     new HtmlWebpackPlugin({
       template: './index.html', // Use your root index.html
       filename: 'index.html', // Output index.html in dist
-      base: '/rockbride/', // Set the base URL for the generated HTML file
+      base: '/rockbride-publish/', // Set the base URL for the generated HTML file
     }),
     new HtmlWebpackPlugin({
       template: './photography.html', // This is for photography.html
       filename: 'photography.html',  // Output photography.html in dist
-      base: '/rockbride/', // Set the base URL for the generated HTML file
+      base: '/rockbride-publish/', // Set the base URL for the generated HTML file
     }),
     new MiniCssExtractPlugin({
       filename: 'css/style.css', // Output CSS in the `css` folder
