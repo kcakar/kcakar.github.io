@@ -24,12 +24,19 @@
 </head>
 
 <body>
+  <!-- <div id="loading-screen">
+    <div class="spinner"></div>
+  </div> -->
   <header>
     <img class="logo" src="img/logo-white.png">
     <nav class="navbar">
+      <button class="hamburger" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <ul class="menu">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
         <li><a href="#">Photography</a></li>
         <li><a href="#">Videography</a></li>
         <li><a href="#">How we work</a></li>
@@ -42,20 +49,21 @@
   <section class="hero">
     <article class="slider">
       <img class="slide" src="img/headslide/1.jpg">
-      <img class="slide slide-2" src="img/headslide/2.jpg">
-      <img class="slide top-center" src="img/headslide/3.jpg">
-      <img class="slide left-center" src="img/headslide/4.jpg">
-      <img class="slide slide-5" src="img/headslide/5.jpg">
+      <img class="slide" src="img/headslide/2.jpg">
+      <img class="slide" src="img/headslide/3.jpg">
+      <img class="slide" src="img/headslide/4.jpg">
+      <img class="slide" src="img/headslide/5.jpg">
       <img class="slide" src="img/headslide/6.jpg">
-      <img class="slide top-center" src="img/headslide/7.jpg">
-      <img class="slide slide-8" src="img/headslide/8.jpg">
+      <img class="slide" src="img/headslide/7.jpg">
+      <img class="slide" src="img/headslide/8.jpg">
       <img class="slide" src="img/headslide/9.jpg">
       <img class="slide" src="img/headslide/10.jpg">
-      <img class="slide  slide-11" src="img/headslide/11.jpg">
+      <img class="slide" src="img/headslide/11.jpg">
       <img class="slide" src="img/headslide/12.jpg">
     </article>
   </section>
-  <section class="services">
+
+  <article class="services">
     <article class="list">
       <span>photographs for lovers</span>
       <span>films for party starters</span>
@@ -63,40 +71,126 @@
       <span>photographs for lovers</span>
       <span>films for party starters</span>
       <span>digital &amp; 35mm film</span>
-      
     </article>
-  </section>
-  <section class="secondary">
-    <h1 class="headline">
-      <span>M</span><span>o</span><span>m</span><span>e</span><span>n</span><span>t</span><span>s</span>
-      <span> </span><span>t</span><span>h</span><span>a</span><span>t</span>
-      <span> </span><span>L</span><span>a</span><span>s</span><span>t</span>
-      <span> </span><span>a</span> <span>L</span><span>i</span><span>f</span><span>e</span><span>t</span><span>i</span><span>m</span><span>e</span>
-      <span>,</span><span> </span><span>C</span><span>a</span><span>p</span><span>t</span><span>u</span><span>r</span><span>e</span>
-      <span> </span><span>T</span><span>o</span><span>d</span><span>a</span><span>y</span>
-    </h1>
+  </article>
+
+  <section class="airplane-section">
+    <h1 class="headline write">Moments that Last a Lifetime, Capture Today</h1>
     <article class="airplane">
       <div class="text-bubble">
         <h3>A Love That Survives:</h3>
         <h3 class="inverted">Your Adventure Begins&nbsp;Here</h3>
         <p>Captured in the wreckage of a crashed plane, your love story defies all odds. For adventurous couples who
-          embrace the unexpected, let us immortalize your journey with unforgettable images.</p>
+          embrace the unexpected</p>
       </div>
-      <img src="./img/secondary.jpg">
+      <img src="./img/airplane.jpg">
     </article>
   </section>
 
-  <!-- <section class="test" style="height: 2000px;">
-    <h1>TEST</h1>
-    <h1>TEST</h1>
-    <h1>TEST</h1>
-    <h1>TEST</h1>
-    <h1>TEST</h1>
-    <h1>TEST</h1>
-    <h1>TEST</h1>
-  </section> -->
-  <script src="js/app.js"></script>
+  <section class="fun-headline white">
+    <h2 class="headline white write">Where Love, Laughter, and Party Vibes <span class="rainbow">Come to Life!</span>
+    </h2>
+  </section>
 
+  <section class="fun">
+    <article class="mini-slider left">
+      <img class="slide" src="img/mini-slider-left/1.jpg">
+      <img class="slide" src="img/mini-slider-left/2.jpg">
+      <img class="slide" src="img/mini-slider-left/3.jpg">
+      <img class="slide" src="img/mini-slider-left/4.jpg">
+      <img class="slide" src="img/mini-slider-left/5.jpg">
+    </article>
+
+    <article class="description">
+      <p>Weddings are the perfect mix of love, laughter, and celebration. The dance floor comes alive, friends and
+        family party together, and unforgettable memories are made. It’s all about having fun and enjoying every moment!
+      </p>
+    </article>
+
+    <article class="mini-slider right">
+      <img class="slide" src="img/mini-slider-right/1.jpg">
+      <img class="slide" src="img/mini-slider-right/2.jpg">
+      <img class="slide" src="img/mini-slider-right/3.jpg">
+      <img class="slide" src="img/mini-slider-right/4.jpg">
+      <img class="slide" src="img/mini-slider-right/5.jpg">
+    </article>
+  </section>
+
+  <section class="photoshoots white">
+    <div class="limit">
+      <article class="description">
+        <h3>Timeless Love,<br> Captured Forever</h3>
+        <p>Every couple has a unique story. <br>Let us capture those fleeting moments, turning your love into timeless
+          memories. Our photography beautifully tells the tale of your journey together.</p>
+      </article>
+      <article class="collage">
+        <img src="/img/collage/1.jpg">
+        <img src="/img/collage/2.jpg">
+        <img src="/img/collage/3.jpg">
+        <img src="/img/collage/4.jpg">
+        <img src="/img/collage/5.jpg">
+        <img src="/img/collage/6.jpg">
+        <img src="/img/collage/7.jpg">
+        <img src="/img/collage/8.jpg">
+        <img src="/img/collage/9.jpg">
+      </article>
+    </div>
+  </section>
+  <section class="testimonials">
+    <article class="testimonial">
+      <h5>We couldn’t have asked for a better photographer! Every picture radiates love, laughter, and the magic of our
+        special day. Thank you for capturing moments we’ll cherish forever!
+        <span class="name">— Emma & Liam</span>
+      </h5>
+      <img src="img/testimonials/1.jpg">
+    </article>
+    <article class="testimonial white">
+      <h5>Your creativity and passion shine through every shot! From candid moments to breathtaking portraits, you made
+        us feel so comfortable and truly captured our personalities.
+        <span class="name">— Sophia & Noah</span>
+      </h5>
+      <img src="img/testimonials/2.jpg">
+    </article>
+    <article class="testimonial">
+      <h5>Working with you was an absolute dream. You didn’t just take photos; you told our love story through your lens. We’re forever grateful!
+        <span class="name">— Olivia & Ethan</span>
+      </h5>
+      <img src="img/testimonials/3.jpg">
+    </article>
+  </section>
+  <section class="about">
+    <article class="description">
+      <p>I’m a passionate photographer who loves capturing the beauty of love and life.</p>
+      <h3>FOLLOW US!</h3>
+      <div class="social">
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:example@email.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </article>
+    <div class="card">
+      <div class="content">
+        <img src="/img/me.jpg">
+      </div>
+    </div>
+
+  </section>
+  <footer>
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> Rockbride Studio</p>
+    <ul>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Legal Notice</a></li>
+    </ul>
+  </footer>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
