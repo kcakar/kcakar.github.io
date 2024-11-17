@@ -1,7 +1,8 @@
-@import '../fonts/AesteticoFormal/AesteticoFormal.css';
-@import '../fonts/LFTetica/LFTetica.css';
-@import '../fonts/TOMOBossa/TOMOBossa.css';
-@import '@fortawesome/fontawesome-free/css/all.css';
+@use '/css/photography.scss';
+@import '/fonts/AesteticoFormal/AesteticoFormal.css';
+@import '/fonts/LFTetica/LFTetica.css';
+@import '/fonts/TOMOBossa/TOMOBossa.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
 
 $header-height: 125px;
 $header-mobile-height: 50px;
@@ -725,35 +726,6 @@ section.about {
     }
   }
 }
-.photography {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Gap between items */
-}
-
-.masonry-item {
-  width: calc(33.333% - 20px); /* 3 items per row */
-  box-sizing: border-box;
-  margin-bottom: 30px;
-}
-
-.masonry-item .lazy-load {
-  width: 100%;
-  height: auto; /* Ensures images maintain their aspect ratio */
-}
-
-.masonry-item img {
-  max-width: 492px;
-  width: 100%;
-  height: auto; /* Ensures images maintain their aspect ratio */
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out; /* Smooth fade-in */
-}
-
-.masonry-item img.visible {
-  opacity: 1;
-}
-
 
 footer {
   display: flex;

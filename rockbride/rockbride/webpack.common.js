@@ -1,14 +1,30 @@
 const path = require('path');
 
 module.exports = {
-  entry: './js/app.js', // JavaScript entry point
+  entry: {
+    main: './js/app.js',
+    photography: './js/photography.js',
+  },
   output: {
-    filename: 'js/bundle.js', // Output JavaScript to the `js` folder
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
+    filename: '[name].js', // Create separate JS files for each entry
+    publicPath: '/', // Serve assets from the root (important for dev server)
   },
   module: {
     rules: [
+      {
+        test: /\.js$/, // Transpile JavaScript
+        use: {
+          loader: 'babel-loader', // Optional: For transpiling modern JS
+        },
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,  // Matches plain CSS files (like FontAwesome's)
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
       {
         test: /\.scss$/i, // Process Sass files
         use: ['style-loader', 'css-loader', 'sass-loader'],
@@ -18,5 +34,5 @@ module.exports = {
         loader: 'html-loader',
       },
     ],
-  },
+  }
 };

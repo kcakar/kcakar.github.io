@@ -1,5 +1,6 @@
 import Masonry from 'masonry-layout';
 import imagesLoaded from 'imagesloaded';
+import '../css/style.scss';
 
 document.addEventListener("DOMContentLoaded", function () {
     // Step 1: Initialize Masonry
