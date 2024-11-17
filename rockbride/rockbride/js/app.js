@@ -11,7 +11,6 @@ import '../css/style.scss';
 import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 import { Slider, servicesSlider, menuAndLogoAnimations, textWriteEffects, generalAnimations, collage } from './motions.js';
-import './photography.js'
 
 function init() {
     gsap.registerPlugin(ScrollTrigger);
@@ -27,8 +26,5 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Check if the current URL is the homepage
-    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-        init(); // Run the function only on the main page
-    }
+    init(); 
 });

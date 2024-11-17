@@ -3,6 +3,7 @@ const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -24,7 +25,7 @@ module.exports = merge(common, {
         },
       },
       {
-        test: /\.(jpg|jpeg|png|gif|svg)$/,  // Match image file types
+        test: /\.(jpg|jpeg|png|gif|svg|webp)$/,  // Match image file types
         type: 'asset/resource',  // Moves images to the output folder
         generator: {
           filename: 'img/[name].[hash][ext][query]',  // Place images in the 'images/' folder
@@ -34,6 +35,7 @@ module.exports = merge(common, {
   },
   output: {
     filename: 'js/[name].[contenthash].js', // Use contenthash for cache busting
+    path: path.resolve(__dirname, '../../rockbride-publish'), // Set absolute path to rockbride-publish
     clean: true,
     publicPath: '/rockbride-publish/', // Adjust this based on your deployment path
   },
