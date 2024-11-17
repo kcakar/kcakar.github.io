@@ -2,7 +2,6 @@
 @import '/fonts/AesteticoFormal/AesteticoFormal.css';
 @import '/fonts/LFTetica/LFTetica.css';
 @import '/fonts/TOMOBossa/TOMOBossa.css';
-@import '~@fortawesome/fontawesome-free/css/all.css';
 
 $header-height: 125px;
 $header-mobile-height: 50px;
@@ -196,7 +195,7 @@ nav {
     text-decoration: none;
     color: #edebe5;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -384,8 +383,7 @@ nav {
     max-width: 200px;
     padding: 0px 40px;
     text-align: center;
-    font-weight: 200;
-    font-family: 'LFT Etica', 'TOMO Bossa';
+    font-family: 'LFT Etica';
 
     @media (max-width: 700px) {
       padding: 50px 10px 50px 10px;
@@ -584,7 +582,7 @@ section.testimonials {
     }
 
     h5 {
-      font-family: 'Aestetico Formal', 'LFT Etica';
+      font-family: 'Aestetico Formal';
       font-weight: 100;
       position: relative;
       z-index: 2;
@@ -646,7 +644,7 @@ section.about {
     font-family: 'Aestetico Formal';
     max-width: 400px;
     font-size: 30px;
-    font-weight: 800;
+    font-weight: bold;
     text-transform: uppercase;
     margin-right: 50px;
 
@@ -723,6 +721,19 @@ section.about {
 
     a:not(:nth-child(1)) {
       margin-left: 20px;
+    }
+
+    .mail img{
+      width: 35px;
+      height: auto;
+    }
+    .instagram img{
+      width: 30px;
+      height: auto;
+    }
+    .facebook img{
+      width: 20px;
+      height: auto;
     }
   }
 }
