@@ -11,7 +11,7 @@ if %errorlevel% neq 0 (
 for %%i in (*.jpg) do (
     echo Processing %%i ...
     ::magick "%%i" -resize 700x -quality 80 "%%~ni.webp"
-    magick "%%i" "%%~ni.webp"
+    magick "%%i" -resize 1500x "%%~ni.webp"
 
 )
 

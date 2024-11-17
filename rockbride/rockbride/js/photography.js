@@ -1,48 +1,81 @@
-import Masonry from 'masonry-layout';
+import Isotope from 'isotope-layout';
 import imagesLoaded from 'imagesloaded';
+import hashtags from './hashtags.json';
 import '../css/style.scss';
 
+let iso = null;
 document.addEventListener("DOMContentLoaded", function () {
-    // Step 1: Initialize Masonry
-    var elem = document.querySelector('.masonry-container');
-    if(!elem)
+    var elem = document.querySelector('.photography');
+    if (!elem)
         return;
-    var msnry = new Masonry(elem, {
-        itemSelector: '.masonry-item', // Select the items within the container
-        columnWidth: '.masonry-item',  // The width of the column should be based on the items
-        percentPosition: true, // Use percentage positioning
-        gutter: 20, // Space between items
+
+    iso = new Isotope('.photography', {
+        itemSelector: '.photography-item',
+        layoutMode: 'masonry',
+        masonry: {
+            columnWidth: '.photography-item',
+            gutter: 20
+        }, hiddenStyle: {
+            opacity: 0,
+            height: 0,
+            pointerEvents: 'none'
+        },
+        visibleStyle: {
+            opacity: 1,
+            height: 'auto'
+        }, 
+        transitionDuration: '0'
     });
 
-    // Step 2: Use IntersectionObserver to load images lazily and fade them in
-    var lazyImages = document.querySelectorAll('.lazy-load'); // Select all images with the lazy-load class
+    var lazyImages = document.querySelectorAll('.lazy-load');
 
     var observer = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 var img = entry.target;
-                img.src = img.getAttribute('data-src'); // Set the source from data-src
-                img.classList.add('visible'); // Add the 'visible' class to trigger fade-in
+                img.src = img.getAttribute('data-src');
+                img.classList.add('visible');
 
                 img.onload = function () {
-                    msnry.layout(); // Recalculate Masonry layout after the image is loaded
+                    iso.layout();
+                    img.onload = null;
                 };
 
-                observer.unobserve(img); // Stop observing this image after it's loaded
+                observer.unobserve(img);
             }
         });
     }, {
-        rootMargin: '200px 0px', // Start loading before the image enters the viewport
-        threshold: 0.1 // Start loading when 10% of the image is in the viewport
+        rootMargin: '200px 0px',
+        threshold: 0.1
     });
 
-    // Step 3: Observe each lazy-load image
     lazyImages.forEach(function (img) {
         observer.observe(img);
     });
 
-    // Step 4: Trigger Masonry layout after initial image loading (in case images are loaded on page load)
     imagesLoaded(elem, function () {
-        msnry.layout(); // Recalculate the layout after images are loaded
+        iso.layout();
     });
 });
+
+
+const hashtagsContainer = document.querySelector('.hashtags');
+hashtagsContainer.addEventListener('click', (e) => {
+    if (e.target && e.target.tagName === 'SPAN') {
+        filterImages(e.target.innerHTML);
+    }
+});
+
+function filterImages(query) {
+    if (query.startsWith('#')) {
+        query = query.slice(1);
+    }
+
+    const result = hashtags.find(tag => tag.word.includes(query));
+    if (result != null) {
+        const selector = result.imageIDs.map(id => `[data-id='${id}']`).join(', ');
+        iso.arrange({ filter: selector });
+        iso.layout();
+    }
+}
+
