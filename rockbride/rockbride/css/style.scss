@@ -802,3 +802,7 @@ footer {
     transform: rotate(360deg);
   }
 }
+
+body {
+  transition: opacity 0.5s ease;
+}

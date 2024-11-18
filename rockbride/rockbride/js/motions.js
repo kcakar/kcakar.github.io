@@ -341,3 +341,14 @@ function movePhoto(element, x, y, transform, targetTransform, targetX, targetY, 
             delay: index * 0.15
         });
 }
+
+// window.addEventListener('beforeunload', function () {
+//     console.log("hey")
+//     document.body.style.opacity = 0;
+//   });
+  
+//   // Fade in the new page after loading
+//   window.onload = function () {
+//     console.log("hey")
+//     document.body.style.opacity = 1;
+//   };
