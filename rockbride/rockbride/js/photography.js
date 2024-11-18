@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         visibleStyle: {
             opacity: 1,
             height: 'auto'
-        }, 
+        },
         transitionDuration: '0'
     });
 
@@ -58,24 +58,148 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const viewer = document.querySelector('.photo-viewer');
+document.querySelector('.photography').addEventListener('click', e => {
+    if (e.target && e.target.classList.contains('photography-item')) {
+        setViewerImage(e.target.getAttribute('data-detail-src'), e.target.getAttribute('data-id'))
+        viewer.classList.add('fullscreen')
+
+        // Check if the document is not already in fullscreen
+        if (document.documentElement.requestFullscreen) {
+            viewer.requestFullscreen().catch(err => {
+                console.error("Error attempting to enable fullscreen mode:", err);
+            });
+        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+            viewer.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari
+            viewer.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+            viewer.msRequestFullscreen();
+        }
+    }
+})
+
+function setViewerImage(src, id) {
+    const image = viewer.querySelector('img');
+    image.src = src;
+    viewer.setAttribute('data-id', id)
+}
+
+viewer.querySelector('.close').addEventListener('click', e => {
+    closeViewer()
+})
+
+function closeViewer() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { // For WebKit browsers
+        document.webkitExitFullscreen();
+    } else if (document.mozCancelFullScreen) { // For Firefox
+        document.mozCancelFullScreen();
+    } else if (document.msExitFullscreen) { // For IE/Edge
+        document.msExitFullscreen();
+    }
+    viewer.classList.remove('fullscreen')
+}
+
+viewer.querySelector('.next').addEventListener('click', e => {
+    const currentID = Number(viewer.getAttribute('data-id'));
+    let nextID;
+    if (currentHashtag) {
+        const imageIDs = currentHashtag.imageIDs;
+        const currentIndex = imageIDs.indexOf(currentID);
+
+        if (currentIndex !== -1) {
+            if (currentIndex === imageIDs.length - 1) {
+                nextID = imageIDs[0];
+            } else {
+                nextID = imageIDs[currentIndex + 1];
+            }
+        }
+    }
+    else {
+        const nextIMG = document.querySelector(`.photography-item[data-id="${currentID}"]`).nextElementSibling
+        if (nextIMG) {
+            nextID = nextIMG.getAttribute('data-id')
+        }
+        else {
+            nextID = 1;
+        }
+    }
+    const nextIMG = document.querySelector(`.photography-item[data-id="${nextID}"]`);
+    setViewerImage(nextIMG.getAttribute('data-detail-src'), nextIMG.getAttribute('data-id'))
+})
+
+viewer.querySelector('.prev').addEventListener('click', e => {
+    const currentID = Number(viewer.getAttribute('data-id'));
+    let prevID;
+    if (currentHashtag) {
+        const imageIDs = currentHashtag.imageIDs;
+        const currentIndex = imageIDs.indexOf(currentID);
+
+        if (currentIndex !== -1) {
+            if (currentIndex === 0) {
+                prevID = imageIDs[imageIDs.length - 1];
+            } else {
+                prevID = imageIDs[currentIndex - 1];
+            }
+        }
+    }
+    else {
+        const prevIMG = document.querySelector(`.photography-item[data-id="${currentID}"]`).previousElementSibling
+        if (prevIMG) {
+            prevID = prevIMG.getAttribute('data-id')
+        }
+        else {
+            prevID = document.querySelector('.photography-item:last-of-type').getAttribute('data-id');
+        }
+    }
+    const prevIMG = document.querySelector(`.photography-item[data-id="${prevID}"]`);
+    setViewerImage(prevIMG.getAttribute('data-detail-src'), prevIMG.getAttribute('data-id'))
+})
+
+document.addEventListener('fullscreenchange', function () {
+    if (!document.fullscreenElement) {
+        viewer.classList.remove('fullscreen');
+    }
+});
 
 const hashtagsContainer = document.querySelector('.hashtags');
-hashtagsContainer.addEventListener('click', (e) => {
+let currentHashtag = null;
+hashtagsContainer.addEventListener('click', e => {
     if (e.target && e.target.tagName === 'SPAN') {
-        filterImages(e.target.innerHTML);
+        let query = e.target.getAttribute('data-tag')
+
+        if (query === currentHashtag?.word) {
+            let selectedSpan = document.querySelector('.selected');
+            if (selectedSpan) {
+                selectedSpan.classList.remove('selected');
+            }
+            filterImages();
+        }
+        else {
+            let selectedSpan = document.querySelector('.selected');
+            if (selectedSpan) {
+                selectedSpan.classList.remove('selected');
+            }
+            e.target.classList.add('selected');
+            filterImages(query);
+        }
     }
 });
 
 function filterImages(query) {
-    if (query.startsWith('#')) {
-        query = query.slice(1);
+    if (!query) {
+        currentHashtag = null;
+        iso.arrange({ filter: '*' });
+        iso.layout();
     }
 
     const result = hashtags.find(tag => tag.word.includes(query));
     if (result != null) {
+        currentHashtag = result;
         const selector = result.imageIDs.map(id => `[data-id='${id}']`).join(', ');
         iso.arrange({ filter: selector });
         iso.layout();
     }
 }
-

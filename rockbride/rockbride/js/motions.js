@@ -227,7 +227,7 @@ export function generalAnimations() {
     sectionReveal('.card', '.about', 0.2, 2);
 }
 
-function sectionReveal(target, trigger, delay, duration) {
+export function sectionReveal(target, trigger, delay, duration) {
     if (trigger) {
         gsap.fromTo(target,
             { opacity: 0 },

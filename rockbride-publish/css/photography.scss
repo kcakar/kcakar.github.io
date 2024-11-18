@@ -13,6 +13,7 @@
     height: auto;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 
     @media (max-width: 700px) {
         width: calc(50% - 13px);
@@ -21,9 +22,25 @@
     &.visible {
         opacity: 1;
     }
+
+    &:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+        cursor: pointer;
+    }
+
+    & img {
+
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
 }
 
 .search {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,6 +48,20 @@
     padding-top: 20px;
     padding-bottom: 20px;
 
+    .click-us {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-size: 40px;
+    }
 }
 
 .hashtags {
@@ -42,9 +73,112 @@
         color: orange;
         margin-right: 10px;
 
-        &:hover {
+        &:hover,
+        &.selected {
             color: white;
             cursor: pointer;
         }
+
+        .close {
+            display: none;
+            font-weight: bold;
+            color: white
+        }
+
+        &.selected {
+            .close {
+                display: inline;
+            }
+        }
     }
+}
+
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    /* Make sure it overlays everything else */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: auto;
+        max-height: 100%;
+    }
+
+    .close {
+        position: absolute;
+        right: 50px;
+        top: 10px;
+        font-size: 30px;
+        background-color: darkred;
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        width: 3em;
+        height: 3em;
+        border: none;
+        background: rgba(180, 83, 107, 0.11);
+        border-radius: 5px;
+        transition: background 0.5s;
+
+        .X {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2em;
+            height: 1.5px;
+            background-color: rgb(255, 255, 255);
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .Y {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2em;
+            height: 1.5px;
+            background-color: #fff;
+            transform: translateX(-50%) rotate(-45deg);
+        }
+
+        &:hover {
+            background-color: rgb(211, 21, 21);
+        }
+
+        &:active {
+            background-color: rgb(130, 0, 0);
+        }
+    }
+
+    .next,
+    .prev {
+        position: absolute;
+        font-size: 30px;
+        top: 50%;
+        cursor: pointer;
+    }
+
+    .next {
+        right: 50px;
+    }
+
+    .prev {
+        left: 50px;
+    }
+}
+
+.photo-viewer:not(.fullscreen) {
+    display: none;
 }
