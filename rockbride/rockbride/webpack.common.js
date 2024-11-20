@@ -4,6 +4,7 @@ module.exports = {
   entry: {
     main: './js/app.js',
     photography: './js/photography.js',
+    contact: './js/contact.js',
   },
   output: {
     filename: '[name].js', // Create separate JS files for each entry

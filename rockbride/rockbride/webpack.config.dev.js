@@ -16,6 +16,11 @@ module.exports = merge(common, {
       template: './photography.html',
       filename: 'photography.html',
       chunks: ['photography'], // Include only photography.js
+    }),,
+    new HtmlWebpackPlugin({
+      template: './contact.html',
+      filename: 'contact.html',
+      chunks: ['contact'], // Include only photography.js
     }),
   ],
   devServer: {

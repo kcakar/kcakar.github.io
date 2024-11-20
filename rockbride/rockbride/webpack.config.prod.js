@@ -10,50 +10,58 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.scss$/i, // Match Sass/SCSS files
+        test: /\.scss$/i, 
         use: [
-          MiniCssExtractPlugin.loader, // Extract CSS to a separate file
+          MiniCssExtractPlugin.loader, 
           'css-loader',
           'sass-loader',
         ],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,  // Match font file types
-        type: 'asset/resource',  // This will move the fonts to the output directory
+        test: /\.(woff|woff2|eot|ttf|otf)$/,  
+        type: 'asset/resource',  
         generator: {
-          filename: 'fonts/[name].[hash][ext][query]',  // Place fonts in the 'fonts/' folder
+          filename: 'fonts/[name].[hash][ext][query]',  
         },
       },
       {
-        test: /\.(jpg|jpeg|png|gif|svg|webp)$/,  // Match image file types
-        type: 'asset/resource',  // Moves images to the output folder
+        test: /\.(jpg|jpeg|png|gif|svg|webp)$/,  
+        type: 'asset/resource',  
         generator: {
-          filename: 'img/[name].[hash][ext][query]',  // Place images in the 'images/' folder
+          filename: 'img/[name].[hash][ext][query]',  
         },
       },
     ],
   },
   output: {
-    filename: 'js/[name].[contenthash].js', // Use contenthash for cache busting
-    path: path.resolve(__dirname, '../../rockbride-publish'), // Set absolute path to rockbride-publish
+    filename: 'js/[name].[contenthash].js', 
+    path: path.resolve(__dirname, './public'), 
     clean: true,
-    publicPath: '/rockbride-publish/', // Adjust this based on your deployment path
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html', // Use your root index.html
-      filename: 'index.html', // Output index.html in dist
-      base: '/rockbride-publish/', // Set the base URL for the generated HTML file
-      chunks: ['main'], // Include only main.js
+      template: './index.html', 
+      filename: 'index.html', 
+      chunks: ['main'], 
     }),
     new HtmlWebpackPlugin({
-      template: './photography.html', // This is for photography.html
-      filename: 'photography.html',  // Output photography.html in dist
-      base: '/rockbride-publish/', // Set the base URL for the generated HTML file
-      chunks: ['photography'], // Include only photography.js
+      template: './photography.html', 
+      filename: 'photography.html',  
+      base: '', 
+      chunks: ['photography'], 
+    }),
+    new HtmlWebpackPlugin({
+      template: './contact.html', 
+      filename: 'contact.html',  
+      chunks: ['contact'], 
+    }),
+    new HtmlWebpackPlugin({
+      template: './404.html', 
+      filename: '404.html',  
+      chunks: ['contact'], 
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/style.css', // Output CSS in the `css` folder
+      filename: 'css/style.css', 
     }),
     new CopyPlugin({
       patterns: [
@@ -64,7 +72,6 @@ module.exports = merge(common, {
         { from: 'favicon.ico', to: 'favicon.ico' },
         { from: 'robots.txt', to: 'robots.txt' },
         { from: 'icon.png', to: 'icon.png' },
-        { from: '404.html', to: '404.html' },
         { from: 'site.webmanifest', to: 'site.webmanifest' },
       ],
     }),

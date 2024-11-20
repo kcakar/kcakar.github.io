@@ -2,6 +2,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 gsap.registerPlugin(ScrollTrigger);
 
+const mediaQuery = window.matchMedia("(min-width: 701px)");
+
 export class Slider {
     constructor(selector, delay = 2, animationDuration = 1, showIndicators = false) {
         this.slides = document.querySelectorAll(`${selector} .slide`);
@@ -124,30 +126,37 @@ export function servicesSlider() {
     tl2.to('.list', { duration: 50, xPercent: "-=100", ease: "none", repeat: -1 });
 }
 
+export function fixedNavbar(){
+    if(mediaQuery.matches){
+        gsap.to(".navbar", {
+            scrollTrigger: {
+                trigger: ".menu",
+                start: "top top",
+                end: "max",
+                pin: true,
+                pinSpacing: false
+            }
+        });
+    }
+}
+mediaQuery.addEventListener("change", fixedNavbar);
+
 export function menuAndLogoAnimations() {
     const tl = gsap.timeline();
     tl.fromTo('.logo', { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
-    const menuLinks = document.querySelectorAll(".menu li");
-    let delay = 0.5;
-    menuLinks.forEach((link, key) => {
-        tl.fromTo(link, { opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 })
-    })
-
-    gsap.to(".navbar", {
-        scrollTrigger: {
-            trigger: ".menu",
-            start: "top top",
-            end: "max",
-            pin: true,
-            pinSpacing: false
-        }
-    });
+    if(mediaQuery.matches){
+        const menuLinks = document.querySelectorAll(".menu li");
+        let delay = 0.5;
+        menuLinks.forEach((link, key) => {
+            tl.fromTo(link, { opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 })
+        })
+    }
 }
 
 export function textWriteEffects() {
     const textsToAnimate = document.querySelectorAll('.write');
 
-    textsToAnimate.forEach(textElement => {
+    textsToAnimate.forEach((textElement, index) => {
         const rainbowContent = textElement.querySelector('.rainbow');
 
         let text = '';
@@ -173,27 +182,40 @@ export function textWriteEffects() {
                 span.textContent = char;
                 span.style.color = getRockColors(index);
                 textElement.appendChild(span);
-                if (index + 1 == length) {
-                    textsToAnimate.forEach(animateLetters);
-                }
             });
+        }
+        if (index + 1 == textsToAnimate.length) {
+            textsToAnimate.forEach(el=>animateLetters(el));
         }
     });
 }
 
-function animateLetters(textElement) {
-    gsap.fromTo(textElement.childNodes,
+export function animateText(selector,duration,stagger,delay){
+    const textElement = document.querySelector(selector);
+    const text = textElement.textContent;
+    textElement.textContent = '';
+    text.split('').forEach((char) => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        textElement.appendChild(span);
+    });
+    return animateLetters(textElement,duration,stagger,delay);
+}
+
+function animateLetters(textElement,duration=1,stagger=0.03,delay=0) {
+    return gsap.fromTo(textElement.childNodes,
         { opacity: 0, y: 50 },
         {
             scrollTrigger: {
                 trigger: textElement,
                 start: "top center+=100px",
-                end: "center center"
+                end: "center center",
             },
             opacity: 1,
             y: 50,
-            duration: 1,
-            stagger: 0.03,
+            duration: duration,
+            stagger: stagger,
+            delay:delay,
             ease: "power4.out",
         });
 }
@@ -341,6 +363,24 @@ function movePhoto(element, x, y, transform, targetTransform, targetX, targetY, 
             delay: index * 0.15
         });
 }
+
+export function bindHamburger(){
+    const menu = document.querySelector('.menu');
+    document.querySelector('.hamburger').addEventListener("click",e =>{
+        menu.classList.toggle('visible')
+        if(menu.classList.contains('visible')){
+            document.body.classList.add('menu-open');
+            const menuLinks = document.querySelectorAll(".menu li");
+            menuLinks.forEach((link, key) => {
+                gsap.fromTo(link, { opacity: 0 }, { opacity: 1, duration: 1,delay:key*0.2 })
+            })
+        }
+        else{
+            document.body.classList.remove('menu-open');
+        }
+      })
+}
+
 
 // window.addEventListener('beforeunload', function () {
 //     console.log("hey")

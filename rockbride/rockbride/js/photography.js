@@ -1,10 +1,12 @@
 import Isotope from 'isotope-layout';
 import imagesLoaded from 'imagesloaded';
 import hashtags from './hashtags.json';
+import {bindHamburger} from './motions'
 import '../css/style.scss';
 
 let iso = null;
 document.addEventListener("DOMContentLoaded", function () {
+    bindHamburger();
     var elem = document.querySelector('.photography');
     if (!elem)
         return;

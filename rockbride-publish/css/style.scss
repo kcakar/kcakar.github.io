@@ -1,4 +1,5 @@
 @use '/css/photography.scss';
+@use '/css/contact.scss';
 @import '/fonts/AesteticoFormal/AesteticoFormal.css';
 @import '/fonts/LFTetica/LFTetica.css';
 @import '/fonts/TOMOBossa/TOMOBossa.css';
@@ -133,6 +134,41 @@ nav {
     padding: 0 20px;
   }
 
+
+  .menu {
+    justify-content: center;
+    background-color: black;
+    list-style: none;
+    z-index: 999;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    li:not(:first-of-type) {
+      margin-left: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #edebe5;
+      font-size: 20px;
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      &:visited {
+        color: white;
+      }
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+
   .hamburger {
     display: none;
     background: none;
@@ -161,54 +197,39 @@ nav {
       position: absolute;
       top: 50px;
       right: 10px;
-      background: #fff;
       padding: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .menu.visible {
-      display: flex;
+      width: 100vw;
+      height: calc(100vh - 50px);
+      top: 50px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      color: black;
+      position: fixed;
     }
 
     .menu li {
-      margin: 5px 0;
+      margin: 0;
+
+      &:not(:first-of-type){
+      margin: 0;
+
+      }
+
+      a {
+        font-size: calc(1.2rem + 3vw);
+      }
+    }
+
+
+    .menu.visible {
+      display: flex;
+      z-index: 99;
     }
   }
 }
 
-.menu {
-  justify-content: center;
-  background-color: black;
-  list-style: none;
-  z-index: 999;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-  li:not(:first-of-type) {
-    margin-left: 20px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #edebe5;
-    font-size: 20px;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-
-    &:visited {
-      color: white;
-    }
-
-    &:hover {
-      color: $hover-color;
-    }
-  }
-}
 
 .hero {
   .slider {
@@ -217,11 +238,12 @@ nav {
     max-width: calc(100vw - 17px);
     max-height: 650px;
 
-    @media (orientation: portrait){
+    @media (orientation: portrait) {
       height: auto;
       aspect-ratio: 3456 / 2304;
       width: 100vw;
       max-width: 100vw;
+
       @media (min-width: 700px) {
         max-width: 800px;
       }
@@ -238,11 +260,12 @@ nav {
       margin: 0 auto;
       max-height: 650px;
 
-      @media (orientation: portrait){
+      @media (orientation: portrait) {
         height: auto;
         aspect-ratio: 3456 / 2304;
         width: 100vw;
         max-width: 100vw;
+
         @media (min-width: 700px) {
           max-width: 800px;
         }
@@ -723,15 +746,17 @@ section.about {
       margin-left: 20px;
     }
 
-    .mail img{
+    .mail img {
       width: 35px;
       height: auto;
     }
-    .instagram img{
+
+    .instagram img {
       width: 30px;
       height: auto;
     }
-    .facebook img{
+
+    .facebook img {
       width: 20px;
       height: auto;
     }
@@ -800,5 +825,12 @@ footer {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+body {
+  transition: opacity 0.5s ease;
+  &.menu-open{
+    overflow: hidden;
   }
 }

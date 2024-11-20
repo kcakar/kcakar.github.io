@@ -10,7 +10,7 @@
 import '../css/style.scss';
 import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
-import { Slider, servicesSlider, menuAndLogoAnimations, textWriteEffects, generalAnimations, collage } from './motions.js';
+import { Slider, servicesSlider, menuAndLogoAnimations, textWriteEffects, generalAnimations, collage, bindHamburger } from './motions.js';
 
 function init() {
     gsap.registerPlugin(ScrollTrigger);
@@ -23,6 +23,7 @@ function init() {
     textWriteEffects();
     generalAnimations();
     collage();
+    bindHamburger();
 }
 
 document.addEventListener("DOMContentLoaded", function() {
