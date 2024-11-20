@@ -51,6 +51,18 @@
         "destination": "/tr/contact.html"
       },
       {
+        "source": "/fr",
+        "destination": "/fr/index.html"
+      },
+      {
+        "source": "/fr/photography",
+        "destination": "/fr/photography.html"
+      },
+      {
+        "source": "/fr/contact",
+        "destination": "/fr/contact.html"
+      },
+      {
         "source": "/photography/*",
         "destination": "/photography.html"
       },
@@ -69,6 +81,10 @@
       {
         "source": "/tr/*",
         "destination": "/tr/index.html"
+      },
+      {
+        "source": "/fr/*",
+        "destination": "/fr/index.html"
       }
     ],
     "errorPages": [

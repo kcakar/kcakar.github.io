@@ -28,6 +28,11 @@ module.exports = merge(common, {
       chunks: ['main'], // Include only main.js
     }),
     new HtmlWebpackPlugin({
+      template: './fr/index.html',
+      filename: 'fr/index.html',
+      chunks: ['main'], // Include only main.js
+    }),
+    new HtmlWebpackPlugin({
       template: './photography.html',
       filename: 'photography',
       chunks: ['photography'], // Include only photography.js
@@ -42,6 +47,10 @@ module.exports = merge(common, {
     }), new HtmlWebpackPlugin({
       template: './tr/photography.html',
       filename: 'tr/photography',
+      chunks: ['photography'], // Include only photography.js
+    }), new HtmlWebpackPlugin({
+      template: './fr/photography.html',
+      filename: 'fr/photography',
       chunks: ['photography'], // Include only photography.js
     }),
     new HtmlWebpackPlugin({
@@ -59,6 +68,10 @@ module.exports = merge(common, {
     }), new HtmlWebpackPlugin({
       template: './tr/contact.html',
       filename: 'tr/contact',
+      chunks: ['contact'], // Include only photography.js
+    }), new HtmlWebpackPlugin({
+      template: './fr/contact.html',
+      filename: 'fr/contact',
       chunks: ['contact'], // Include only photography.js
     }),
   ],

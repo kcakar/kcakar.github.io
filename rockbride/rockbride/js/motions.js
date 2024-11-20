@@ -432,14 +432,14 @@ export function languageSelectorINIT() {
             const lang = btn.getAttribute('data-language');
             let currentUrl = window.location.href;
     
-            if (currentUrl.includes('/tr') || currentUrl.includes('/de') || currentUrl.includes('/es')) {
-                currentUrl = currentUrl.replace(/\/(tr|de|es)/, ''); 
+            if (currentUrl.includes('/tr') || currentUrl.includes('/de') || currentUrl.includes('/es') || currentUrl.includes('/fr')) {
+                currentUrl = currentUrl.replace(/\/(tr|de|es|fr)/, ''); 
             }
     
-            if (lang === 'tr' || lang === 'de' || lang === 'es') {
+            if (lang === 'tr' || lang === 'de' || lang === 'es' || lang === 'fr') {
                 window.location.href = currentUrl.replace(window.location.origin, window.location.origin + '/' + lang);
             } else {
-                window.location.href = currentUrl.replace(window.location.origin + '/em', window.location.origin);
+                window.location.href = currentUrl.replace(window.location.origin + '/en', window.location.origin);
             }
         })
     })
