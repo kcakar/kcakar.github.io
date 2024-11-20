@@ -56,12 +56,60 @@ module.exports = merge(common, {
       chunks: ['contact'], 
     }),
     new HtmlWebpackPlugin({
+      template: './tr/index.html', 
+      filename: 'tr/index.html', 
+      chunks: ['main'], 
+    }),
+    new HtmlWebpackPlugin({
+      template: './tr/photography.html', 
+      filename: 'tr/photography.html',  
+      base: '', 
+      chunks: ['photography'], 
+    }),
+    new HtmlWebpackPlugin({
+      template: './tr/contact.html', 
+      filename: 'tr/contact.html',  
+      chunks: ['contact'], 
+    }),
+    new HtmlWebpackPlugin({
+      template: './es/index.html', 
+      filename: 'es/index.html', 
+      chunks: ['main'], 
+    }),
+    new HtmlWebpackPlugin({
+      template: './es/photography.html', 
+      filename: 'es/photography.html',  
+      base: '', 
+      chunks: ['photography'], 
+    }),
+    new HtmlWebpackPlugin({
+      template: './es/contact.html', 
+      filename: 'es/contact.html',  
+      chunks: ['contact'], 
+    }),
+    new HtmlWebpackPlugin({
+      template: './de/index.html', 
+      filename: 'de/index.html', 
+      chunks: ['main'], 
+    }),
+    new HtmlWebpackPlugin({
+      template: './de/photography.html', 
+      filename: 'de/photography.html',  
+      base: '', 
+      chunks: ['photography'], 
+    }),
+    new HtmlWebpackPlugin({
+      template: './de/contact.html', 
+      filename: 'de/contact.html',  
+      chunks: ['contact'], 
+    }),
+    new HtmlWebpackPlugin({
       template: './404.html', 
       filename: '404.html',  
       chunks: ['contact'], 
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/style.css', 
+      filename: 'css/style.[contenthash].css',
     }),
     new CopyPlugin({
       patterns: [

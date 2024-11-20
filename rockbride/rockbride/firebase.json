@@ -13,6 +13,62 @@
       {
         "source": "/contact",
         "destination": "/contact.html"
+      },
+      {
+        "source": "/de",
+        "destination": "/de/index.html"
+      },
+      {
+        "source": "/de/photography",
+        "destination": "/de/photography.html"
+      },
+      {
+        "source": "/de/contact",
+        "destination": "/de/contact.html"
+      },
+      {
+        "source": "/es",
+        "destination": "/es/index.html"
+      },
+      {
+        "source": "/es/photography",
+        "destination": "/es/photography.html"
+      },
+      {
+        "source": "/es/contact",
+        "destination": "/es/contact.html"
+      },
+      {
+        "source": "/tr",
+        "destination": "/tr/index.html"
+      },
+      {
+        "source": "/tr/photography",
+        "destination": "/tr/photography.html"
+      },
+      {
+        "source": "/tr/contact",
+        "destination": "/tr/contact.html"
+      },
+      {
+        "source": "/photography/*",
+        "destination": "/photography.html"
+      },
+      {
+        "source": "/contact/*",
+        "destination": "/contact.html"
+      },
+      {
+        "source": "/de/*",
+        "destination": "/de/index.html"
+      },
+      {
+        "source": "/es/*",
+        "destination": "/es/index.html"
+      },
+      {
+        "source": "/tr/*",
+        "destination": "/tr/index.html"
       }
     ],
     "errorPages": [
@@ -25,7 +81,8 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
-      "**/*.bat"
+      "**/*.bat",
+      "src/**"
     ]
   }
 }

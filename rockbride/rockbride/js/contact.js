@@ -1,7 +1,7 @@
 import '../css/style.scss';
 import { animateText, sectionReveal } from './motions.js';
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
 import { confetti } from '@tsparticles/confetti';
 import { languageSelectorINIT, bindHamburger, initScrollButton } from './motions'
 
@@ -113,7 +113,10 @@ function celebrate() {
 
 const saveContactModel = async (contactModel) => {
     try {
-        await addDoc(collection(db, "contacts"), contactModel);
+        const timestamp = Date.now();
+        const customId = `${contactModel.email}-${timestamp}`;
+        const contactRef = doc(db, "contacts", customId);
+        await setDoc(contactRef, contactModel);
     } catch (e) {
         console.error("Error adding document: ", e);
     }
