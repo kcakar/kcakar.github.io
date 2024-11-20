@@ -10,24 +10,24 @@
 import '../css/style.scss';
 import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
-import { Slider, servicesSlider, menuAndLogoAnimations, textWriteEffects, generalAnimations, collage, bindHamburger } from './motions.js';
+import { Slider, initScrollButton, servicesSlider, menuAndLogoAnimations, textWriteEffects, generalAnimations, collage, bindHamburger } from './motions.js';
 
 function init() {
-    gsap.registerPlugin(ScrollTrigger);
-    new Slider(".hero").start();
-    new Slider(".mini-slider.left", 2.5, 1, true).start();
-    new Slider(".mini-slider.right", 2.5, 1, true).start();
+  gsap.registerPlugin(ScrollTrigger);
+  new Slider(".hero").start();
+  new Slider(".mini-slider.left", 2.5, 1, true).start();
+  new Slider(".mini-slider.right", 2.5, 1, true).start();
 
-    servicesSlider();
-    menuAndLogoAnimations();
-    textWriteEffects();
-    generalAnimations();
-    collage();
-    bindHamburger();
+  servicesSlider();
+  menuAndLogoAnimations();
+  textWriteEffects();
+  generalAnimations();
+  collage();
+  bindHamburger();
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    init(); 
+document.addEventListener("DOMContentLoaded", function () {
+  init();
 });
 
 const lazyImages = document.querySelectorAll('.lazy-img');
@@ -56,4 +56,6 @@ const observer = new IntersectionObserver((entries, observer) => {
 lazyImages.forEach(img => {
   observer.observe(img); // Observe each image
 });
- 
+
+initScrollButton();
+

@@ -126,8 +126,9 @@ export function servicesSlider() {
     tl2.to('.list', { duration: 50, xPercent: "-=100", ease: "none", repeat: -1 });
 }
 
-export function fixedNavbar(){
-    if(mediaQuery.matches){
+fixedNavbar();
+export function fixedNavbar() {
+    if (mediaQuery.matches) {
         gsap.to(".navbar", {
             scrollTrigger: {
                 trigger: ".menu",
@@ -144,7 +145,7 @@ mediaQuery.addEventListener("change", fixedNavbar);
 export function menuAndLogoAnimations() {
     const tl = gsap.timeline();
     tl.fromTo('.logo', { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
-    if(mediaQuery.matches){
+    if (mediaQuery.matches) {
         const menuLinks = document.querySelectorAll(".menu li");
         let delay = 0.5;
         menuLinks.forEach((link, key) => {
@@ -185,13 +186,12 @@ export function textWriteEffects() {
             });
         }
         if (index + 1 == textsToAnimate.length) {
-            textsToAnimate.forEach(el=>animateLetters(el));
+            textsToAnimate.forEach(el => animateLetters(el));
         }
     });
 }
 
-export function animateText(selector,duration,stagger,delay){
-    const textElement = document.querySelector(selector);
+export function animateText(textElement, duration, stagger, delay) {
     const text = textElement.textContent;
     textElement.textContent = '';
     text.split('').forEach((char) => {
@@ -199,10 +199,10 @@ export function animateText(selector,duration,stagger,delay){
         span.textContent = char;
         textElement.appendChild(span);
     });
-    return animateLetters(textElement,duration,stagger,delay);
+    return animateLetters(textElement, duration, stagger, delay);
 }
 
-function animateLetters(textElement,duration=1,stagger=0.03,delay=0) {
+function animateLetters(textElement, duration = 1, stagger = 0.03, delay = 0) {
     return gsap.fromTo(textElement.childNodes,
         { opacity: 0, y: 50 },
         {
@@ -215,7 +215,7 @@ function animateLetters(textElement,duration=1,stagger=0.03,delay=0) {
             y: 50,
             duration: duration,
             stagger: stagger,
-            delay:delay,
+            delay: delay,
             ease: "power4.out",
         });
 }
@@ -346,7 +346,7 @@ function collageWithMove() {
     })
 }
 
-function movePhoto(element, x, y, transform, targetTransform, targetX, targetY, index,isOpacity) {
+function movePhoto(element, x, y, transform, targetTransform, targetX, targetY, index, isOpacity) {
     gsap.fromTo(element,
         { opacity: 0, x, transform, y },
         {
@@ -364,21 +364,21 @@ function movePhoto(element, x, y, transform, targetTransform, targetX, targetY, 
         });
 }
 
-export function bindHamburger(){
+export function bindHamburger() {
     const menu = document.querySelector('.menu');
-    document.querySelector('.hamburger').addEventListener("click",e =>{
+    document.querySelector('.hamburger').addEventListener("click", e => {
         menu.classList.toggle('visible')
-        if(menu.classList.contains('visible')){
+        if (menu.classList.contains('visible')) {
             document.body.classList.add('menu-open');
             const menuLinks = document.querySelectorAll(".menu li");
             menuLinks.forEach((link, key) => {
-                gsap.fromTo(link, { opacity: 0 }, { opacity: 1, duration: 1,delay:key*0.2 })
+                gsap.fromTo(link, { opacity: 0 }, { opacity: 1, duration: 1, delay: key * 0.2 })
             })
         }
-        else{
+        else {
             document.body.classList.remove('menu-open');
         }
-      })
+    })
 }
 
 
@@ -386,9 +386,31 @@ export function bindHamburger(){
 //     console.log("hey")
 //     document.body.style.opacity = 0;
 //   });
-  
+
 //   // Fade in the new page after loading
 //   window.onload = function () {
 //     console.log("hey")
 //     document.body.style.opacity = 1;
 //   };
+
+
+
+const scrollToTopButton = document.getElementById('scroll-up');
+scrollToTopButton.style.display = "none";
+export function initScrollButton() {
+    window.onscroll = function () {
+        if (document.documentElement.scrollTop > 200 || document.body.scrollTop > 200) {
+            scrollToTopButton.style.display = "block";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    };
+
+    scrollToTopButton.onclick = function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+}

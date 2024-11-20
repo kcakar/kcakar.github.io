@@ -3,7 +3,7 @@ import { animateText, sectionReveal } from './motions.js';
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { confetti } from '@tsparticles/confetti';
-import {bindHamburger} from './motions'
+import { bindHamburger, initScrollButton } from './motions'
 
 const firebaseConfig = {
     apiKey: "AIzaSyCd-nspx0BBEQC-KvvlNvE1VWgHpFOLq1A",
@@ -35,14 +35,15 @@ const eventDate = document.querySelector('#input-3');
 const eventLocation = document.querySelector('#input-4');
 const email = document.querySelector('#input-5');
 
+initScrollButton();
 bindHamburger();
 stage1Animations();
 
-document.querySelector('[data-stage="1"] button').addEventListener('click',handleStage1Input);
-document.querySelector('[data-stage="2"] button').addEventListener('click',handleStage2Input);
-document.querySelector('[data-stage="3"] button').addEventListener('click',handleStage3Input);
-document.querySelector('[data-stage="4"] button').addEventListener('click',handleStage4Input);
-document.querySelector('[data-stage="5"] button').addEventListener('click',handleStage5Input);
+document.querySelector('[data-stage="1"] button').addEventListener('click', handleStage1Input);
+document.querySelector('[data-stage="2"] button').addEventListener('click', handleStage2Input);
+document.querySelector('[data-stage="3"] button').addEventListener('click', handleStage3Input);
+document.querySelector('[data-stage="4"] button').addEventListener('click', handleStage4Input);
+document.querySelector('[data-stage="5"] button').addEventListener('click', handleStage5Input);
 
 
 nameInput.addEventListener('keypress', e => {
@@ -118,10 +119,11 @@ const saveContactModel = async (contactModel) => {
 }
 
 function stage1Animations() {
-    animateText('[data-stage="1"] h3:nth-child(1)', 1, 0.007);
-    animateText('[data-stage="1"] h3:nth-child(2)', 1, 0.007, 0.6);
-    animateText('[data-stage="1"] h3:nth-child(3)', 1, 0.007, 0.9);
+    document.querySelectorAll('[data-stage="1"] h3').forEach((el, index) => {
+        animateText(el, 1, 0.007, index / 2 * 1.1);
+    })
     sectionReveal('[data-stage="1"] .form', null, 1.2, 1);
+    sectionReveal('[data-stage="1"] .emoji', null, 0.2, 0.1);
     setTimeout(() => {
         nameInput.focus();
     }, 1200)
@@ -130,11 +132,11 @@ function stage1Animations() {
 function stage2Animations() {
     document.querySelector('[data-stage="1"').classList.remove('active');
     document.querySelector('[data-stage="2"').classList.add('active');
-
-    animateText('[data-stage="2"] h3:nth-child(1)', 1, 0.007);
-    animateText('[data-stage="2"] h3:nth-child(2)', 1, 0.007, 0.6);
-    animateText('[data-stage="2"] h3:nth-child(3)', 1, 0.007, 0.9);
+    document.querySelectorAll('[data-stage="2"] h3').forEach((el, index) => {
+        animateText(el, 1, 0.007, index / 2 * 1.1);
+    })
     sectionReveal('[data-stage="2"] .form', null, 1.5, 1);
+    sectionReveal('[data-stage="2"] .emoji', null, 0.3, 0.1);
     eventTypeInput.focus();
 }
 
@@ -142,8 +144,11 @@ function stage3Animations() {
     document.querySelector('[data-stage="2"').classList.remove('active');
     document.querySelector('[data-stage="3"').classList.add('active');
 
-    animateText('[data-stage="3"] h3:nth-child(1)', 1, 0.007);
+    document.querySelectorAll('[data-stage="3"] h3').forEach((el, index) => {
+        animateText(el, 1, 0.007, index / 2 * 1.1);
+    })
     sectionReveal('[data-stage="3"] .form', null, 1, 1);
+    sectionReveal('[data-stage="3"] .emoji', null, 0.4, 0.1);
     eventDate.focus();
 }
 
@@ -151,9 +156,11 @@ function stage4Animations() {
     document.querySelector('[data-stage="3"').classList.remove('active');
     document.querySelector('[data-stage="4"').classList.add('active');
 
-    animateText('[data-stage="4"] h3:nth-child(1)', 1, 0.007);
-    animateText('[data-stage="4"] h3:nth-child(2)', 1, 0.007, 0.6);
+    document.querySelectorAll('[data-stage="4"] h3').forEach((el, index) => {
+        animateText(el, 1, 0.007, index / 2 * 1.1);
+    })
     sectionReveal('[data-stage="4"] .form', null, 1, 1);
+    sectionReveal('[data-stage="4"] .emoji', null, 1, 0.1);
     eventLocation.focus();
 }
 
@@ -161,9 +168,12 @@ function stage5Animations() {
     document.querySelector('[data-stage="4"').classList.remove('active');
     document.querySelector('[data-stage="5"').classList.add('active');
 
-    animateText('[data-stage="5"] h3:nth-child(1)', 1, 0.007);
-    animateText('[data-stage="5"] h3:nth-child(2)', 1, 0.007, 0.6);
+    document.querySelectorAll('[data-stage="5"] h3').forEach((el, index) => {
+        animateText(el, 1, 0.007, index / 2 * 1.1);
+    })
     sectionReveal('[data-stage="5"] .form', null, 1, 1);
+    sectionReveal('[data-stage="5"] .with-emoji:nth-of-type(1) .emoji', null, 0.2, 0.1);
+    sectionReveal('[data-stage="5"] .with-emoji:nth-of-type(2) .emoji', null, 1.1, 0.1);
     email.focus();
 }
 
@@ -171,41 +181,45 @@ function stage6Animations() {
     document.querySelector('[data-stage="5"').classList.remove('active');
     document.querySelector('[data-stage="6"').classList.add('active');
 
-    animateText('[data-stage="6"] h3:nth-child(1)', 1, 0.007);
-    animateText('[data-stage="6"] h3:nth-child(2)', 1, 0.007, 0.6);
-    animateText('[data-stage="6"] h3:nth-child(3)', 1, 0.007, 1);
-    animateText('[data-stage="6"] h3:nth-child(4)', 1, 0.007, 1.4);
+    document.querySelectorAll('[data-stage="6"] h3').forEach((el, index) => {
+        animateText(el, 1, 0.007, index / 2 * 1.1);
+    })
+    sectionReveal('[data-stage="6"] .with-emoji:nth-of-type(1) .emoji:nth-of-type(1)', null, 0.1, 0.1);
+    sectionReveal('[data-stage="6"] .with-emoji:nth-of-type(1) .emoji:nth-of-type(2)', null, 0.3, 0.1);
+    sectionReveal('[data-stage="6"] .with-emoji:nth-of-type(2) .emoji:nth-of-type(1)', null, 1.5, 0.1);
+    sectionReveal('[data-stage="6"] .with-emoji:nth-of-type(2) .emoji:nth-of-type(2)', null, 1.8, 0.1);
+
     celebrate();
     saveContactModel(contactModel);
 }
 
 function handleStage1Input() {
-    if(!nameInput.value){return; }
+    if (!nameInput.value) { return; }
     contactModel.name = nameInput.value;
     document.querySelectorAll('.name-span').forEach(e => e.innerHTML = contactModel.name);
     stage2Animations();
 }
 
 function handleStage2Input() {
-    if(!eventTypeInput.value){return; }
+    if (!eventTypeInput.value) { return; }
     contactModel.eventType = eventTypeInput.value;
     stage3Animations();
 }
 
 function handleStage3Input() {
-    if(!eventDate.value){return; }
+    if (!eventDate.value) { return; }
     contactModel.eventDate = eventDate.value;
     stage4Animations();
 }
 
 function handleStage4Input() {
-    if(!eventLocation.value){return; }
+    if (!eventLocation.value) { return; }
     contactModel.eventLocation = eventLocation.value;
     stage5Animations();
 }
 
 function handleStage5Input() {
-    if(!email.value){return; }
+    if (!email.value) { return; }
     contactModel.email = email.value;
     stage6Animations();
 }

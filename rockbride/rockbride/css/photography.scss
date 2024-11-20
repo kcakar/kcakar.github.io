@@ -110,11 +110,12 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 9999;
-    /* Make sure it overlays everything else */
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8); /* Optional: semi-transparent background */
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
 
     img {
         width: auto;
@@ -134,6 +135,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        z-index: 99;
 
         width: 3em;
         height: 3em;
@@ -193,3 +195,4 @@
 .photo-viewer:not(.fullscreen) {
     display: none;
 }
+

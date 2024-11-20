@@ -14,12 +14,12 @@ module.exports = merge(common, {
     }),
     new HtmlWebpackPlugin({
       template: './photography.html',
-      filename: 'photography.html',
+      filename: 'photography',
       chunks: ['photography'], // Include only photography.js
     }),,
     new HtmlWebpackPlugin({
       template: './contact.html',
-      filename: 'contact.html',
+      filename: 'contact',
       chunks: ['contact'], // Include only photography.js
     }),
   ],

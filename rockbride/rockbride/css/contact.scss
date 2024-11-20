@@ -26,13 +26,38 @@
             display: flex;
         }
 
+        .with-emoji{
+            max-width: 290px;
+        }
+
         h3 {
             max-width: 290px;
             margin: 0 0 20px 0;
+            display: inline;
+            padding:0;
         }
 
         &:nth-child(3) h3:nth-child(3) {
             max-width: 340px;
+        }
+
+        &:nth-child(6) h3:nth-child(1) {
+            margin-bottom: 5px;
+        }
+
+
+
+        // h3{
+        //   position: relative;
+        //   left: -15px;
+        // }
+
+        .emoji {
+            position: relative;
+            // right: -15px;
+            top:-3px;
+            // display: inline-block;
+            width: 46px;
         }
     }
 

@@ -1,12 +1,13 @@
 import Isotope from 'isotope-layout';
 import imagesLoaded from 'imagesloaded';
 import hashtags from './hashtags.json';
-import {bindHamburger} from './motions'
+import { bindHamburger, initScrollButton } from './motions'
 import '../css/style.scss';
 
 let iso = null;
 document.addEventListener("DOMContentLoaded", function () {
     bindHamburger();
+    initScrollButton();
     var elem = document.querySelector('.photography');
     if (!elem)
         return;
@@ -63,28 +64,55 @@ document.addEventListener("DOMContentLoaded", function () {
 const viewer = document.querySelector('.photo-viewer');
 document.querySelector('.photography').addEventListener('click', e => {
     if (e.target && e.target.classList.contains('photography-item')) {
-        setViewerImage(e.target.getAttribute('data-detail-src'), e.target.getAttribute('data-id'))
-        viewer.classList.add('fullscreen')
+        setViewerImage(e.target.getAttribute('data-detail-src'), e.target.getAttribute('data-id'));
+        viewer.classList.add('fullscreen');
 
-        // Check if the document is not already in fullscreen
+        // Try Fullscreen API
         if (document.documentElement.requestFullscreen) {
             viewer.requestFullscreen().catch(err => {
                 console.error("Error attempting to enable fullscreen mode:", err);
+                // Fallback to CSS if fullscreen API fails
+                viewer.classList.add('fullscreen');
             });
         } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-            viewer.mozRequestFullScreen();
+            viewer.mozRequestFullScreen().catch(err => {
+                console.error("Error attempting to enable fullscreen mode:", err);
+                viewer.classList.add('fullscreen');
+            });
         } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari
-            viewer.webkitRequestFullscreen();
+            viewer.webkitRequestFullscreen().catch(err => {
+                console.error("Error attempting to enable fullscreen mode:", err);
+                viewer.classList.add('fullscreen');
+            });
         } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-            viewer.msRequestFullscreen();
+            viewer.msRequestFullscreen().catch(err => {
+                console.error("Error attempting to enable fullscreen mode:", err);
+                viewer.classList.add('fullscreen');
+            });
+        } else {
+            // No fullscreen support, fallback to CSS solution
+            console.error('Fullscreen not supported in this browser.');
+            viewer.classList.add('fullscreen');
         }
     }
-})
+});
 
+const loader = viewer.querySelector('.loader');
+const image = viewer.querySelector('img');
 function setViewerImage(src, id) {
-    const image = viewer.querySelector('img');
     image.src = src;
-    viewer.setAttribute('data-id', id)
+    loader.style.display = 'block';
+    image.style.display = 'none';
+    image.src = src;
+    viewer.setAttribute('data-id', id);
+    image.onload = function () {
+        loader.style.display = 'none';
+        image.style.display = 'block';
+    };
+
+    image.onerror = function () {
+        loader.style.display = 'none';
+    };
 }
 
 viewer.querySelector('.close').addEventListener('click', e => {
@@ -92,14 +120,19 @@ viewer.querySelector('.close').addEventListener('click', e => {
 })
 
 function closeViewer() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) { // For WebKit browsers
-        document.webkitExitFullscreen();
-    } else if (document.mozCancelFullScreen) { // For Firefox
-        document.mozCancelFullScreen();
-    } else if (document.msExitFullscreen) { // For IE/Edge
-        document.msExitFullscreen();
+    if (document.fullscreenElement ||
+        document.mozFullScreenElement || // Firefox
+        document.webkitFullscreenElement || // Safari, Chrome, Opera
+        document.msFullscreenElement) {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { // For WebKit browsers
+            document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) { // For Firefox
+            document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) { // For IE/Edge
+            document.msExitFullscreen();
+        }
     }
     viewer.classList.remove('fullscreen')
 }
