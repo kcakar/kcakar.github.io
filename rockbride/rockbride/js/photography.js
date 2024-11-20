@@ -1,9 +1,10 @@
 import Isotope from 'isotope-layout';
 import imagesLoaded from 'imagesloaded';
 import hashtags from './hashtags.json';
-import { bindHamburger, initScrollButton } from './motions'
+import { bindHamburger, initScrollButton,languageSelectorINIT } from './motions'
 import '../css/style.scss';
 
+languageSelectorINIT();
 let iso = null;
 document.addEventListener("DOMContentLoaded", function () {
     bindHamburger();

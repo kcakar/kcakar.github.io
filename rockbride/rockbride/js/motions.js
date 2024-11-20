@@ -412,5 +412,35 @@ export function initScrollButton() {
             behavior: 'smooth'
         });
     };
+}
 
+const languageSelector = document.querySelector('.language-selector');
+const languages = languageSelector.querySelector('.languages');
+export function languageSelectorINIT() {
+    languageSelector.querySelector('.selected.language').addEventListener('click', e => {
+        languages.classList.toggle('open');
+        if (languages.classList.contains('open')) {
+            gsap.fromTo(languages,
+                { opacity: 0, y: 10 },
+                { opacity: 1, y: 0, duration: 1 }
+            )
+        }
+    });
+
+    languages.querySelectorAll('.language').forEach(btn => {
+        btn.addEventListener('click',(e)=>{
+            const lang = btn.getAttribute('data-language');
+            let currentUrl = window.location.href;
+    
+            if (currentUrl.includes('/tr') || currentUrl.includes('/de') || currentUrl.includes('/es')) {
+                currentUrl = currentUrl.replace(/\/(tr|de|es)/, ''); 
+            }
+    
+            if (lang === 'tr' || lang === 'de' || lang === 'es') {
+                window.location.href = currentUrl.replace(window.location.origin, window.location.origin + '/' + lang);
+            } else {
+                window.location.href = currentUrl.replace(window.location.origin + '/em', window.location.origin);
+            }
+        })
+    })
 }

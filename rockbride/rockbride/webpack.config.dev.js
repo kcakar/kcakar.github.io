@@ -13,13 +13,52 @@ module.exports = merge(common, {
       chunks: ['main'], // Include only main.js
     }),
     new HtmlWebpackPlugin({
+      template: './de/index.html',
+      filename: 'de/index.html',
+      chunks: ['main'], // Include only main.js
+    }),
+    new HtmlWebpackPlugin({
+      template: './es/index.html',
+      filename: 'es/index.html',
+      chunks: ['main'], // Include only main.js
+    }),
+    new HtmlWebpackPlugin({
+      template: './tr/index.html',
+      filename: 'tr/index.html',
+      chunks: ['main'], // Include only main.js
+    }),
+    new HtmlWebpackPlugin({
       template: './photography.html',
       filename: 'photography',
       chunks: ['photography'], // Include only photography.js
-    }),,
+    }), new HtmlWebpackPlugin({
+      template: './de/photography.html',
+      filename: 'de/photography',
+      chunks: ['photography'], // Include only photography.js
+    }), new HtmlWebpackPlugin({
+      template: './es/photography.html',
+      filename: 'es/photography',
+      chunks: ['photography'], // Include only photography.js
+    }), new HtmlWebpackPlugin({
+      template: './tr/photography.html',
+      filename: 'tr/photography',
+      chunks: ['photography'], // Include only photography.js
+    }),
     new HtmlWebpackPlugin({
       template: './contact.html',
       filename: 'contact',
+      chunks: ['contact'], // Include only photography.js
+    }), new HtmlWebpackPlugin({
+      template: './de/contact.html',
+      filename: 'de/contact',
+      chunks: ['contact'], // Include only photography.js
+    }), new HtmlWebpackPlugin({
+      template: './es/contact.html',
+      filename: 'es/contact',
+      chunks: ['contact'], // Include only photography.js
+    }), new HtmlWebpackPlugin({
+      template: './tr/contact.html',
+      filename: 'tr/contact',
       chunks: ['contact'], // Include only photography.js
     }),
   ],

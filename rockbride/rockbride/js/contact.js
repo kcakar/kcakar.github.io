@@ -3,7 +3,7 @@ import { animateText, sectionReveal } from './motions.js';
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { confetti } from '@tsparticles/confetti';
-import { bindHamburger, initScrollButton } from './motions'
+import { languageSelectorINIT, bindHamburger, initScrollButton } from './motions'
 
 const firebaseConfig = {
     apiKey: "AIzaSyCd-nspx0BBEQC-KvvlNvE1VWgHpFOLq1A",
@@ -38,6 +38,7 @@ const email = document.querySelector('#input-5');
 initScrollButton();
 bindHamburger();
 stage1Animations();
+languageSelectorINIT();
 
 document.querySelector('[data-stage="1"] button').addEventListener('click', handleStage1Input);
 document.querySelector('[data-stage="2"] button').addEventListener('click', handleStage2Input);
