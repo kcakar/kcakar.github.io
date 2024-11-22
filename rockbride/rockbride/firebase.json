@@ -15,16 +15,16 @@
         "destination": "/contact.html"
       },
       {
-        "source": "/de",
-        "destination": "/de/index.html"
+        "source": "/en",
+        "destination": "/en/index.html"
       },
       {
-        "source": "/de/photography",
-        "destination": "/de/photography.html"
+        "source": "/en/photography",
+        "destination": "/en/photography.html"
       },
       {
-        "source": "/de/contact",
-        "destination": "/de/contact.html"
+        "source": "/en/contact",
+        "destination": "/en/contact.html"
       },
       {
         "source": "/es",
@@ -71,8 +71,8 @@
         "destination": "/contact.html"
       },
       {
-        "source": "/de/*",
-        "destination": "/de/index.html"
+        "source": "/en/*",
+        "destination": "/en/index.html"
       },
       {
         "source": "/es/*",

@@ -223,6 +223,11 @@ function handleStage4Input() {
 }
 
 function handleStage5Input() {
+    const emailRegex = /\S+@\S+\.\S+/;
+    if(!emailRegex.test(email.value))
+    {
+        return;
+    }
     if (!email.value) { return; }
     contactModel.email = email.value;
     stage6Animations();
