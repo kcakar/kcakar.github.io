@@ -1,5 +1,5 @@
 {
-  "name": " ",
+  "name": "RockbrideStudio",
   "version": "0.0.1",
   "description": "",
   "private": true,
@@ -11,7 +11,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js && firebase deploy"
+    "build": "webpack --config webpack.config.prod.js",
+    "deploy": "webpack --config webpack.config.prod.js && firebase deploy",
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",

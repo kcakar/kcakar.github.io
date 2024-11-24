@@ -1,12 +1,13 @@
 @font-face {
-    font-family: 'TOMO Bossa';
-    src: url('TOMOBossa-Black.eot');
-    src: local('TOMO Bossa Black'), local('TOMOBossa-Black'),
-        url('TOMOBossa-Black.eot?#iefix') format('embedded-opentype'),
-        url('TOMOBossa-Black.woff2') format('woff2'),
-        url('TOMOBossa-Black.woff') format('woff'),
-        url('TOMOBossa-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
+  font-family: "TOMO Bossa";
+  src: url("TOMOBossa-Black.eot");
+  src:
+    local("TOMO Bossa Black"),
+    local("TOMOBossa-Black"),
+    url("TOMOBossa-Black.eot?#iefix") format("embedded-opentype"),
+    url("TOMOBossa-Black.woff2") format("woff2"),
+    url("TOMOBossa-Black.woff") format("woff"),
+    url("TOMOBossa-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
 }
-

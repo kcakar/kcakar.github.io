@@ -1,0 +1,13 @@
+{
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 350,
+  "singleAttributePerLine": false,
+  "enable": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/public": true
+  },
+  "bracketSameLine": true
+}
