@@ -156,8 +156,8 @@ function stage3Animations() {
 }
 
 function stage4Animations() {
-  document.querySelector('[data-stage="3"').classList.remove("active");
-  document.querySelector('[data-stage="4"').classList.add("active");
+  document.querySelector('[data-stage="3"]').classList.remove("active");
+  document.querySelector('[data-stage="4"]').classList.add("active");
 
   document.querySelectorAll('[data-stage="4"] h3').forEach((el, index) => {
     animateText(el, 1, 0.007, (index / 2) * 1.1);
@@ -168,8 +168,8 @@ function stage4Animations() {
 }
 
 function stage5Animations() {
-  document.querySelector('[data-stage="4"').classList.remove("active");
-  document.querySelector('[data-stage="5"').classList.add("active");
+  document.querySelector('[data-stage="4"]').classList.remove("active");
+  document.querySelector('[data-stage="5"]').classList.add("active");
 
   document.querySelectorAll('[data-stage="5"] h3').forEach((el, index) => {
     animateText(el, 1, 0.007, (index / 2) * 1.1);
@@ -231,12 +231,11 @@ function handleStage4Input() {
 
 function handleStage5Input() {
   const emailRegex = /\S+@\S+\.\S+/;
-  if (!emailRegex.test(email.value)) {
+  if (!emailRegex.test(email.value) || !email.value) {
+    document.querySelector('[data-stage="5"] .form').classList.add("error");
     return;
   }
-  if (!email.value) {
-    return;
-  }
+  document.querySelector('[data-stage="5"] .form').classList.remove("error");
   contactModel.email = email.value;
   stage6Animations();
 }

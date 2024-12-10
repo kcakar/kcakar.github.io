@@ -1,0 +1,138 @@
+.contact {
+  width: 100vw;
+  min-height: 370px;
+  height: calc(90vh - 175px);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.contact .form {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 300px;
+  flex-wrap: wrap;
+}
+.contact .form .error-text {
+  color: #8c0000;
+  display: none;
+}
+.contact .form.error .error-text {
+  display: block;
+}
+.contact .scene {
+  position: relative;
+  top: 10vh;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+}
+.contact .scene.active {
+  display: flex;
+}
+.contact .scene .with-emoji {
+  max-width: 290px;
+}
+.contact .scene h3 {
+  max-width: 290px;
+  margin: 0 0 20px 0;
+  display: inline;
+  padding: 0;
+}
+.contact .scene:nth-child(3) h3:nth-child(3) {
+  max-width: 340px;
+}
+.contact .scene:nth-child(6) h3:nth-child(1) {
+  margin-bottom: 5px;
+}
+.contact .scene .emoji {
+  position: relative;
+  top: -3px;
+  width: 46px;
+}
+.contact .input-wrapper {
+  width: 100%;
+}
+.contact .input-wrapper input {
+  background-color: #eee;
+  border: none;
+  padding: 15px;
+  font-size: 1rem;
+  width: calc(100% - 30px);
+  border-radius: 5px;
+  color: #808080;
+  cursor: pointer;
+}
+.contact .input-wrapper input:focus {
+  outline-color: black;
+}
+.contact .input-wrapper input::-moz-placeholder {
+  color: gray;
+  font-style: italic;
+  opacity: 1;
+}
+.contact .input-wrapper input::placeholder {
+  color: gray;
+  font-style: italic;
+  opacity: 1;
+}
+.contact button {
+  z-index: 2;
+  height: 43px;
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #272727;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+.contact button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #ffd401;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+.contact button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+.contact button span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 5px 5px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+.contact button:hover span {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}/*# sourceMappingURL=contact.css.map */

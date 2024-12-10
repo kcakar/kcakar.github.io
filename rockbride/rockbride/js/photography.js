@@ -1,7 +1,7 @@
 import Isotope from "isotope-layout";
 import imagesLoaded from "imagesloaded";
 import hashtags from "./hashtags.json";
-import { bindHamburger, initScrollButton, languageSelectorINIT } from "./motions";
+import { bindHamburger, initScrollButton, languageSelectorINIT,sectionReveal } from "./motions";
 import "../css/style.scss";
 
 languageSelectorINIT();

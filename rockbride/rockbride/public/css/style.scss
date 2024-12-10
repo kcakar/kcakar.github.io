@@ -1,17 +1,16 @@
-@use '/css/photography.scss';
-@use '/css/contact.scss';
-@import '/fonts/AesteticoFormal/AesteticoFormal.css';
-@import '/fonts/LFTetica/LFTetica.css';
-@import '/fonts/TOMOBossa/TOMOBossa.css';
+@use "/css/photography.scss";
+@use "/css/contact.scss";
+@import "/fonts/AesteticoFormal/AesteticoFormal.css";
+@import "/fonts/LFTetica/LFTetica.css";
+@import "/fonts/TOMOBossa/TOMOBossa.css";
 
-$header-height: 125px;
 $header-mobile-height: 50px;
 $hover-color: #a84a00;
 
 html,
 body {
-  // font-family: 'Aestetico Formal','LFT Etica','TOMO Bossa';
-  font-family: 'Aestetico Formal';
+  /* font-family: 'Aestetico Formal', 'LFT Etica', 'TOMO Bossa'; */
+  font-family: "Aestetico Formal";
   color: #edebe5;
   font-size: 1em;
   line-height: 1.4;
@@ -19,7 +18,6 @@ body {
   background-color: black;
 
   &.loading {
-
     article,
     section,
     header {
@@ -34,7 +32,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'TOMO Bossa';
+  font-family: "TOMO Bossa";
   text-align: center;
   font-size: 45px;
 
@@ -99,14 +97,13 @@ footer {
   margin: 0 auto;
 }
 
-
 header {
   background-color: black;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: flex-end;
-  height: $header-height;
+  height: 125px;
 
   @media (max-width: 700px) {
     flex-direction: row;
@@ -136,7 +133,6 @@ nav {
     position: absolute;
     right: 0;
   }
-
 
   .menu {
     justify-content: center;
@@ -207,7 +203,6 @@ nav {
           bottom: 0;
         }
       }
-
     }
 
     .menu {
@@ -233,7 +228,6 @@ nav {
 
       &:not(:first-of-type) {
         margin: 0;
-
       }
 
       a {
@@ -249,11 +243,10 @@ nav {
   }
 }
 
-
 .hero {
   .slider {
     position: relative;
-    height: calc(100vh - $header-height);
+    height: calc(100vh - 125px);
     max-width: calc(100vw - 17px);
     max-height: 650px;
 
@@ -273,7 +266,7 @@ nav {
       top: 0;
       left: 0;
       max-width: calc(100vw - 17px);
-      height: calc(100vh - $header-height);
+      height: calc(100vh - 125px);
       object-fit: contain;
       right: 0;
       margin: 0 auto;
@@ -305,7 +298,7 @@ nav {
   padding: 10px 0 10px;
 
   span {
-    font-family: 'LFT Etica';
+    font-family: "LFT Etica";
     margin-right: 50px;
     font-size: 22px;
     color: #fff;
@@ -346,9 +339,8 @@ nav {
       height: 100px;
     }
 
-
     h3 {
-      font-family: 'LFT Etica';
+      font-family: "LFT Etica";
       font-size: 20px;
       color: black;
       background-color: white;
@@ -372,7 +364,6 @@ nav {
       padding: 0 30px;
       text-align: center;
     }
-
   }
 }
 
@@ -425,7 +416,7 @@ nav {
     max-width: 200px;
     padding: 0px 40px;
     text-align: center;
-    font-family: 'LFT Etica';
+    font-family: "LFT Etica";
 
     @media (max-width: 700px) {
       padding: 50px 10px 50px 10px;
@@ -581,7 +572,6 @@ nav {
       }
     }
   }
-
 }
 
 section.testimonials {
@@ -597,7 +587,6 @@ section.testimonials {
       flex-direction: row-reverse;
       color: black;
     }
-
 
     @media (max-width: 700px) {
       display: flex;
@@ -624,7 +613,7 @@ section.testimonials {
     }
 
     h5 {
-      font-family: 'Aestetico Formal';
+      font-family: "Aestetico Formal";
       font-weight: 100;
       position: relative;
       z-index: 2;
@@ -683,7 +672,7 @@ section.about {
 
   .description {
     text-align: center;
-    font-family: 'Aestetico Formal';
+    font-family: "Aestetico Formal";
     max-width: 400px;
     font-size: 30px;
     font-weight: bold;
@@ -707,7 +696,7 @@ section.about {
   }
 
   .card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -717,7 +706,7 @@ section.about {
   }
 
   .card::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -745,11 +734,9 @@ section.about {
   }
 
   .social-icons {
-
     a,
     a:visited {
       color: #ebebeb;
-      ;
       text-decoration: none;
 
       &:hover {
@@ -804,7 +791,6 @@ footer {
     a,
     a:visited {
       color: #ebebeb;
-      ;
       text-decoration: none;
 
       &:hover {
@@ -854,7 +840,6 @@ footer {
     transform: translate(-50%, -50%) rotateZ(360deg);
   }
 }
-
 
 body {
   transition: opacity 0.5s ease;
@@ -907,11 +892,13 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: bottom .4s, transform .4s;
+  transition:
+    bottom 0.4s,
+    transform 0.4s;
 }
 
 .scroll-up:hover {
-  transform: translateY(-.25rem);
+  transform: translateY(-0.25rem);
 }
 
 ._show-scroll {
@@ -957,7 +944,7 @@ body {
 
     @media (max-width: 700px) {
       top: 40px;
-      left:0;
+      left: 0;
       right: initial;
     }
 
@@ -983,7 +970,7 @@ body {
       /* Adjust to be perfectly centered */
       @media (max-width: 700px) {
         right: initial;
-        left:8px
+        left: 8px;
       }
     }
 
@@ -999,4 +986,17 @@ body {
 
 body.de .text-bubble {
   height: 200px;
+}
+
+
+.intro{
+  h1{
+    font-size: 22px;
+    margin: 10px;
+  }
+
+  h2{
+    font-size: 16px;
+    margin: 0;
+  }
 }

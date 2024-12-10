@@ -3,7 +3,10 @@ const common = require("./webpack.common.js");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
+const PostCSSPlugin = require("postcss-loader");
+const cssnano = require("cssnano");
 
 module.exports = merge(common, {
   mode: "production",
@@ -11,7 +14,23 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.scss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  require("cssnano")({
+                    preset: ['default', { discardComments: { removeAll: true } }],
+                  }), // Minifies the CSS
+                ],
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -136,4 +155,8 @@ module.exports = merge(common, {
       ],
     }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
 });
