@@ -1,3 +1,6 @@
+<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Keremcan Çakar</title>
@@ -78,7 +81,8 @@ body.plain .screen{display:grid!important}
 body.plain .scene,body.plain .controls,body.plain .intro-only{display:none}
 body.plain .screen+.screen{border-top:2px solid var(--line);padding-top:18px}
 </style>
-
+</head>
+<body>
 <div class="wrap">
   <div class="top">
     <div class="eyebrow">Player profile · Munich, Germany</div>
@@ -91,7 +95,6 @@ body.plain .screen+.screen{border-top:2px solid var(--line);padding-top:18px}
     <button class="btn primary" id="next" type="button">Start the adventure ▸</button>
   </div>
 </div>
-
 <script>
 const CATC = {impact:"#ffb547", ownership:"#ff6b8b", scale:"#8fb3ff", legacy:"#c9a7ff", arch:"#5ee2c8", security:"#9be37a", cost:"#ffd86b", lead:"#ff9f6b", quality:"#7fe0ff", devex:"#e3a0d6", business:"#b8d77a", ai:"#f5f08a"};
 // Language-independent structure: era id, scene, years, stack, and the categories of each achievement (in order).
@@ -677,3 +680,5 @@ async function copyMail(ev){
       document.body.appendChild(d); setTimeout(()=>d.remove(),3500); } }); }
 
 </script>
+</body>
+</html>
